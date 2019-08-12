@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block custom_head_css_js %}
+    <link href="{% static 'css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/plugins/select2/select2.full.min.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="panel-options">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <a href="{% url 'visions:vision-effect-detail' pk=effect.id %}" class="text-center">
+                                    <i class="fa fa-laptop"></i> {% trans 'Detail' %} </a>
+                            </li>
+                            <li class="active">
+                                <a href="{% url 'visions:vision-effect-asset-list' pk=effect.id  %}" class="text-center">
+                                <i class="fa fa-bar-chart-o"></i> {% trans 'Video combines or videos' %}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="col-sm-7" style="padding-left: 0;">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span style="float: left">{% trans 'Video combine list of ' %} <b>{{ effect.name }}</b></span>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-user">
+                                        </ul>
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>{% trans 'Name' %}</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for video_combine in object_list %}
+                                            <tr>
+                                                <td><a href="{% url 'visions:vision-video-combine-detail' pk=video_combine.id %}" class="text-center">
+                                                        <i class="fa fa-laptop"></i> {{ video_combine.name }} </a></td>
+                                                <td>
+                                                    <button title="{{ video_combine.inherit }}" data-gid="{{ video_combine.id }}" class="btn btn-danger btn-xs btn-remove-video-combine {% if video_combine.inherit %} disabled {% endif %}" type="button" style="float: right;"><i class="fa fa-minus"></i></button>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        {% include '_pagination.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span style="float: left">{% trans 'Video list of ' %} <b>{{ effect.name }}</b></span>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-user">
+                                        </ul>
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>{% trans 'Name' %}</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for video in videos_granted %}
+                                            <tr>
+                                                <td><a href="{% url 'visions:vision-video-detail' pk=video.id %}" class="text-center">
+                                                        <i class="fa fa-laptop"></i> {{ video.name }} </a></td>
+                                                <td>
+                                                    <button title="{{ video.inherit }}" data-gid="{{ video.id }}" class="btn btn-danger btn-xs btn-remove-videos {% if video.inherit %} disabled {% endif %}" type="button" style="float: right;"><i class="fa fa-minus"></i></button>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        {% include '_pagination.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5" style="padding-left: 0;padding-right: 0">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <i class="fa fa-info-circle"></i> {% trans 'Add video combine to this vision effect' %}
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tbody>
+                                        <form>
+                                            <tr class="no-borders-tr">
+                                                <td colspan="2">
+                                                    <select data-placeholder="{% trans 'Select video combines' %}" class="select2" id="video_combine_select2" style="width: 100%" multiple="" tabindex="4">
+                                                        {% for video_combine in video_combines_remain %}
+                                                            <option value="{{ video_combine.id }}">{{ video_combine }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr class="no-borders-tr">
+                                                <td colspan="2">
+                                                    <button type="button" class="btn btn-primary btn-sm btn-add-video-combines">{% trans 'Add' %}</button>
+                                                </td>
+                                            </tr>
+                                        </form>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5" style="padding-left: 0;padding-right: 0">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <i class="fa fa-info-circle"></i> {% trans 'Add video to this vision effect' %}
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tbody>
+                                        <form>
+                                            <tr class="no-borders-tr">
+                                                <td colspan="2">
+                                                    <select data-placeholder="{% trans 'Select videos' %}" class="select2" id="video_select2" style="width: 100%" multiple="" tabindex="4">
+                                                        {% for video in videos_remain %}
+                                                            <option value="{{ video.id }}">{{ video }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr class="no-borders-tr">
+                                                <td colspan="2">
+                                                    <button type="button" class="btn btn-primary btn-sm btn-add-videos">{% trans 'Add' %}</button>
+                                                </td>
+                                            </tr>
+                                        </form>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block custom_foot_js %}
+<script>
+function addVideoCombines(video_combines) {
+    var the_url = "{% url 'api-visions:vision-effect-add-video-combine' pk=effect.id %}";
+    var body = {
+        video_combines: video_combines
+    };
+    var success = function(data) {
+        location.reload();
+    };
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+        success: success
+    });
+}
+
+function removeVideoCombines(video_combines) {
+    var the_url = "{% url 'api-visions:vision-effect-remove-video-combine' pk=effect.id %}";
+    var body = {
+        video_combines: video_combines
+    };
+    var success = function(data) {
+        location.reload();
+    };
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+        success: success
+    });
+}
+
+function addVideos(videos) {
+    var the_url = "{% url 'api-visions:vision-effect-add-video' pk=effect.id %}";
+    var body = {
+        videos: videos
+    };
+    var success = function(data) {
+        location.reload();
+    };
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+        success: success
+    });
+}
+
+function removeVideos(videos) {
+    var the_url = "{% url 'api-visions:vision-effect-remove-video' pk=effect.id %}";
+    var body = {
+        videos: videos
+    };
+    var success = function(data) {
+        location.reload();
+    };
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+        success: success
+    });
+}
+
+
+$(document).ready(function () {
+     $('.select2').select2();
+})
+.on('click', '.btn-add-video-combines', function () {
+    var video_combines_selected = $("#video_combine_select2 option:selected").map(function () {
+        return $(this).attr('value');
+    }).get();
+    if (video_combines_selected.length === 0) {
+		return false;
+	}
+    addVideoCombines(video_combines_selected);
+})
+.on('click', '.btn-remove-video-combine', function () {
+    var video_combine_id = $(this).data("gid");
+    if (video_combine_id === "") {
+        return
+    }
+    var video_combines = [video_combine_id];
+    removeVideoCombines(video_combines)
+})
+.on('click', '.btn-add-videos', function () {
+    var videos_selected = $("#video_select2 option:selected").map(function () {
+        return $(this).attr('value');
+    }).get();
+    if (videos_selected.length === 0) {
+		return false;
+	}
+    addVideos(videos_selected);
+})
+.on('click', '.btn-remove-videos', function () {
+    var video_id = $(this).data("gid");
+    if (video_id === "") {
+        return
+    }
+    var videos = [video_id];
+    removeVideos(videos)
+})
+
+</script>
+{% endblock %}

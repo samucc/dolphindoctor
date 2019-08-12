@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block custom_head_css_js %}
+    <link href="{% static 'css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+    <link href="{% static "css/plugins/sweetalert/sweetalert.css" %}" rel="stylesheet">
+    <link href="{% static "css/plugins/datatables/datatables.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" %}" rel="stylesheet">
+    <script src="{% static 'js/plugins/select2/select2.full.min.js' %}"></script>
+    <script src="{% static "js/plugins/sweetalert/sweetalert.min.js" %}"></script>
+    <script src="{% static "js/plugins/datatables/datatables.min.js" %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="panel-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="{% url 'visions:vision-video-detail' pk=video.id %}" class="text-center"><i class="fa fa-laptop"></i> {% trans 'User group detail' %} </a>
+                            </li>
+                            <li class="pull-right">
+                                <a class="btn btn-outline btn-default" href="{% url 'visions:vision-video-update' pk=video.id %}"><i class="fa fa-edit"></i>{% trans 'Update' %}</a>
+                            </li>
+                            <li class="pull-right">
+                                <a class="btn btn-outline btn-danger btn-delete-video">
+                                    <i class="fa fa-trash-o"></i>{% trans 'Delete' %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="col-sm-7" style="padding-left: 0">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span class="label"><b>{{ video.name }}</b></span>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr class="no-borders-tr">
+                                            <td width="20%">{% trans 'Name' %}:</td>
+                                            <td><b>{{ video.name }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%">{% trans 'Category' %}:</td>
+                                            <td><b>{{ video.category }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%">{% trans 'Show' %}:</td>
+                                            <td><b>{{ video.show }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20%">{% trans 'Show Time' %}:</td>
+                                            <td><b>{{ video.show_time }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Create by' %}:</td>
+                                            <td><b>{{ video.created_by }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Date created' %}:</td>
+                                            <td><b>{{ video.date_created }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Comment' %}:</td>
+                                            <td><b>{{ video.comment }}</b></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {% if user.is_superuser or user.is_org_admin %}
+                        <div class="col-sm-4" style="padding-left: 0;padding-right: 0">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <i class="fa fa-info-circle"></i> {% trans 'Quick modify' %}
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr class="no-borders-tr">
+                                          <td width="50%">{% trans 'Active' %}:</td>
+                                            <td>
+                                              <span class="pull-right">
+                                                  <div class="switch">
+                                                      <div class="onoffswitch">
+                                                          <input type="checkbox" {% if video.is_active %} checked {% endif %}  class="onoffswitch-checkbox" id="is_active">
+                                                          <label class="onoffswitch-label" for="is_active">
+                                                              <span class="onoffswitch-inner"></span>
+                                                              <span class="onoffswitch-switch"></span>
+                                                          </label>
+                                                      </div>
+                                                  </div>
+                                              </span>
+                                          </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block custom_foot_js %}
+<script>
+$(document).ready(function () {
+   $('.select2').select2()
+          .on('select2:select', function(evt) {
+            var data = evt.params.data;
+        }).on('select2:unselect', function(evt) {
+            var data = evt.params.data;
+        })
+}).on('click', '.btn-delete-video', function () {
+    var $this = $(this);
+    var name = "{{ video.name }}";
+    var uid = "{{ video.id }}";
+    var the_url = '{% url "api-visions:vision-video-detail" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', uid);
+    var redirect_url = "{% url 'visions:vision-video-list' %}";
+    objectDelete($this, name, the_url, redirect_url);
+}).on('click', '#is_active', function () {
+    var the_url = '{% url "api-visions:vision-video-list"  %}';
+    var checked = $(this).prop('checked');
+    var body = [{
+        'is_active': checked,
+        'pk':'{{ video.id }}'
+    }];
+    var success = '{% trans "Update successfully!" %}';
+    var status = $(".ibox-content > table > tbody > tr:nth-child(13) > td:last >b").text();
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+        success_message: success
+    });
+    if (status === "False") {
+        $(".ibox-content > table > tbody > tr:nth-child(13) > td:last >b").html('True');
+    }else{
+        $(".ibox-content > table > tbody > tr:nth-child(13) > td:last >b").html('False');
+    }
+})
+</script>
+{% endblock %}

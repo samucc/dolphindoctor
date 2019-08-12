@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block custom_head_css_js %}
+    <link href="{% static 'css/plugins/select2/select2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery-ui.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/plugins/select2/select2.full.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <style>
+    .div-left{ float:left;width:49%;border:0px solid #F00}
+    .div-right{ float:left;width:49%;border:0px solid #000}
+    @keyframes fade {
+        from {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1.0;
+        }
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: 1.0;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1.0;
+        }
+    }
+    .headerBox {
+        animation: fade 600ms infinite;
+        -webkit-animation: fade 600ms infinite;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="panel-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="{% url 'visions:vision-video-detail' pk=object.id %}" class="text-center"><i class="fa fa-laptop"></i> {% trans 'Detail' %} </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'visions:vision-video-asset-list' pk=object.id %}" class="text-center">
+                                <i class="fa fa-bar-chart-o"></i> {% trans 'Assets and asset groups' %}</a>
+                            </li>
+                            <li class="pull-right">
+                                <a class="btn btn-outline btn-default" href="{% url 'visions:vision-video-update' pk=object.id %}"><i class="fa fa-edit"></i>{% trans 'Update' %}</a>
+                            </li>
+                            <li class="pull-right">
+                                <a class="btn btn-outline btn-danger btn-delete-vision">
+                                    <i class="fa fa-trash-o"></i>{% trans 'Delete' %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="col-sm-4" style="padding-left: 0;">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span class="label"><b>{{ object.name }}</b></span>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-user">
+                                        </ul>
+                                        <a class="close-link">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr class="no-borders-tr">
+                                            <td>{% trans 'Name' %}:</td>
+                                            <td><b>{{ object.name }}</b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>{% trans 'Music' %}:</td>
+                                            <td><b>
+                                            {% if object.music %}
+                                            <a href="{% url 'visions:vision-music-detail' pk=object.music.id %}" class="text-center">{{ object.music }} </a>
+                                            {% else %}
+                                            {{ object.music }}
+                                            {% endif%}
+                                            {% if object.gallery %}
+                                            - <a href="{% url 'visions:vision-gallery-detail' pk=object.gallery.id %}" class="text-center">{{ object.gallery }} </a>
+                                            {% else %}
+                                            - {{ object.gallery }}
+                                            {% endif%}
+                                            {% if object.effect %}
+                                            - <a href="{% url 'visions:vision-effect-detail' pk=object.effect.id %}" class="text-center">{{ object.effect }} </a>
+                                            {% else %}
+                                            - {{ object.effect }}
+                                            {% endif%}
+                                            {% if object.video_combine %}
+                                            - <a href="{% url 'visions:vision-video-combine-detail' pk=object.video_combine.id %}" class="text-center">{{ object.video_combine }} </a>
+                                            {% else %}
+                                            - {{ object.video_combine }}
+                                            {% endif%}
+                                            </b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Purpose' %}:</td>
+                                            <td><b>{{ object.purpose }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Position' %}:</td>
+                                            <td><b>{{ object.position }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'U quantity' %}:</td>
+                                            <td><b>{{ object.u_quantity }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'U location' %}:</td>
+                                            <td><b>{{ object.u_location }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Model' %}:</td>
+                                            <td><b>{{ object.model }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Max power' %}:</td>
+                                            <td><b>{{ object.max_power }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Max bearing' %}:</td>
+                                            <td><b>{{ object.max_bearing }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Start time' %}:</td>
+                                            <td><b>{{ object.start_time }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Asset count' %}:</td>
+                                            <td><b>{{ object.assets.count }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Node count' %}:</td>
+                                            <td><b>{{ object.nodes.count }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Date created' %}:</td>
+                                            <td><b>{{ object.date_created }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Created by' %}:</td>
+                                            <td><b>{{ object.created_by  }}</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{% trans 'Comment' %}:</td>
+                                            <td><b>{{ object.comment }}</b></td>
+                                        </tr>
+                                        <tr class="no-borders-tr">
+                                            <td width="50%">{% trans 'Active' %} :</td>
+                                            <td><span style="float: left">
+                                                <div class="switch">
+                                                    <div class="onoffswitch">
+                                                        <input type="checkbox" {% if object.is_active %} checked {% endif %} class="onoffswitch-checkbox" id="is_active">
+                                                        <label class="onoffswitch-label" for="is_active">
+                                                            <span class="onoffswitch-inner"></span>
+                                                            <span class="onoffswitch-switch"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8" style="padding-left: 0;padding-right: 0;text-align: left;align:left;">
+
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <i class="fa fa-info-circle"></i> {% trans 'Elevation' %}
+                                </div>
+                                <div class="panel-body">
+                                    <div class="div-left">{% include 'visions/_video_elevation.html' %}</div>
+                                    <div class="div-right">{% include 'visions/_video_back_elevation.html' %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block custom_foot_js %}
+<script>
+dolphindoctor.system_users_selected = {};
+
+$(document).ready(function () {
+    $('.select2').select2()
+        .on('select2:select', function(evt) {
+             var data = evt.params.data;
+             dolphindoctor.system_users_selected[data.id] = data.text;
+        })
+        .on('select2:unselect', function(evt) {
+            var data = evt.params.data;
+            delete dolphindoctor.system_users_selected[data.id]
+        })
+})
+.on('click', '.btn-delete-vision', function () {
+    var $this = $(this);
+    var name = "{{ video.name }}";
+    var uid = "{{ object.id }}";
+    var the_url = '{% url "api-visions:vision-video-detail" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', uid);
+    var redirect_url = "{% url 'visions:vision-video-list' %}";
+    objectDelete($this, name, the_url, redirect_url);
+}).on('click', '#is_active', function () {
+    var the_url = '{% url "api-visions:vision-video-detail" pk=object.id %}';
+    var checked = $(this).prop('checked');
+    var body = {
+        'is_active': checked
+    };
+    APIUpdateAttr({
+        url: the_url,
+        body: JSON.stringify(body),
+    });
+})
+</script>
+{% endblock %}

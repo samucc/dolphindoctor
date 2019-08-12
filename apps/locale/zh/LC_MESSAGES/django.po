@@ -1,0 +1,6410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Dolphindoctor 0.3.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 17:14+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: ibuler <ibuler@qq.com>\n"
+"Language-Team: Dolphindoctor team<ibuler@qq.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: assets/api/asset.py:51
+#, python-format
+msgid "%(hostname)s was %(action)s successfully"
+msgstr "%(hostname)s %(action)s成功"
+
+#: assets/api/asset.py:125
+msgid "Please select assets that need to be updated"
+msgstr "请选择需要更新的资产"
+
+#: assets/api/node.py:61
+msgid "You can't update the root node name"
+msgstr "不能修改根节点名称"
+
+#: assets/api/node.py:283
+msgid "Update node asset hardware information: {}"
+msgstr "更新节点资产硬件信息: {}"
+
+#: assets/api/node.py:297
+msgid "Test if the assets under the node are connectable: {}"
+msgstr "测试节点下资产是否可连接: {}"
+
+#: assets/const.py:77 assets/models/utils.py:43
+#: assets/templates/assets/admin_user_list.html:51
+#: assets/templates/assets/system_user_list.html:57
+msgid "Unreachable"
+msgstr "不可达"
+
+#: assets/const.py:78 assets/models/utils.py:44
+#: assets/templates/assets/admin_user_list.html:50
+#: assets/templates/assets/asset_list.html:99
+#: assets/templates/assets/system_user_asset.html:53
+#: assets/templates/assets/system_user_list.html:56
+#: users/templates/users/user_group_granted_asset.html:47
+msgid "Reachable"
+msgstr "可连接"
+
+#: assets/const.py:79 assets/models/utils.py:45 authentication/utils.py:9
+msgid "Unknown"
+msgstr "未知"
+
+#: assets/forms/asset.py:20 assets/forms/user.py:74 assets/forms/user.py:94
+#: assets/models/base.py:28 assets/models/cluster.py:18
+#: assets/models/group.py:20 assets/models/label.py:18
+#: assets/templates/assets/admin_user_detail.html:56
+#: assets/templates/assets/admin_user_list.html:47
+#: assets/templates/assets/label_list.html:14
+#: assets/templates/assets/system_user_detail.html:58
+#: assets/templates/assets/system_user_list.html:51 ops/models/adhoc.py:37
+#: ops/templates/ops/task_detail.html:60 ops/templates/ops/task_list.html:27
+#: orgs/models.py:11 settings/models.py:29
+#: settings/templates/settings/_ldap_list_users_modal.html:38
+#: settings/templates/settings/command_storage_create.html:41
+#: settings/templates/settings/replay_storage_create.html:44
+#: settings/templates/settings/terminal_setting.html:83
+#: settings/templates/settings/terminal_setting.html:105
+#: users/models/group.py:14 users/models/user.py:64
+#: users/templates/users/_select_user_modal.html:13
+#: users/templates/users/user_detail.html:63
+#: users/templates/users/user_group_detail.html:55
+#: users/templates/users/user_group_list.html:35
+#: users/templates/users/user_list.html:35
+#: users/templates/users/user_profile.html:51
+#: users/templates/users/user_pubkey_update.html:53
+#: visions/models/classify.py:51 visions/models/effect.py:14
+#: visions/models/gallery.py:28 visions/models/material.py:14
+#: visions/models/music.py:29 visions/models/video.py:17
+#: visions/models/video_combine.py:34
+#: visions/templates/visions/effect_detail.html:52
+#: visions/templates/visions/effect_list.html:35
+#: visions/templates/visions/material_detail.html:52
+#: visions/templates/visions/material_list.html:35
+#: visions/templates/visions/video_detail.html:52
+#: visions/templates/visions/video_list.html:35
+#: visions/templates/visions/vision_classify_detail.html:57
+#: visions/templates/visions/vision_classify_list.html:48
+#: visions/templates/visions/vision_effect_detail.html:59
+#: visions/templates/visions/vision_effect_list.html:48
+#: visions/templates/visions/vision_effect_video_group.html:49
+#: visions/templates/visions/vision_effect_video_group.html:91
+#: visions/templates/visions/vision_gallery_area.html:49
+#: visions/templates/visions/vision_gallery_detail.html:59
+#: visions/templates/visions/vision_gallery_list.html:48
+#: visions/templates/visions/vision_material_asset-template.html:49
+#: visions/templates/visions/vision_material_detail.html:57
+#: visions/templates/visions/vision_material_list.html:48
+#: visions/templates/visions/vision_music_detail.html:61
+#: visions/templates/visions/vision_music_list.html:48
+#: visions/templates/visions/vision_music_room.html:49
+#: visions/templates/visions/vision_video_combine_cabinet.html:49
+#: visions/templates/visions/vision_video_combine_detail.html:57
+#: visions/templates/visions/vision_video_combine_list.html:48
+#: visions/templates/visions/vision_video_detail.html:91
+#: visions/templates/visions/vision_video_list.html:82
+msgid "Name"
+msgstr "名称"
+
+#: assets/forms/asset.py:24 assets/models/asset.py:117
+#: assets/templates/assets/system_user_asset.html:52
+#: assets/templates/assets/user_asset_list.html:168
+#: settings/templates/settings/replay_storage_create.html:59
+msgid "Port"
+msgstr "端口"
+
+#: assets/forms/asset.py:44 assets/models/asset.py:122
+#: assets/models/user.py:107 assets/templates/assets/asset_detail.html:186
+#: assets/templates/assets/asset_detail.html:194
+#: assets/templates/assets/system_user_asset.html:95
+#: assets/templates/assets/system_user_assets.html:83
+#: visions/models/classify.py:67
+msgid "Nodes"
+msgstr "节点"
+
+#: assets/forms/asset.py:47 assets/forms/asset.py:77 assets/models/asset.py:126
+#: assets/models/cluster.py:19 assets/models/user.py:65
+#: assets/templates/assets/asset_detail.html:76 templates/_nav.html:23
+msgid "Admin user"
+msgstr "管理用户"
+
+#: assets/forms/asset.py:50 assets/forms/asset.py:80 assets/forms/asset.py:114
+#: assets/templates/assets/asset_create.html:47
+#: assets/templates/assets/asset_create.html:49
+#: assets/templates/assets/asset_list.html:85
+#: assets/templates/assets/user_asset_list.html:33
+msgid "Label"
+msgstr "标签"
+
+#: assets/forms/asset.py:54 assets/forms/asset.py:74 assets/forms/asset.py:84
+#: assets/forms/asset.py:117 assets/models/node.py:255
+#: assets/templates/assets/asset_create.html:41 visions/forms/classify.py:31
+#: visions/forms/classify.py:35
+#: visions/templates/visions/vision_classify_list.html:53
+#: visions/templates/visions/vision_classify_list.html:140
+#: visions/templates/visions/vision_effect_list.html:139
+#: visions/templates/visions/vision_gallery_list.html:137
+#: visions/templates/visions/vision_material_list.html:136
+#: visions/templates/visions/vision_music_list.html:140
+#: visions/templates/visions/vision_video_combine_list.html:140
+#: visions/templates/visions/vision_video_list.html:89
+#: visions/templates/visions/vision_video_list.html:176
+msgid "Node"
+msgstr "节点"
+
+#: assets/forms/asset.py:58 assets/forms/asset.py:88
+msgid ""
+"root or other NOPASSWD sudo privilege user existed in asset,If asset is "
+"windows or other set any one, more see admin user left menu"
+msgstr ""
+"root或其他拥有NOPASSWD: ALL权限的用户, 如果是windows或其它硬件可以随意设置一"
+"个, 更多信息查看左侧 `管理用户` 菜单"
+
+#: assets/forms/asset.py:61 assets/forms/asset.py:91
+msgid "Windows 2016 RDP protocol is different, If is window 2016, set it"
+msgstr "Windows 2016的RDP协议与之前不同，如果是请设置"
+
+#: assets/forms/asset.py:98 assets/forms/asset.py:102 assets/forms/label.py:15
+#: visions/templates/visions/vision_classify_asset.html:84
+#: visions/templates/visions/vision_video_asset.html:84
+msgid "Select assets"
+msgstr "选择资产"
+
+#: assets/forms/label.py:13 assets/models/asset.py:286
+#: assets/models/authbook.py:24 assets/serializers/admin_user.py:35
+#: assets/serializers/asset_user.py:81 assets/serializers/system_user.py:30
+#: assets/templates/assets/admin_user_list.html:49
+#: assets/templates/assets/label_list.html:16
+#: assets/templates/assets/system_user_list.html:55 audits/models.py:19
+#: audits/templates/audits/ftp_log_list.html:42
+#: audits/templates/audits/ftp_log_list.html:72 visions/forms/classify.py:28
+#: visions/models/classify.py:66
+#: visions/templates/visions/vision_classify_list.html:52
+#: visions/templates/visions/vision_classify_list.html:137
+#: visions/templates/visions/vision_effect_list.html:136
+#: visions/templates/visions/vision_gallery_list.html:134
+#: visions/templates/visions/vision_material_list.html:133
+#: visions/templates/visions/vision_music_list.html:137
+#: visions/templates/visions/vision_video_combine_list.html:137
+#: visions/templates/visions/vision_video_list.html:88
+#: visions/templates/visions/vision_video_list.html:173
+msgid "Asset"
+msgstr "资产"
+
+#: assets/forms/user.py:25
+msgid "Password or private key passphrase"
+msgstr "密码或密钥密码"
+
+#: assets/forms/user.py:26 assets/models/base.py:30
+#: assets/serializers/asset_user.py:62
+#: assets/templates/assets/_asset_user_auth_modal.html:21
+#: assets/templates/assets/_asset_user_auth_update_modal.html:21
+#: assets/templates/assets/_asset_user_auth_view_modal.html:27
+#: assets/templates/assets/_asset_user_view_auth_modal.html:37
+#: authentication/forms.py:13
+#: authentication/templates/authentication/login.html:67
+#: authentication/templates/authentication/new_login.html:93
+#: settings/forms.py:110 users/forms.py:16 users/forms.py:28
+#: users/templates/users/reset_password.html:53
+#: users/templates/users/user_password_authentication.html:18
+#: users/templates/users/user_password_update.html:43
+#: users/templates/users/user_profile_update.html:40
+#: users/templates/users/user_pubkey_update.html:40
+#: users/templates/users/user_update.html:20
+msgid "Password"
+msgstr "密码"
+
+#: assets/forms/user.py:29 assets/serializers/asset_user.py:70
+#: assets/templates/assets/_asset_user_auth_update_modal.html:27
+#: users/models/user.py:91
+msgid "Private key"
+msgstr "ssh私钥"
+
+#: assets/forms/user.py:41
+msgid "Invalid private key, Only support RSA/DSA format key"
+msgstr "不合法的密钥，仅支持RSA/DSA格式的密钥"
+
+#: assets/forms/user.py:52
+msgid "Password and private key file must be input one"
+msgstr "密码和私钥, 必须输入一个"
+
+#: assets/forms/user.py:75 assets/forms/user.py:95 assets/models/base.py:29
+#: assets/templates/assets/_asset_user_auth_modal.html:15
+#: assets/templates/assets/_asset_user_auth_update_modal.html:15
+#: assets/templates/assets/_asset_user_auth_view_modal.html:21
+#: assets/templates/assets/_asset_user_list.html:16
+#: assets/templates/assets/_asset_user_view_auth_modal.html:31
+#: assets/templates/assets/admin_user_detail.html:60
+#: assets/templates/assets/admin_user_list.html:48
+#: assets/templates/assets/system_user_detail.html:62
+#: assets/templates/assets/system_user_list.html:52 audits/models.py:94
+#: audits/templates/audits/login_log_list.html:51 authentication/forms.py:11
+#: authentication/templates/authentication/login.html:64
+#: authentication/templates/authentication/new_login.html:90
+#: ops/models/adhoc.py:164
+#: settings/templates/settings/_ldap_list_users_modal.html:37 users/forms.py:14
+#: users/models/user.py:62 users/templates/users/_select_user_modal.html:14
+#: users/templates/users/user_detail.html:67
+#: users/templates/users/user_list.html:36
+#: users/templates/users/user_profile.html:47
+msgid "Username"
+msgstr "用户名"
+
+#: assets/forms/user.py:98
+msgid "Auto push system user to asset"
+msgstr "自动推送系统用户到资产"
+
+#: assets/forms/user.py:99
+msgid ""
+"1-100, High level will be using login asset as default, if user was granted "
+"more than 2 system user"
+msgstr ""
+"1-100, 1最低优先级，100最高优先级。授权多个用户时，高优先级的系统用户将会作为"
+"默认登录用户"
+
+#: assets/forms/user.py:101
+msgid ""
+"If you choose manual login mode, you do not need to fill in the username and "
+"password."
+msgstr "如果选择手动登录模式，用户名和密码可以不填写"
+
+#: assets/forms/user.py:103
+msgid "Use comma split multi command, ex: /bin/whoami,/bin/ifconfig"
+msgstr "使用逗号分隔多个命令，如: /bin/whoami,/sbin/ifconfig"
+
+#: assets/models/asset.py:112 assets/serializers/asset_user.py:28
+#: assets/templates/assets/_asset_list_modal.html:46
+#: assets/templates/assets/_asset_user_list.html:15
+#: assets/templates/assets/asset_detail.html:64
+#: assets/templates/assets/asset_list.html:97
+#: assets/templates/assets/system_user_asset.html:51
+#: assets/templates/assets/user_asset_list.html:45
+#: assets/templates/assets/user_asset_list.html:167
+#: audits/templates/audits/login_log_list.html:54 settings/forms.py:140
+#: users/templates/users/user_granted_asset.html:45
+#: users/templates/users/user_group_granted_asset.html:45
+#: visions/templates/visions/_video_back_elevation.html:258
+#: visions/templates/visions/_video_elevation.html:227
+#: visions/templates/visions/vision_classify_asset.html:50
+#: visions/templates/visions/vision_video_asset.html:50
+msgid "IP"
+msgstr "IP"
+
+#: assets/models/asset.py:113 assets/serializers/asset_user.py:27
+#: assets/templates/assets/_asset_list_modal.html:45
+#: assets/templates/assets/_asset_user_auth_modal.html:9
+#: assets/templates/assets/_asset_user_auth_update_modal.html:9
+#: assets/templates/assets/_asset_user_auth_view_modal.html:15
+#: assets/templates/assets/_asset_user_list.html:14
+#: assets/templates/assets/_asset_user_view_auth_modal.html:25
+#: assets/templates/assets/asset_detail.html:60
+#: assets/templates/assets/asset_list.html:96
+#: assets/templates/assets/system_user_asset.html:50
+#: assets/templates/assets/user_asset_list.html:44
+#: assets/templates/assets/user_asset_list.html:166 settings/forms.py:139
+#: users/templates/users/user_granted_asset.html:44
+#: users/templates/users/user_group_granted_asset.html:44
+#: visions/templates/visions/_video_back_elevation.html:257
+#: visions/templates/visions/_video_elevation.html:226
+#: visions/templates/visions/vision_classify_asset.html:49
+#: visions/templates/visions/vision_video_asset.html:49
+msgid "Hostname"
+msgstr "主机名"
+
+#: assets/models/asset.py:116 assets/models/user.py:110
+#: assets/templates/assets/asset_detail.html:72
+#: assets/templates/assets/system_user_detail.html:70
+#: assets/templates/assets/system_user_list.html:53
+#: assets/templates/assets/user_asset_list.html:169
+msgid "Protocol"
+msgstr "协议"
+
+#: assets/models/asset.py:119 assets/serializers/asset.py:63
+#: assets/templates/assets/asset_create.html:23
+msgid "Protocols"
+msgstr "协议组"
+
+#: assets/models/asset.py:120 assets/templates/assets/asset_detail.html:100
+#: assets/templates/assets/user_asset_list.html:170
+msgid "Platform"
+msgstr "系统平台"
+
+#: assets/models/asset.py:123 assets/models/label.py:22
+#: assets/templates/assets/asset_detail.html:108
+#: assets/templates/assets/user_asset_list.html:173
+msgid "Is active"
+msgstr "激活"
+
+#: assets/models/asset.py:129 assets/templates/assets/asset_detail.html:68
+msgid "Public IP"
+msgstr "公网IP"
+
+#: assets/models/asset.py:130 assets/templates/assets/asset_detail.html:116
+msgid "Asset number"
+msgstr "资产编号"
+
+#: assets/models/asset.py:133 assets/templates/assets/asset_detail.html:80
+msgid "Vendor"
+msgstr "制造商"
+
+#: assets/models/asset.py:134 assets/templates/assets/asset_detail.html:84
+#: visions/models/classify.py:52
+#: visions/templates/visions/vision_classify_detail.html:61
+#: visions/templates/visions/vision_classify_list.html:51
+#: visions/templates/visions/vision_video_detail.html:137
+msgid "Model"
+msgstr "型号"
+
+#: assets/models/asset.py:135 assets/templates/assets/asset_detail.html:112
+msgid "Serial number"
+msgstr "序列号"
+
+#: assets/models/asset.py:137
+msgid "CPU model"
+msgstr "CPU型号"
+
+#: assets/models/asset.py:138
+msgid "CPU count"
+msgstr "CPU数量"
+
+#: assets/models/asset.py:139
+msgid "CPU cores"
+msgstr "CPU核数"
+
+#: assets/models/asset.py:140
+msgid "CPU vcpus"
+msgstr "CPU总数"
+
+#: assets/models/asset.py:141 assets/templates/assets/asset_detail.html:92
+msgid "Memory"
+msgstr "内存"
+
+#: assets/models/asset.py:142
+msgid "Disk total"
+msgstr "硬盘大小"
+
+#: assets/models/asset.py:143
+msgid "Disk info"
+msgstr "硬盘信息"
+
+#: assets/models/asset.py:145 assets/templates/assets/asset_detail.html:104
+#: assets/templates/assets/user_asset_list.html:171
+msgid "OS"
+msgstr "操作系统"
+
+#: assets/models/asset.py:146
+msgid "OS version"
+msgstr "系统版本"
+
+#: assets/models/asset.py:147
+msgid "OS arch"
+msgstr "系统架构"
+
+#: assets/models/asset.py:148
+msgid "Hostname raw"
+msgstr "主机名原始"
+
+#: assets/models/asset.py:150 assets/templates/assets/asset_create.html:45
+#: assets/templates/assets/asset_detail.html:223 templates/_nav.html:25
+msgid "Labels"
+msgstr "标签管理"
+
+#: assets/models/asset.py:151 assets/models/base.py:36
+#: assets/models/cluster.py:28 assets/models/group.py:21
+#: assets/templates/assets/admin_user_detail.html:68
+#: assets/templates/assets/asset_detail.html:120
+#: assets/templates/assets/system_user_detail.html:100
+#: ops/templates/ops/adhoc_detail.html:86 orgs/models.py:14
+#: users/models/user.py:105 users/serializers/v1.py:116
+#: users/templates/users/user_detail.html:111 visions/models/classify.py:69
+#: visions/models/gallery.py:35 visions/models/music.py:41
+#: visions/models/video_combine.py:49 visions/serializers/effect.py:20
+#: visions/serializers/material.py:20 visions/serializers/video.py:20
+#: visions/templates/visions/vision_classify_detail.html:110
+#: visions/templates/visions/vision_effect_detail.html:102
+#: visions/templates/visions/vision_gallery_detail.html:80
+#: visions/templates/visions/vision_material_detail.html:70
+#: visions/templates/visions/vision_music_detail.html:98
+#: visions/templates/visions/vision_video_combine_detail.html:94
+#: visions/templates/visions/vision_video_detail.html:165
+msgid "Created by"
+msgstr "创建者"
+
+# msgid "Created by"
+# msgstr "创建者"
+#: assets/models/asset.py:152 assets/models/base.py:34
+#: assets/models/cluster.py:26 assets/models/group.py:22
+#: assets/models/label.py:25 assets/templates/assets/admin_user_detail.html:64
+#: assets/templates/assets/system_user_detail.html:96
+#: ops/templates/ops/adhoc_detail.html:90 ops/templates/ops/task_detail.html:64
+#: orgs/models.py:15 users/models/group.py:17
+#: users/templates/users/user_group_detail.html:63
+#: visions/models/classify.py:70 visions/models/effect.py:23
+#: visions/models/gallery.py:36 visions/models/material.py:23
+#: visions/models/music.py:42 visions/models/video.py:23
+#: visions/models/video_combine.py:50
+#: visions/templates/visions/effect_detail.html:76
+#: visions/templates/visions/material_detail.html:76
+#: visions/templates/visions/video_detail.html:72
+#: visions/templates/visions/vision_classify_detail.html:106
+#: visions/templates/visions/vision_effect_detail.html:98
+#: visions/templates/visions/vision_gallery_detail.html:76
+#: visions/templates/visions/vision_material_detail.html:66
+#: visions/templates/visions/vision_music_detail.html:94
+#: visions/templates/visions/vision_video_combine_detail.html:90
+#: visions/templates/visions/vision_video_detail.html:161
+msgid "Date created"
+msgstr "创建日期"
+
+# msgid "Date created"
+# msgstr "创建日期"
+#: assets/models/asset.py:153 assets/models/base.py:33
+#: assets/models/cluster.py:29 assets/models/group.py:23
+#: assets/models/label.py:23 assets/templates/assets/admin_user_detail.html:72
+#: assets/templates/assets/admin_user_list.html:53
+#: assets/templates/assets/asset_detail.html:128
+#: assets/templates/assets/system_user_detail.html:104
+#: assets/templates/assets/system_user_list.html:59
+#: assets/templates/assets/user_asset_list.html:174 ops/models/adhoc.py:43
+#: orgs/models.py:16 settings/models.py:34 users/models/group.py:15
+#: users/models/user.py:97 users/templates/users/user_detail.html:127
+#: users/templates/users/user_group_detail.html:67
+#: users/templates/users/user_group_list.html:37
+#: users/templates/users/user_profile.html:134 visions/models/classify.py:71
+#: visions/models/effect.py:20 visions/models/gallery.py:37
+#: visions/models/material.py:20 visions/models/music.py:43
+#: visions/models/video.py:20 visions/models/video_combine.py:51
+#: visions/templates/visions/effect_detail.html:80
+#: visions/templates/visions/effect_list.html:39
+#: visions/templates/visions/material_detail.html:80
+#: visions/templates/visions/material_list.html:39
+#: visions/templates/visions/video_detail.html:76
+#: visions/templates/visions/video_list.html:39
+#: visions/templates/visions/vision_classify_detail.html:114
+#: visions/templates/visions/vision_effect_detail.html:106
+#: visions/templates/visions/vision_gallery_detail.html:84
+#: visions/templates/visions/vision_material_detail.html:74
+#: visions/templates/visions/vision_music_detail.html:102
+#: visions/templates/visions/vision_video_combine_detail.html:98
+#: visions/templates/visions/vision_video_detail.html:169
+msgid "Comment"
+msgstr "备注"
+
+#: assets/models/authbook.py:25 ops/templates/ops/task_detail.html:72
+msgid "Latest version"
+msgstr "最新版本"
+
+#: assets/models/authbook.py:26
+#: assets/templates/assets/_asset_user_list.html:17
+#: ops/templates/ops/adhoc_history.html:58
+#: ops/templates/ops/adhoc_history_detail.html:57
+#: ops/templates/ops/task_adhoc.html:58 ops/templates/ops/task_history.html:64
+msgid "Version"
+msgstr "版本"
+
+#: assets/models/authbook.py:35
+msgid "AuthBook"
+msgstr ""
+
+#: assets/models/base.py:31
+msgid "SSH private key"
+msgstr "ssh密钥"
+
+#: assets/models/base.py:32
+msgid "SSH public key"
+msgstr "ssh公钥"
+
+#: assets/models/base.py:35
+msgid "Date updated"
+msgstr "更新日期"
+
+#: assets/models/cluster.py:20
+msgid "Bandwidth"
+msgstr "带宽"
+
+#: assets/models/cluster.py:21
+msgid "Contact"
+msgstr "联系人"
+
+#: assets/models/cluster.py:22 users/models/user.py:83
+#: users/templates/users/user_detail.html:76
+msgid "Phone"
+msgstr "手机"
+
+#: assets/models/cluster.py:23 visions/models/music.py:30
+#: visions/templates/visions/vision_music_detail.html:65
+msgid "Address"
+msgstr "地址"
+
+#: assets/models/cluster.py:24
+msgid "Intranet"
+msgstr "内网"
+
+#: assets/models/cluster.py:25
+msgid "Extranet"
+msgstr "外网"
+
+#: assets/models/cluster.py:27
+msgid "Operator"
+msgstr "运营商"
+
+#: assets/models/cluster.py:36 assets/models/group.py:34
+msgid "Default"
+msgstr "默认"
+
+#: assets/models/cluster.py:36 assets/models/label.py:14
+#: users/models/user.py:453
+msgid "System"
+msgstr "系统"
+
+#: assets/models/cluster.py:36
+msgid "Default Cluster"
+msgstr "默认Cluster"
+
+#: assets/models/cluster.py:40
+msgid "Cluster"
+msgstr "集群"
+
+#: assets/models/cluster.py:56
+msgid "Beijing unicom"
+msgstr "北京联通"
+
+#: assets/models/cluster.py:56
+msgid "Beijing telecom"
+msgstr "北京电信"
+
+#: assets/models/cluster.py:56
+msgid "BGP full netcom"
+msgstr "BGP全网通"
+
+#: assets/models/group.py:30
+msgid "Asset group"
+msgstr "资产组"
+
+#: assets/models/group.py:34
+msgid "Default asset group"
+msgstr "默认资产组"
+
+#: assets/models/label.py:15 audits/models.py:17 audits/models.py:37
+#: audits/models.py:50 audits/templates/audits/ftp_log_list.html:34
+#: audits/templates/audits/ftp_log_list.html:71
+#: audits/templates/audits/operate_log_list.html:34
+#: audits/templates/audits/operate_log_list.html:67
+#: audits/templates/audits/password_change_log_list.html:34
+#: audits/templates/audits/password_change_log_list.html:51
+#: ops/templates/ops/command_execution_list.html:35
+#: ops/templates/ops/command_execution_list.html:60 templates/index.html:85
+#: users/forms.py:316 users/models/user.py:38 users/models/user.py:441
+#: users/serializers/v1.py:105 users/templates/users/user_group_detail.html:78
+#: users/templates/users/user_group_list.html:36 users/views/user.py:251
+msgid "User"
+msgstr "用户"
+
+#: assets/models/label.py:19 assets/models/node.py:246
+#: assets/templates/assets/label_list.html:15 settings/models.py:30
+msgid "Value"
+msgstr "值"
+
+#: assets/models/label.py:21 visions/models/video.py:14
+#: visions/templates/visions/video_detail.html:56
+#: visions/templates/visions/video_list.html:36
+msgid "Category"
+msgstr "分类"
+
+#: assets/models/node.py:245
+msgid "Key"
+msgstr "键"
+
+#: assets/models/node.py:303
+msgid "New node"
+msgstr "新节点"
+
+#: assets/models/user.py:103
+msgid "Automatic login"
+msgstr "自动登录"
+
+#: assets/models/user.py:104
+msgid "Manually login"
+msgstr "手动登录"
+
+#: assets/models/user.py:108
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:11
+#: assets/templates/assets/system_user_asset.html:22
+#: assets/templates/assets/system_user_assets.html:22
+#: assets/templates/assets/system_user_detail.html:22
+#: assets/views/admin_user.py:30 assets/views/admin_user.py:49
+#: assets/views/admin_user.py:67 assets/views/admin_user.py:84
+#: assets/views/admin_user.py:109 assets/views/asset.py:40
+#: assets/views/asset.py:57 assets/views/asset.py:106 assets/views/asset.py:133
+#: assets/views/asset.py:173 assets/views/asset.py:203 assets/views/label.py:27
+#: assets/views/label.py:45 assets/views/label.py:72
+#: assets/views/system_user.py:29 assets/views/system_user.py:46
+#: assets/views/system_user.py:63 assets/views/system_user.py:78
+#: templates/_nav.html:19
+#: visions/templates/visions/vision_classify_list.html:180
+#: visions/templates/visions/vision_video_list.html:235
+msgid "Assets"
+msgstr "资产管理"
+
+#: assets/models/user.py:109
+msgid "Priority"
+msgstr "优先级"
+
+#: assets/models/user.py:111 assets/templates/assets/_system_user.html:59
+#: assets/templates/assets/system_user_detail.html:122
+#: assets/templates/assets/system_user_update.html:10
+msgid "Auto push"
+msgstr "自动推送"
+
+#: assets/models/user.py:112 assets/templates/assets/system_user_detail.html:74
+msgid "Sudo"
+msgstr "Sudo"
+
+#: assets/models/user.py:113 assets/templates/assets/system_user_detail.html:79
+msgid "Shell"
+msgstr "Shell"
+
+#: assets/models/user.py:114 assets/templates/assets/system_user_detail.html:66
+#: assets/templates/assets/system_user_list.html:54
+msgid "Login mode"
+msgstr "登录模式"
+
+#: assets/models/user.py:151 assets/templates/assets/user_asset_list.html:172
+#: audits/models.py:20 audits/templates/audits/ftp_log_list.html:50
+#: audits/templates/audits/ftp_log_list.html:73 templates/_nav.html:24
+msgid "System user"
+msgstr "系统用户"
+
+#: assets/models/utils.py:35
+#, python-format
+msgid "%(value)s is not an even number"
+msgstr "%(value)s is not an even number"
+
+#: assets/serializers/admin_user.py:36 assets/serializers/asset.py:64
+#: assets/serializers/asset_user.py:29 assets/serializers/system_user.py:31
+#: assets/templates/assets/_asset_user_list.html:18
+msgid "Connectivity"
+msgstr "连接"
+
+#: assets/serializers/asset.py:21
+msgid "Protocol format should {}/{}"
+msgstr "协议格式 {}/{}"
+
+#: assets/serializers/asset.py:38
+msgid "Protocol duplicate: {}"
+msgstr "协议重复: {}"
+
+#: assets/serializers/asset.py:90
+msgid "Hardware info"
+msgstr "硬件信息"
+
+#: assets/serializers/asset.py:91 orgs/mixins/serializers.py:26
+msgid "Org name"
+msgstr "组织名称"
+
+#: assets/serializers/asset_user.py:31
+msgid "Backend"
+msgstr "后端"
+
+#: assets/serializers/asset_user.py:66 users/forms.py:263
+#: users/models/user.py:94 users/templates/users/first_login.html:42
+#: users/templates/users/user_password_update.html:46
+#: users/templates/users/user_profile.html:68
+#: users/templates/users/user_profile_update.html:43
+#: users/templates/users/user_pubkey_update.html:43
+msgid "Public key"
+msgstr "ssh公钥"
+
+#: assets/serializers/base.py:44
+msgid "private key invalid"
+msgstr "密钥不合法"
+
+#: assets/serializers/node.py:33
+msgid "The same level node name cannot be the same"
+msgstr "同级别节点名字不能重复"
+
+#: assets/serializers/system_user.py:32
+msgid "Login mode display"
+msgstr "登录模式显示"
+
+#: assets/serializers/system_user.py:67
+msgid "* Automatic login mode must fill in the username."
+msgstr "自动登录模式，必须填写用户名"
+
+#: assets/serializers/system_user.py:76
+msgid "Password or private key required"
+msgstr "密码或密钥密码需要一个"
+
+#: assets/tasks.py:33
+msgid "Asset has been disabled, skipped: {}"
+msgstr "资产或许不支持ansible, 跳过: {}"
+
+#: assets/tasks.py:37
+msgid "Asset may not be support ansible, skipped: {}"
+msgstr "资产或许不支持ansible, 跳过: {}"
+
+#: assets/tasks.py:50
+msgid "No assets matched, stop task"
+msgstr "没有匹配到资产，结束任务"
+
+#: assets/tasks.py:60
+msgid "No assets matched related system user protocol, stop task"
+msgstr "没有匹配到与系统用户协议相关的资产，结束任务"
+
+#: assets/tasks.py:86
+msgid "Get asset info failed: {}"
+msgstr "获取资产信息失败：{}"
+
+#: assets/tasks.py:136
+msgid "Update some assets hardware info"
+msgstr "更新资产硬件信息"
+
+#: assets/tasks.py:153
+msgid "Update asset hardware info: {}"
+msgstr "更新资产硬件信息: {}"
+
+#: assets/tasks.py:178
+msgid "Test assets connectivity"
+msgstr "测试资产可连接性"
+
+#: assets/tasks.py:232
+msgid "Test assets connectivity: {}"
+msgstr "测试资产可连接性: {}"
+
+#: assets/tasks.py:274
+msgid "Test admin user connectivity period: {}"
+msgstr "定期测试管理账号可连接性: {}"
+
+#: assets/tasks.py:281
+msgid "Test admin user connectivity: {}"
+msgstr "测试管理行号可连接性: {}"
+
+#: assets/tasks.py:349
+msgid "Test system user connectivity: {}"
+msgstr "测试系统用户可连接性: {}"
+
+#: assets/tasks.py:356
+msgid "Test system user connectivity: {} => {}"
+msgstr "测试系统用户可连接性: {} => {}"
+
+#: assets/tasks.py:369
+msgid "Test system user connectivity period: {}"
+msgstr "定期测试系统用户可连接性: {}"
+
+#: assets/tasks.py:470 assets/tasks.py:556
+msgid "The asset {} system platform {} does not support run Ansible tasks"
+msgstr "资产 {} 系统平台 {} 不支持运行 Ansible 任务"
+
+#: assets/tasks.py:482
+msgid ""
+"Push system user task skip, auto push not enable or protocol is not ssh or "
+"rdp: {}"
+msgstr "推送系统用户任务跳过，自动推送没有打开，或协议不是ssh或rdp: {}"
+
+#: assets/tasks.py:489
+msgid "For security, do not push user {}"
+msgstr "为了安全，禁止推送用户 {}"
+
+#: assets/tasks.py:517 assets/tasks.py:531
+msgid "Push system users to assets: {}"
+msgstr "推送系统用户到入资产: {}"
+
+#: assets/tasks.py:523
+msgid "Push system users to asset: {} => {}"
+msgstr "推送系统用户到入资产: {} => {}"
+
+#: assets/tasks.py:603
+msgid "Test asset user connectivity: {}"
+msgstr "测试资产用户可连接性: {}"
+
+#: assets/templates/assets/_admin_user_import_modal.html:4
+msgid "Import admin user"
+msgstr "导入管理用户"
+
+#: assets/templates/assets/_admin_user_update_modal.html:4
+#: assets/views/admin_user.py:68
+msgid "Update admin user"
+msgstr "更新管理用户"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:5
+msgid "Update asset group"
+msgstr "更新用户组"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:8
+msgid "Hint: only change the field you want to update."
+msgstr "仅修改你需要更新的字段"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:13
+msgid "Select Asset"
+msgstr "选择资产"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:21
+#: assets/templates/assets/user_asset_list.html:47
+#: users/templates/users/user_granted_asset.html:47
+msgid "System users"
+msgstr "系统用户"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:23
+msgid "Select System Users"
+msgstr "选择系统用户"
+
+#: assets/templates/assets/_asset_group_bulk_update_modal.html:34
+msgid "Enable-MFA"
+msgstr "启用MFA"
+
+#: assets/templates/assets/_asset_import_modal.html:4
+msgid "Import assets"
+msgstr "导入资产"
+
+#: assets/templates/assets/_asset_list_modal.html:7 assets/views/asset.py:41
+#: templates/_nav.html:22
+msgid "Asset list"
+msgstr "资产列表"
+
+#: assets/templates/assets/_asset_update_modal.html:4
+msgid "Update assets"
+msgstr "更新资产"
+
+#: assets/templates/assets/_asset_user_auth_modal.html:4
+#: assets/templates/assets/_asset_user_auth_update_modal.html:4
+msgid "Update asset user auth"
+msgstr "更新资产用户认证信息"
+
+#: assets/templates/assets/_asset_user_auth_modal.html:23
+#: assets/templates/assets/_asset_user_auth_update_modal.html:23
+msgid "Please input password"
+msgstr "请输入密码"
+
+#: assets/templates/assets/_asset_user_auth_update_modal.html:68
+#: assets/templates/assets/asset_detail.html:303
+#: assets/templates/assets/system_user_asset.html:353
+#: users/templates/users/user_detail.html:307
+#: users/templates/users/user_detail.html:334
+#: visions/templates/visions/effect_detail.html:149
+#: visions/templates/visions/material_detail.html:149
+#: visions/templates/visions/video_detail.html:145
+msgid "Update successfully!"
+msgstr "更新成功"
+
+#: assets/templates/assets/_asset_user_auth_view_modal.html:5
+#: assets/templates/assets/_asset_user_view_auth_modal.html:5
+msgid "Asset user auth"
+msgstr "资产用户信息"
+
+#: assets/templates/assets/_asset_user_auth_view_modal.html:54
+#: assets/templates/assets/_asset_user_view_auth_modal.html:63
+msgid "Copy success"
+msgstr "复制成功"
+
+#: assets/templates/assets/_asset_user_auth_view_modal.html:70
+#: assets/templates/assets/_asset_user_view_auth_modal.html:79
+msgid "Get auth info error"
+msgstr "获取认证信息错误"
+
+#: assets/templates/assets/_asset_user_auth_view_modal.html:97
+#: assets/templates/assets/_asset_user_view_auth_modal.html:139
+#: assets/templates/assets/_user_asset_detail_modal.html:23
+#: authentication/templates/authentication/_mfa_confirm_modal.html:53
+#: settings/templates/settings/_ldap_list_users_modal.html:99
+#: templates/_modal.html:22
+msgid "Close"
+msgstr "关闭"
+
+#: assets/templates/assets/_asset_user_list.html:19
+#: audits/templates/audits/operate_log_list.html:72
+#: audits/templates/audits/password_change_log_list.html:54
+#: ops/templates/ops/task_adhoc.html:63
+msgid "Datetime"
+msgstr "日期"
+
+#: assets/templates/assets/_asset_user_list.html:20
+#: assets/templates/assets/admin_user_list.html:54
+#: assets/templates/assets/asset_list.html:100
+#: assets/templates/assets/label_list.html:17
+#: assets/templates/assets/system_user_asset.html:54
+#: assets/templates/assets/system_user_list.html:60
+#: assets/templates/assets/user_asset_list.html:48 audits/models.py:38
+#: audits/templates/audits/operate_log_list.html:42
+#: audits/templates/audits/operate_log_list.html:68
+#: ops/templates/ops/adhoc_history.html:59 ops/templates/ops/task_adhoc.html:64
+#: ops/templates/ops/task_history.html:65 ops/templates/ops/task_list.html:34
+#: settings/templates/settings/terminal_setting.html:85
+#: settings/templates/settings/terminal_setting.html:107
+#: users/templates/users/user_group_list.html:38
+#: users/templates/users/user_list.html:41
+#: visions/templates/visions/effect_list.html:41
+#: visions/templates/visions/material_list.html:41
+#: visions/templates/visions/video_list.html:41
+#: visions/templates/visions/vision_classify_list.html:55
+#: visions/templates/visions/vision_effect_list.html:54
+#: visions/templates/visions/vision_gallery_list.html:52
+#: visions/templates/visions/vision_material_list.html:51
+#: visions/templates/visions/vision_music_list.html:55
+#: visions/templates/visions/vision_video_combine_list.html:55
+#: visions/templates/visions/vision_video_list.html:91
+msgid "Action"
+msgstr "动作"
+
+#: assets/templates/assets/_asset_user_list.html:36
+#: assets/templates/assets/asset_list.html:138
+msgid "Test datetime: "
+msgstr "测试日期: "
+
+#: assets/templates/assets/_asset_user_list.html:69
+msgid "View"
+msgstr "查看"
+
+#: assets/templates/assets/_asset_user_list.html:70
+#: assets/templates/assets/admin_user_detail.html:24
+#: assets/templates/assets/admin_user_list.html:29
+#: assets/templates/assets/admin_user_list.html:114
+#: assets/templates/assets/asset_detail.html:27
+#: assets/templates/assets/asset_list.html:78
+#: assets/templates/assets/asset_list.html:169
+#: assets/templates/assets/label_list.html:39
+#: assets/templates/assets/system_user_detail.html:26
+#: assets/templates/assets/system_user_list.html:33
+#: assets/templates/assets/system_user_list.html:119 audits/models.py:33
+#: users/templates/users/user_detail.html:25
+#: users/templates/users/user_group_detail.html:28
+#: users/templates/users/user_group_list.html:20
+#: users/templates/users/user_group_list.html:70
+#: users/templates/users/user_list.html:20
+#: users/templates/users/user_list.html:96
+#: users/templates/users/user_list.html:99
+#: users/templates/users/user_profile.html:177
+#: users/templates/users/user_profile.html:187
+#: users/templates/users/user_profile.html:196
+#: visions/templates/visions/effect_detail.html:25
+#: visions/templates/visions/effect_list.html:20
+#: visions/templates/visions/effect_list.html:92
+#: visions/templates/visions/material_detail.html:25
+#: visions/templates/visions/material_list.html:20
+#: visions/templates/visions/material_list.html:92
+#: visions/templates/visions/video_detail.html:25
+#: visions/templates/visions/video_list.html:20
+#: visions/templates/visions/video_list.html:92
+#: visions/templates/visions/vision_classify_detail.html:25
+#: visions/templates/visions/vision_classify_list.html:181
+#: visions/templates/visions/vision_effect_detail.html:27
+#: visions/templates/visions/vision_effect_list.html:186
+#: visions/templates/visions/vision_gallery_detail.html:27
+#: visions/templates/visions/vision_gallery_list.html:174
+#: visions/templates/visions/vision_material_detail.html:25
+#: visions/templates/visions/vision_material_list.html:167
+#: visions/templates/visions/vision_music_detail.html:29
+#: visions/templates/visions/vision_music_list.html:171
+#: visions/templates/visions/vision_video_combine_detail.html:25
+#: visions/templates/visions/vision_video_combine_list.html:189
+#: visions/templates/visions/vision_video_detail.html:59
+#: visions/templates/visions/vision_video_list.html:72
+#: visions/templates/visions/vision_video_list.html:236
+msgid "Update"
+msgstr "更新"
+
+#: assets/templates/assets/_asset_user_list.html:71
+#: assets/templates/assets/admin_user_assets.html:61
+#: assets/templates/assets/asset_asset_user_list.html:57
+#: assets/templates/assets/asset_detail.html:174
+#: assets/templates/assets/system_user_asset.html:75
+#: assets/templates/assets/system_user_asset.html:166
+#: assets/templates/assets/system_user_assets.html:63
+#: assets/templates/assets/system_user_detail.html:151
+msgid "Test"
+msgstr "测试"
+
+#: assets/templates/assets/_asset_user_list.html:72
+#: assets/templates/assets/system_user_asset.html:84
+#: assets/templates/assets/system_user_asset.html:164
+#: assets/templates/assets/system_user_assets.html:72
+#: assets/templates/assets/system_user_detail.html:142
+msgid "Push"
+msgstr "推送"
+
+#: assets/templates/assets/_asset_user_view_auth_modal.html:14
+#: audits/models.py:99 audits/templates/audits/login_log_list.html:56
+#: authentication/templates/authentication/_mfa_confirm_modal.html:14
+#: users/forms.py:175 users/models/user.py:86
+#: users/templates/users/first_login.html:45
+msgid "MFA"
+msgstr "MFA"
+
+#: assets/templates/assets/_asset_user_view_auth_modal.html:17
+#: authentication/templates/authentication/_mfa_confirm_modal.html:17
+msgid "Need otp auth for view auth"
+msgstr "需要二次认证来查看账号信息"
+
+#: assets/templates/assets/_asset_user_view_auth_modal.html:20
+#: assets/templates/assets/admin_user_detail.html:100
+#: assets/templates/assets/asset_detail.html:203
+#: assets/templates/assets/asset_list.html:396
+#: assets/templates/assets/system_user_asset.html:112
+#: assets/templates/assets/system_user_assets.html:100
+#: assets/templates/assets/system_user_detail.html:182
+#: assets/templates/assets/system_user_list.html:172
+#: authentication/templates/authentication/_mfa_confirm_modal.html:20
+#: settings/templates/settings/terminal_setting.html:168
+#: templates/_modal.html:23 users/templates/users/user_detail.html:388
+#: users/templates/users/user_detail.html:414
+#: users/templates/users/user_detail.html:437
+#: users/templates/users/user_detail.html:482
+#: users/templates/users/user_group_create_update.html:32
+#: users/templates/users/user_group_list.html:119
+#: users/templates/users/user_list.html:257
+#: visions/templates/visions/effect_create_update.html:36
+#: visions/templates/visions/effect_list.html:144
+#: visions/templates/visions/effect_list.html:284
+#: visions/templates/visions/material_create_update.html:36
+#: visions/templates/visions/material_list.html:144
+#: visions/templates/visions/material_list.html:284
+#: visions/templates/visions/video_create_update.html:35
+#: visions/templates/visions/video_list.html:144
+#: visions/templates/visions/video_list.html:284
+msgid "Confirm"
+msgstr "确认"
+
+#: assets/templates/assets/_gateway_test_modal.html:4
+msgid "Test gateway test connection"
+msgstr "测试连接网关"
+
+#: assets/templates/assets/_gateway_test_modal.html:10
+msgid "SSH Port"
+msgstr "SSH端口"
+
+#: assets/templates/assets/_gateway_test_modal.html:13
+msgid "If use nat, set the ssh real port"
+msgstr "如果使用了nat端口映射，请设置为ssh真实监听的端口"
+
+#: assets/templates/assets/_node_tree.html:49
+msgid "Add node"
+msgstr "新建节点"
+
+#: assets/templates/assets/_node_tree.html:50
+msgid "Rename node"
+msgstr "重命名节点"
+
+#: assets/templates/assets/_node_tree.html:51
+msgid "Delete node"
+msgstr "删除节点"
+
+#: assets/templates/assets/_node_tree.html:154
+msgid "Create node failed"
+msgstr "创建节点失败"
+
+#: assets/templates/assets/_node_tree.html:166
+msgid "Have child node, cancel"
+msgstr "存在子节点，不能删除"
+
+#: assets/templates/assets/_node_tree.html:168
+msgid "Have assets, cancel"
+msgstr "存在资产，不能删除"
+
+#: assets/templates/assets/_node_tree.html:242
+msgid "Rename success"
+msgstr "重命名成功"
+
+#: assets/templates/assets/_system_user.html:37
+#: assets/templates/assets/asset_create.html:16
+#: assets/templates/assets/gateway_create_update.html:37
+#: visions/templates/visions/vision_classify_create_update.html:33
+#: visions/templates/visions/vision_effect_create_update.html:33
+#: visions/templates/visions/vision_gallery_create_update.html:33
+#: visions/templates/visions/vision_material_create_update.html:33
+#: visions/templates/visions/vision_music_create_update.html:33
+#: visions/templates/visions/vision_video_combine_create_update.html:33
+#: visions/templates/visions/vision_video_create_update.html:33
+msgid "Basic"
+msgstr "基本"
+
+#: assets/templates/assets/_system_user.html:44
+#: assets/templates/assets/asset_create.html:37
+#: assets/templates/assets/gateway_create_update.html:44
+#: users/templates/users/_user.html:21
+msgid "Auth"
+msgstr "认证"
+
+#: assets/templates/assets/_system_user.html:48
+msgid "Auto generate key"
+msgstr "自动生成密钥"
+
+#: assets/templates/assets/_system_user.html:66
+#: assets/templates/assets/system_user_detail.html:165
+msgid "Command filter"
+msgstr "命令过滤器"
+
+#: assets/templates/assets/_system_user.html:69
+#: assets/templates/assets/asset_create.html:73
+#: assets/templates/assets/gateway_create_update.html:52
+#: visions/models/classify.py:42
+#: visions/templates/visions/vision_classify_create_update.html:46
+#: visions/templates/visions/vision_effect_create_update.html:56
+#: visions/templates/visions/vision_gallery_create_update.html:36
+#: visions/templates/visions/vision_material_create_update.html:36
+#: visions/templates/visions/vision_music_create_update.html:42
+#: visions/templates/visions/vision_video_combine_create_update.html:38
+#: visions/templates/visions/vision_video_create_update.html:53
+msgid "Other"
+msgstr "其它"
+
+#: assets/templates/assets/_system_user.html:75
+#: assets/templates/assets/admin_user_create_update.html:45
+#: assets/templates/assets/asset_bulk_update.html:23
+#: assets/templates/assets/asset_create.html:80
+#: assets/templates/assets/gateway_create_update.html:57
+#: assets/templates/assets/label_create_update.html:18
+#: settings/templates/settings/basic_setting.html:64
+#: settings/templates/settings/command_storage_create.html:79
+#: settings/templates/settings/email_content_setting.html:54
+#: settings/templates/settings/email_setting.html:65
+#: settings/templates/settings/ldap_setting.html:64
+#: settings/templates/settings/replay_storage_create.html:152
+#: settings/templates/settings/security_setting.html:73
+#: settings/templates/settings/terminal_setting.html:71
+#: users/templates/users/_user.html:50
+#: users/templates/users/user_bulk_update.html:23
+#: users/templates/users/user_detail.html:176
+#: users/templates/users/user_password_update.html:71
+#: users/templates/users/user_profile.html:204
+#: users/templates/users/user_profile_update.html:63
+#: users/templates/users/user_pubkey_update.html:70
+#: users/templates/users/user_pubkey_update.html:76
+#: visions/templates/visions/effect_bulk_update.html:23
+#: visions/templates/visions/material_bulk_update.html:23
+#: visions/templates/visions/video_bulk_update.html:23
+#: visions/templates/visions/vision_classify_create_update.html:57
+#: visions/templates/visions/vision_effect_create_update.html:67
+#: visions/templates/visions/vision_gallery_create_update.html:47
+#: visions/templates/visions/vision_material_create_update.html:47
+#: visions/templates/visions/vision_music_create_update.html:53
+#: visions/templates/visions/vision_video_combine_create_update.html:49
+#: visions/templates/visions/vision_video_create_update.html:64
+msgid "Reset"
+msgstr "重置"
+
+#: assets/templates/assets/_system_user.html:76
+#: assets/templates/assets/admin_user_create_update.html:46
+#: assets/templates/assets/asset_bulk_update.html:24
+#: assets/templates/assets/asset_create.html:81
+#: assets/templates/assets/asset_list.html:117
+#: assets/templates/assets/gateway_create_update.html:58
+#: assets/templates/assets/label_create_update.html:19
+#: audits/templates/audits/login_log_list.html:89
+#: settings/templates/settings/basic_setting.html:65
+#: settings/templates/settings/command_storage_create.html:80
+#: settings/templates/settings/email_content_setting.html:55
+#: settings/templates/settings/email_setting.html:66
+#: settings/templates/settings/ldap_setting.html:67
+#: settings/templates/settings/replay_storage_create.html:153
+#: settings/templates/settings/security_setting.html:74
+#: settings/templates/settings/terminal_setting.html:73
+#: users/templates/users/_user.html:51
+#: users/templates/users/forgot_password.html:42
+#: users/templates/users/user_bulk_update.html:24
+#: users/templates/users/user_list.html:57
+#: users/templates/users/user_password_update.html:72
+#: users/templates/users/user_profile_update.html:64
+#: users/templates/users/user_pubkey_update.html:77
+#: visions/templates/visions/effect_bulk_update.html:24
+#: visions/templates/visions/effect_list.html:55
+#: visions/templates/visions/material_bulk_update.html:24
+#: visions/templates/visions/material_list.html:55
+#: visions/templates/visions/video_bulk_update.html:24
+#: visions/templates/visions/video_list.html:55
+#: visions/templates/visions/vision_classify_create_update.html:58
+#: visions/templates/visions/vision_effect_create_update.html:68
+#: visions/templates/visions/vision_gallery_create_update.html:48
+#: visions/templates/visions/vision_material_create_update.html:48
+#: visions/templates/visions/vision_music_create_update.html:54
+#: visions/templates/visions/vision_video_combine_create_update.html:50
+#: visions/templates/visions/vision_video_create_update.html:65
+msgid "Submit"
+msgstr "提交"
+
+#: assets/templates/assets/_system_user_import_modal.html:4
+msgid "Import system user"
+msgstr "导入系统用户"
+
+#: assets/templates/assets/_system_user_update_modal.html:4
+#: assets/views/system_user.py:64
+msgid "Update system user"
+msgstr "更新系统用户"
+
+#: assets/templates/assets/_user_asset_detail_modal.html:11
+#: assets/templates/assets/asset_asset_user_list.html:13
+#: assets/templates/assets/asset_detail.html:20 assets/views/asset.py:204
+msgid "Asset detail"
+msgstr "资产详情"
+
+#: assets/templates/assets/admin_user_assets.html:18
+#: assets/templates/assets/admin_user_detail.html:18
+#: assets/templates/assets/system_user_asset.html:18
+#: assets/templates/assets/system_user_assets.html:18
+#: assets/templates/assets/system_user_detail.html:18
+#: ops/templates/ops/adhoc_history.html:130
+#: ops/templates/ops/task_adhoc.html:116
+#: ops/templates/ops/task_history.html:136
+#: visions/templates/visions/vision_classify_asset.html:18
+#: visions/templates/visions/vision_classify_detail.html:18
+#: visions/templates/visions/vision_effect_detail.html:20
+#: visions/templates/visions/vision_effect_video_group.html:18
+#: visions/templates/visions/vision_gallery_area.html:18
+#: visions/templates/visions/vision_gallery_detail.html:20
+#: visions/templates/visions/vision_material_asset-template.html:18
+#: visions/templates/visions/vision_material_detail.html:18
+#: visions/templates/visions/vision_music_detail.html:22
+#: visions/templates/visions/vision_music_room.html:18
+#: visions/templates/visions/vision_video_asset.html:18
+#: visions/templates/visions/vision_video_combine_cabinet.html:18
+#: visions/templates/visions/vision_video_combine_detail.html:18
+#: visions/templates/visions/vision_video_detail.html:52
+msgid "Detail"
+msgstr "详情"
+
+#: assets/templates/assets/admin_user_assets.html:21
+#: assets/templates/assets/admin_user_detail.html:21
+msgid "Assets list"
+msgstr "资产列表"
+
+#: assets/templates/assets/admin_user_assets.html:29
+#: visions/templates/visions/vision_classify_asset.html:30
+#: visions/templates/visions/vision_gallery_area.html:30
+#: visions/templates/visions/vision_material_asset-template.html:30
+#: visions/templates/visions/vision_music_room.html:30
+#: visions/templates/visions/vision_video_asset.html:30
+msgid "Asset list of "
+msgstr "资产列表"
+
+#: assets/templates/assets/admin_user_assets.html:52
+#: assets/templates/assets/system_user_asset.html:66
+#: assets/templates/assets/system_user_assets.html:54
+#: assets/templates/assets/system_user_detail.html:116
+#: visions/templates/visions/vision_classify_detail.html:126
+#: visions/templates/visions/vision_material_detail.html:86
+#: visions/templates/visions/vision_video_combine_detail.html:110
+msgid "Quick update"
+msgstr "快速更新"
+
+#: assets/templates/assets/admin_user_assets.html:58
+#: assets/templates/assets/asset_asset_user_list.html:54
+#: assets/templates/assets/asset_detail.html:171
+msgid "Test connective"
+msgstr "测试可连接性"
+
+#: assets/templates/assets/admin_user_detail.html:28
+#: assets/templates/assets/admin_user_list.html:115
+#: assets/templates/assets/asset_detail.html:31
+#: assets/templates/assets/asset_list.html:170
+#: assets/templates/assets/label_list.html:40
+#: assets/templates/assets/system_user_detail.html:30
+#: assets/templates/assets/system_user_list.html:120 audits/models.py:34
+#: ops/templates/ops/task_list.html:64
+#: settings/templates/settings/terminal_setting.html:93
+#: settings/templates/settings/terminal_setting.html:115
+#: users/templates/users/user_detail.html:30
+#: users/templates/users/user_group_detail.html:32
+#: users/templates/users/user_group_list.html:72
+#: users/templates/users/user_list.html:104
+#: users/templates/users/user_list.html:108
+#: visions/templates/visions/effect_detail.html:29
+#: visions/templates/visions/effect_list.html:94
+#: visions/templates/visions/material_detail.html:29
+#: visions/templates/visions/material_list.html:94
+#: visions/templates/visions/video_detail.html:29
+#: visions/templates/visions/video_list.html:94
+#: visions/templates/visions/vision_classify_detail.html:29
+#: visions/templates/visions/vision_classify_list.html:182
+#: visions/templates/visions/vision_effect_detail.html:31
+#: visions/templates/visions/vision_effect_list.html:187
+#: visions/templates/visions/vision_gallery_detail.html:31
+#: visions/templates/visions/vision_gallery_list.html:175
+#: visions/templates/visions/vision_material_detail.html:29
+#: visions/templates/visions/vision_material_list.html:168
+#: visions/templates/visions/vision_music_detail.html:33
+#: visions/templates/visions/vision_music_list.html:172
+#: visions/templates/visions/vision_video_combine_detail.html:29
+#: visions/templates/visions/vision_video_combine_list.html:190
+#: visions/templates/visions/vision_video_detail.html:63
+#: visions/templates/visions/vision_video_list.html:237
+msgid "Delete"
+msgstr "删除"
+
+#: assets/templates/assets/admin_user_detail.html:83
+msgid "Replace node assets admin user with this"
+msgstr "替换资产的管理员"
+
+#: assets/templates/assets/admin_user_detail.html:91
+#: visions/templates/visions/vision_classify_asset.html:112
+#: visions/templates/visions/vision_video_asset.html:112
+msgid "Select nodes"
+msgstr "选择节点"
+
+#: assets/templates/assets/admin_user_list.html:7
+msgid ""
+"Admin users are asset (charged server) on the root, or have NOPASSWD: ALL "
+"sudo permissions users, "
+msgstr ""
+"管理用户是资产（被控服务器）上的root，或拥有 NOPASSWD: ALL sudo权限的用户，"
+
+#: assets/templates/assets/admin_user_list.html:8
+msgid ""
+"Dolphindoctor users of the system using the user to `push system user`,  "
+"`get assets hardware information`, etc. "
+msgstr "Dolphindoctor使用该用户来 `推送系统用户`、`获取资产硬件信息`等。"
+
+#: assets/templates/assets/admin_user_list.html:9
+msgid "You can set any one for Windows or other hardware."
+msgstr "Windows或其它硬件可以随意设置一个"
+
+#: assets/templates/assets/admin_user_list.html:19
+#: assets/templates/assets/asset_list.html:68
+#: assets/templates/assets/system_user_list.html:23
+#: audits/templates/audits/login_log_list.html:85
+#: users/templates/users/user_group_list.html:10
+#: users/templates/users/user_list.html:10
+#: visions/templates/visions/effect_list.html:10
+#: visions/templates/visions/material_list.html:10
+#: visions/templates/visions/video_list.html:10
+#: visions/templates/visions/vision_video_list.html:62
+msgid "Export"
+msgstr "导出"
+
+#: assets/templates/assets/admin_user_list.html:24
+#: assets/templates/assets/asset_list.html:73
+#: assets/templates/assets/system_user_list.html:28
+#: settings/templates/settings/_ldap_list_users_modal.html:100
+#: users/templates/users/user_group_list.html:15
+#: users/templates/users/user_list.html:15
+#: visions/templates/visions/effect_list.html:15
+#: visions/templates/visions/material_list.html:15
+#: visions/templates/visions/video_list.html:15
+#: visions/templates/visions/vision_video_list.html:67
+msgid "Import"
+msgstr "导入"
+
+#: assets/templates/assets/admin_user_list.html:39
+#: assets/views/admin_user.py:50
+msgid "Create admin user"
+msgstr "创建管理用户"
+
+#: assets/templates/assets/admin_user_list.html:52
+#: assets/templates/assets/system_user_list.html:58
+#: ops/templates/ops/adhoc_history.html:54
+#: ops/templates/ops/task_history.html:60
+msgid "Ratio"
+msgstr "比例"
+
+#: assets/templates/assets/admin_user_list.html:165
+#: assets/templates/assets/admin_user_list.html:196
+#: assets/templates/assets/asset_list.html:268
+#: assets/templates/assets/asset_list.html:305
+#: assets/templates/assets/system_user_list.html:225
+#: assets/templates/assets/system_user_list.html:256
+#: users/templates/users/user_group_list.html:163
+#: users/templates/users/user_group_list.html:194
+#: users/templates/users/user_list.html:158
+#: users/templates/users/user_list.html:190
+#: visions/templates/visions/effect_list.html:188
+#: visions/templates/visions/effect_list.html:219
+#: visions/templates/visions/material_list.html:188
+#: visions/templates/visions/material_list.html:219
+#: visions/templates/visions/video_list.html:188
+#: visions/templates/visions/video_list.html:219
+msgid "Please select file"
+msgstr "选择文件"
+
+#: assets/templates/assets/asset_asset_user_list.html:16
+#: assets/templates/assets/asset_detail.html:23 assets/views/asset.py:58
+msgid "Asset user list"
+msgstr "资产用户列表"
+
+#: assets/templates/assets/asset_asset_user_list.html:24
+msgid "Asset users of"
+msgstr "资产用户"
+
+#: assets/templates/assets/asset_asset_user_list.html:47
+#: assets/templates/assets/asset_detail.html:140
+#: users/templates/users/user_detail.html:138
+#: users/templates/users/user_profile.html:146
+#: visions/templates/visions/effect_detail.html:92
+#: visions/templates/visions/material_detail.html:92
+#: visions/templates/visions/video_detail.html:88
+msgid "Quick modify"
+msgstr "快速修改"
+
+#: assets/templates/assets/asset_bulk_update.html:8
+#: users/templates/users/user_bulk_update.html:8
+#: visions/templates/visions/effect_bulk_update.html:8
+#: visions/templates/visions/material_bulk_update.html:8
+#: visions/templates/visions/video_bulk_update.html:8
+msgid "Select properties that need to be modified"
+msgstr "选择需要修改属性"
+
+#: assets/templates/assets/asset_bulk_update.html:10
+#: users/templates/users/user_bulk_update.html:10
+#: visions/templates/visions/effect_bulk_update.html:10
+#: visions/templates/visions/material_bulk_update.html:10
+#: visions/templates/visions/video_bulk_update.html:10
+msgid "Select all"
+msgstr "全选"
+
+#: assets/templates/assets/asset_detail.html:88
+msgid "CPU"
+msgstr "CPU"
+
+#: assets/templates/assets/asset_detail.html:96
+msgid "Disk"
+msgstr "硬盘"
+
+#: assets/templates/assets/asset_detail.html:124
+#: users/templates/users/user_detail.html:115
+#: users/templates/users/user_profile.html:104
+msgid "Date joined"
+msgstr "创建日期"
+
+#: assets/templates/assets/asset_detail.html:146
+#: assets/templates/assets/user_asset_list.html:46
+#: users/templates/users/_select_user_modal.html:18
+#: users/templates/users/user_detail.html:144
+#: users/templates/users/user_granted_asset.html:46
+#: users/templates/users/user_group_granted_asset.html:46
+#: users/templates/users/user_profile.html:63 visions/models/classify.py:68
+#: visions/models/effect.py:21 visions/models/gallery.py:34
+#: visions/models/material.py:21 visions/models/music.py:40
+#: visions/models/video.py:21 visions/models/video_combine.py:48
+#: visions/templates/visions/effect_detail.html:98
+#: visions/templates/visions/effect_list.html:40
+#: visions/templates/visions/material_detail.html:98
+#: visions/templates/visions/material_list.html:40
+#: visions/templates/visions/video_detail.html:94
+#: visions/templates/visions/video_list.html:40
+#: visions/templates/visions/vision_classify_create_update.html:48
+#: visions/templates/visions/vision_classify_detail.html:132
+#: visions/templates/visions/vision_classify_list.html:54
+#: visions/templates/visions/vision_effect_create_update.html:58
+#: visions/templates/visions/vision_effect_detail.html:110
+#: visions/templates/visions/vision_effect_list.html:53
+#: visions/templates/visions/vision_gallery_create_update.html:38
+#: visions/templates/visions/vision_gallery_detail.html:88
+#: visions/templates/visions/vision_gallery_list.html:51
+#: visions/templates/visions/vision_material_create_update.html:38
+#: visions/templates/visions/vision_material_detail.html:92
+#: visions/templates/visions/vision_material_list.html:50
+#: visions/templates/visions/vision_music_create_update.html:44
+#: visions/templates/visions/vision_music_detail.html:106
+#: visions/templates/visions/vision_music_list.html:54
+#: visions/templates/visions/vision_video_combine_create_update.html:40
+#: visions/templates/visions/vision_video_combine_detail.html:116
+#: visions/templates/visions/vision_video_combine_list.html:54
+#: visions/templates/visions/vision_video_create_update.html:55
+#: visions/templates/visions/vision_video_detail.html:173
+#: visions/templates/visions/vision_video_list.html:90
+msgid "Active"
+msgstr "激活中"
+
+#: assets/templates/assets/asset_detail.html:163
+msgid "Refresh hardware"
+msgstr "更新硬件信息"
+
+#: assets/templates/assets/asset_detail.html:166
+msgid "Refresh"
+msgstr "刷新"
+
+#: assets/templates/assets/asset_list.html:8
+msgid ""
+"The left side is the asset tree, right click to create, delete, and change "
+"the tree node, authorization asset is also organized as a node, and the "
+"right side is the asset under that node"
+msgstr ""
+"左侧是资产树，右击可以新建、删除、更改树节点，授权资产也是以节点方式组织的，"
+"右侧是属于该节点下的资产"
+
+#: assets/templates/assets/asset_list.html:61 assets/views/asset.py:107
+msgid "Create asset"
+msgstr "创建资产"
+
+#: assets/templates/assets/asset_list.html:98
+msgid "Hardware"
+msgstr "硬件"
+
+#: assets/templates/assets/asset_list.html:109
+#: users/templates/users/user_list.html:50
+#: visions/templates/visions/effect_list.html:48
+#: visions/templates/visions/material_list.html:48
+#: visions/templates/visions/video_list.html:48
+msgid "Delete selected"
+msgstr "批量删除"
+
+#: assets/templates/assets/asset_list.html:110
+#: users/templates/users/user_list.html:51
+#: visions/templates/visions/effect_list.html:49
+#: visions/templates/visions/material_list.html:49
+#: visions/templates/visions/video_list.html:49
+msgid "Update selected"
+msgstr "批量更新"
+
+#: assets/templates/assets/asset_list.html:111
+msgid "Remove from this node"
+msgstr "从节点移除"
+
+#: assets/templates/assets/asset_list.html:112
+#: users/templates/users/user_list.html:52
+#: visions/templates/visions/effect_list.html:50
+#: visions/templates/visions/material_list.html:50
+#: visions/templates/visions/video_list.html:50
+msgid "Deactive selected"
+msgstr "禁用所选"
+
+#: assets/templates/assets/asset_list.html:113
+#: users/templates/users/user_list.html:53
+#: visions/templates/visions/effect_list.html:51
+#: visions/templates/visions/material_list.html:51
+#: visions/templates/visions/video_list.html:51
+msgid "Active selected"
+msgstr "激活所选"
+
+#: assets/templates/assets/asset_list.html:191
+msgid "Add assets to node"
+msgstr "添加资产到节点"
+
+#: assets/templates/assets/asset_list.html:192
+msgid "Move assets to node"
+msgstr "移动资产到节点"
+
+#: assets/templates/assets/asset_list.html:194
+msgid "Refresh node hardware info"
+msgstr "更新节点资产硬件信息"
+
+#: assets/templates/assets/asset_list.html:195
+msgid "Test node connective"
+msgstr "测试节点资产可连接性"
+
+#: assets/templates/assets/asset_list.html:197
+msgid "Display only current node assets"
+msgstr "仅显示当前节点资产"
+
+#: assets/templates/assets/asset_list.html:198
+msgid "Displays all child node assets"
+msgstr "显示所有子节点资产"
+
+#: assets/templates/assets/asset_list.html:390
+#: assets/templates/assets/system_user_list.html:166
+#: users/templates/users/user_detail.html:382
+#: users/templates/users/user_detail.html:408
+#: users/templates/users/user_detail.html:476
+#: users/templates/users/user_group_list.html:113
+#: users/templates/users/user_list.html:251
+#: visions/templates/visions/effect_list.html:138
+#: visions/templates/visions/effect_list.html:278
+#: visions/templates/visions/material_list.html:138
+#: visions/templates/visions/material_list.html:278
+#: visions/templates/visions/video_list.html:138
+#: visions/templates/visions/video_list.html:278
+msgid "Are you sure?"
+msgstr "你确认吗?"
+
+#: assets/templates/assets/asset_list.html:391
+msgid "This will delete the selected assets !!!"
+msgstr "删除选择资产"
+
+#: assets/templates/assets/asset_list.html:394
+#: assets/templates/assets/system_user_list.html:170
+#: settings/templates/settings/terminal_setting.html:166
+#: users/templates/users/user_detail.html:386
+#: users/templates/users/user_detail.html:412
+#: users/templates/users/user_detail.html:480
+#: users/templates/users/user_group_create_update.html:31
+#: users/templates/users/user_group_list.html:117
+#: users/templates/users/user_list.html:255
+#: visions/templates/visions/effect_create_update.html:35
+#: visions/templates/visions/effect_list.html:142
+#: visions/templates/visions/effect_list.html:282
+#: visions/templates/visions/material_create_update.html:35
+#: visions/templates/visions/material_list.html:142
+#: visions/templates/visions/material_list.html:282
+#: visions/templates/visions/video_create_update.html:34
+#: visions/templates/visions/video_list.html:142
+#: visions/templates/visions/video_list.html:282
+msgid "Cancel"
+msgstr "取消"
+
+#: assets/templates/assets/asset_list.html:407
+msgid "Asset Deleted."
+msgstr "已被删除"
+
+#: assets/templates/assets/asset_list.html:408
+#: assets/templates/assets/asset_list.html:412
+msgid "Asset Delete"
+msgstr "删除"
+
+#: assets/templates/assets/asset_list.html:411
+msgid "Asset Deleting failed."
+msgstr "删除失败"
+
+#: assets/templates/assets/asset_update.html:7
+msgid "Configuration"
+msgstr "配置"
+
+#: assets/templates/assets/delete_confirm.html:6
+#: templates/delete_confirm.html:6
+#: visions/templates/visions/delete_confirm.html:6
+msgid "Confirm delete"
+msgstr "确认删除"
+
+#: assets/templates/assets/delete_confirm.html:11
+#: templates/delete_confirm.html:11
+msgid "Are you sure delete"
+msgstr "您确定删除吗?"
+
+#: assets/templates/assets/label_list.html:6 assets/views/label.py:46
+msgid "Create label"
+msgstr "创建标签"
+
+#: assets/templates/assets/system_user_asset.html:31
+#: assets/templates/assets/system_user_assets.html:31
+msgid "Assets of "
+msgstr "资产"
+
+#: assets/templates/assets/system_user_asset.html:72
+#: assets/templates/assets/system_user_assets.html:60
+#: assets/templates/assets/system_user_detail.html:148
+msgid "Test assets connective"
+msgstr "测试资产可连接性"
+
+#: assets/templates/assets/system_user_asset.html:81
+#: assets/templates/assets/system_user_assets.html:69
+#: assets/templates/assets/system_user_detail.html:139
+msgid "Push system user now"
+msgstr "立刻推送系统"
+
+#: assets/templates/assets/system_user_asset.html:103
+#: assets/templates/assets/system_user_assets.html:91
+msgid "Add to node"
+msgstr "添加到节点"
+
+#: assets/templates/assets/system_user_asset.html:167
+msgid "View auth"
+msgstr ""
+
+#: assets/templates/assets/system_user_asset.html:169
+msgid "Update auth"
+msgstr ""
+
+#: assets/templates/assets/system_user_asset.html:356
+msgid "Update failed!"
+msgstr "更新失败"
+
+#: assets/templates/assets/system_user_detail.html:85
+msgid "Home"
+msgstr ""
+
+#: assets/templates/assets/system_user_detail.html:91
+msgid "Uid"
+msgstr "Uid"
+
+#: assets/templates/assets/system_user_detail.html:173
+msgid "Binding command filters"
+msgstr "绑定命令过滤器"
+
+#: assets/templates/assets/system_user_list.html:10
+msgid ""
+"System user is Dolphindoctor jump login assets used by the users, can be "
+"understood as the user login assets, such as web, sa, the dba (` ssh "
+"web@some-host `), rather than using a user the username login server jump (` "
+"ssh xiaoming@some-host `); "
+msgstr ""
+"系统用户是 Dolphindoctor跳转登录资产时使用的用户，可以理解为登录资产用户，如 "
+"web, sa, dba(`ssh web@some-host`), 而不是使用某个用户的用户名跳转登录服务器"
+"(`ssh xiaoming@some-host`);"
+
+#: assets/templates/assets/system_user_list.html:11
+msgid ""
+"In simple terms, users log into Dolphindoctor using their own username, and "
+"Dolphindoctor uses system users to log into assets. "
+msgstr ""
+"简单来说是 用户使用自己的用户名登录Dolphindoctor, Dolphindoctor使用系统用户登"
+"录资产。"
+
+#: assets/templates/assets/system_user_list.html:12
+msgid ""
+"When system users are created, if you choose auto push Dolphindoctor to use "
+"ansible push system users into the asset, if the asset (Switch) does not "
+"support ansible, please manually fill in the account password."
+msgstr ""
+"系统用户创建时，如果选择了自动推送 Dolphindoctor会使用ansible自动推送系统用户"
+"到资产中，如果资产(交换机)不支持ansible, 请手动填写账号密码。"
+
+#: assets/templates/assets/system_user_list.html:43
+#: assets/views/system_user.py:47
+msgid "Create system user"
+msgstr "创建系统用户"
+
+#: assets/templates/assets/system_user_list.html:167
+msgid "This will delete the selected System Users !!!"
+msgstr "删除选择系统用户"
+
+#: assets/templates/assets/system_user_list.html:176
+msgid "System Users Deleted."
+msgstr "已被删除"
+
+#: assets/templates/assets/system_user_list.html:177
+#: assets/templates/assets/system_user_list.html:182
+msgid "System Users Delete"
+msgstr "删除系统用户"
+
+#: assets/templates/assets/system_user_list.html:181
+msgid "System Users Deleting failed."
+msgstr "系统用户删除失败"
+
+#: assets/templates/assets/user_asset_list.html:100
+msgid "Connect"
+msgstr "连接"
+
+#: assets/views/admin_user.py:31
+msgid "Admin user list"
+msgstr "管理用户列表"
+
+#: assets/views/admin_user.py:85 assets/views/admin_user.py:110
+msgid "Admin user detail"
+msgstr "管理用户详情"
+
+#: assets/views/asset.py:70 templates/_nav_user.html:4
+msgid "My assets"
+msgstr "我的资产"
+
+#: assets/views/asset.py:134
+msgid "Update asset"
+msgstr "更新资产"
+
+#: assets/views/asset.py:146
+msgid "Bulk update asset success"
+msgstr "批量更新资产成功"
+
+#: assets/views/asset.py:174
+msgid "Bulk update asset"
+msgstr "批量更新资产"
+
+#: assets/views/label.py:28
+msgid "Label list"
+msgstr "标签列表"
+
+#: assets/views/label.py:55
+msgid "Tips: Avoid using label names reserved internally: {}"
+msgstr "提示: 请避免使用内部预留标签名: {}"
+
+#: assets/views/label.py:73
+msgid "Update label"
+msgstr "更新标签"
+
+#: assets/views/system_user.py:30
+msgid "System user list"
+msgstr "系统用户列表"
+
+#: assets/views/system_user.py:79
+msgid "System user detail"
+msgstr "系统用户详情"
+
+#: assets/views/system_user.py:104
+msgid "assets"
+msgstr "资产管理"
+
+#: assets/views/system_user.py:105
+msgid "System user asset"
+msgstr "系统用户资产"
+
+#: audits/models.py:18 audits/models.py:41 audits/models.py:52
+#: audits/templates/audits/ftp_log_list.html:74
+#: audits/templates/audits/operate_log_list.html:71
+#: audits/templates/audits/password_change_log_list.html:53
+msgid "Remote addr"
+msgstr "远端地址"
+
+#: audits/models.py:21 audits/templates/audits/ftp_log_list.html:75
+msgid "Operate"
+msgstr "操作"
+
+#: audits/models.py:22 audits/templates/audits/ftp_log_list.html:57
+#: audits/templates/audits/ftp_log_list.html:76
+msgid "Filename"
+msgstr "文件名"
+
+#: audits/models.py:23 audits/models.py:90
+#: audits/templates/audits/ftp_log_list.html:77
+#: ops/templates/ops/command_execution_list.html:65
+#: ops/templates/ops/task_list.html:31
+#: users/templates/users/user_detail.html:458
+msgid "Success"
+msgstr "成功"
+
+#: audits/models.py:32
+msgid "Create"
+msgstr "创建"
+
+#: audits/models.py:39 audits/templates/audits/operate_log_list.html:50
+#: audits/templates/audits/operate_log_list.html:69
+msgid "Resource Type"
+msgstr "资源类型"
+
+#: audits/models.py:40 audits/templates/audits/operate_log_list.html:70
+msgid "Resource"
+msgstr "资源"
+
+#: audits/models.py:51 audits/templates/audits/password_change_log_list.html:52
+msgid "Change by"
+msgstr "修改者"
+
+#: audits/models.py:70 users/templates/users/user_detail.html:98
+msgid "Disabled"
+msgstr "禁用"
+
+#: audits/models.py:71 settings/models.py:33
+#: users/templates/users/user_detail.html:96
+msgid "Enabled"
+msgstr "启用"
+
+#: audits/models.py:72 audits/models.py:82
+msgid "-"
+msgstr ""
+
+#: audits/models.py:83
+msgid "Username/password check failed"
+msgstr "用户名/密码 校验失败"
+
+#: audits/models.py:84
+msgid "MFA authentication failed"
+msgstr "MFA 认证失败"
+
+#: audits/models.py:85
+msgid "Username does not exist"
+msgstr "用户名不存在"
+
+#: audits/models.py:86
+msgid "Password expired"
+msgstr "密码过期"
+
+#: audits/models.py:91
+msgid "Failed"
+msgstr "失败"
+
+#: audits/models.py:95
+msgid "Login type"
+msgstr "登录方式"
+
+#: audits/models.py:96
+msgid "Login ip"
+msgstr "登录IP"
+
+#: audits/models.py:97
+msgid "Login city"
+msgstr "登录城市"
+
+#: audits/models.py:98
+msgid "User agent"
+msgstr "Agent"
+
+#: audits/models.py:100 audits/templates/audits/login_log_list.html:57
+msgid "Reason"
+msgstr "原因"
+
+#: audits/models.py:101 audits/templates/audits/login_log_list.html:58
+msgid "Status"
+msgstr "状态"
+
+#: audits/models.py:102
+msgid "Date login"
+msgstr "登录日期"
+
+#: audits/templates/audits/ftp_log_list.html:78
+#: ops/templates/ops/adhoc_history.html:52
+#: ops/templates/ops/adhoc_history_detail.html:61
+#: ops/templates/ops/command_execution_list.html:66
+#: ops/templates/ops/task_history.html:58
+msgid "Date start"
+msgstr "开始日期"
+
+#: audits/templates/audits/login_log_list.html:28
+msgid "Select user"
+msgstr "选择用户"
+
+#: audits/templates/audits/login_log_list.html:35
+#: audits/templates/audits/login_log_list.html:40
+#: audits/templates/audits/operate_log_list.html:59
+#: audits/templates/audits/password_change_log_list.html:43
+#: ops/templates/ops/command_execution_list.html:43
+#: ops/templates/ops/command_execution_list.html:48
+#: ops/templates/ops/task_list.html:13 ops/templates/ops/task_list.html:18
+#: templates/_base_list.html:41 templates/_header_bar.html:8
+msgid "Search"
+msgstr "搜索"
+
+#: audits/templates/audits/login_log_list.html:50
+#: ops/templates/ops/adhoc_detail.html:49
+#: ops/templates/ops/adhoc_history_detail.html:49
+#: ops/templates/ops/task_detail.html:56
+msgid "ID"
+msgstr "ID"
+
+#: audits/templates/audits/login_log_list.html:52
+#: settings/templates/settings/command_storage_create.html:31
+#: settings/templates/settings/replay_storage_create.html:31
+#: settings/templates/settings/terminal_setting.html:84
+#: settings/templates/settings/terminal_setting.html:106
+msgid "Type"
+msgstr "类型"
+
+#: audits/templates/audits/login_log_list.html:53
+msgid "UA"
+msgstr "Agent"
+
+#: audits/templates/audits/login_log_list.html:55
+msgid "City"
+msgstr "城市"
+
+#: audits/templates/audits/login_log_list.html:59
+#: ops/templates/ops/task_list.html:32
+msgid "Date"
+msgstr "日期"
+
+#: audits/views.py:80 audits/views.py:117 audits/views.py:162
+#: templates/_nav.html:103 templates/_nav_audits.html:22
+msgid "Audits"
+msgstr "日志审计"
+
+#: audits/views.py:81 templates/_nav.html:109 templates/_nav_audits.html:27
+msgid "Operate log"
+msgstr "操作日志"
+
+#: audits/views.py:118 templates/_nav.html:110 templates/_nav_audits.html:28
+msgid "Password change log"
+msgstr "改密日志"
+
+#: audits/views.py:163 templates/_nav.html:106 templates/_nav_audits.html:25
+msgid "Login log"
+msgstr "登录日志"
+
+#: authentication/api/auth.py:49
+#: authentication/templates/authentication/login.html:52
+#: authentication/templates/authentication/new_login.html:77
+msgid "Log in frequently and try again later"
+msgstr "登录频繁, 稍后重试"
+
+#: authentication/api/auth.py:67
+msgid "The user {} password has expired, please update."
+msgstr "用户 {} 密码已经过期，请更新。"
+
+#: authentication/api/auth.py:86
+msgid "Please carry seed value and conduct MFA secondary certification"
+msgstr "请携带seed值, 进行MFA二次认证"
+
+#: authentication/api/auth.py:166
+msgid "Please verify the user name and password first"
+msgstr "请先进行用户名和密码验证"
+
+#: authentication/api/auth.py:171
+msgid "MFA certification failed"
+msgstr "MFA认证失败"
+
+#: authentication/backends/api.py:52
+msgid "Invalid signature header. No credentials provided."
+msgstr ""
+
+#: authentication/backends/api.py:55
+msgid "Invalid signature header. Signature string should not contain spaces."
+msgstr ""
+
+#: authentication/backends/api.py:62
+msgid "Invalid signature header. Format like AccessKeyId:Signature"
+msgstr ""
+
+#: authentication/backends/api.py:66
+msgid ""
+"Invalid signature header. Signature string should not contain invalid "
+"characters."
+msgstr ""
+
+#: authentication/backends/api.py:86 authentication/backends/api.py:102
+msgid "Invalid signature."
+msgstr ""
+
+#: authentication/backends/api.py:93
+msgid "HTTP header: Date not provide or not %a, %d %b %Y %H:%M:%S GMT"
+msgstr ""
+
+#: authentication/backends/api.py:98
+msgid "Expired, more than 15 minutes"
+msgstr ""
+
+#: authentication/backends/api.py:105
+msgid "User disabled."
+msgstr "用户已禁用"
+
+#: authentication/backends/api.py:120
+msgid "Invalid token header. No credentials provided."
+msgstr ""
+
+#: authentication/backends/api.py:123
+msgid "Invalid token header. Sign string should not contain spaces."
+msgstr ""
+
+#: authentication/backends/api.py:130
+msgid ""
+"Invalid token header. Sign string should not contain invalid characters."
+msgstr ""
+
+#: authentication/backends/api.py:140
+msgid "Invalid token or cache refreshed."
+msgstr ""
+
+#: authentication/forms.py:19
+msgid ""
+"Please enter a correct username and password. Note that both fields may be "
+"case-sensitive."
+msgstr "请输入正确的用户名和密码. 注意它们是区分大小写."
+
+#: authentication/forms.py:22
+msgid "This account is inactive."
+msgstr "此账户无效"
+
+#: authentication/forms.py:37 users/forms.py:22
+msgid "MFA code"
+msgstr "MFA 验证码"
+
+#: authentication/models.py:33
+msgid "Private Token"
+msgstr "ssh密钥"
+
+#: authentication/templates/authentication/_mfa_confirm_modal.html:5
+msgid "MFA confirm"
+msgstr "MFA确认"
+
+#: authentication/templates/authentication/_mfa_confirm_modal.html:25
+msgid "Code error"
+msgstr "代码错误"
+
+#: authentication/templates/authentication/login.html:27
+#: authentication/templates/authentication/login_otp.html:27
+#: users/templates/users/reset_password.html:25
+msgid "Welcome to the Dolphindoctor"
+msgstr "欢迎使用Dolphindoctor"
+
+#: authentication/templates/authentication/login.html:29
+#: authentication/templates/authentication/login_otp.html:29
+msgid "Our Vision: Free AI Family Doctor for Everyone."
+msgstr "我们的愿景:让每个人都能享有免费的AI家庭医生"
+
+#: authentication/templates/authentication/login.html:32
+#: authentication/templates/authentication/login_otp.html:32
+msgid "Our mission: to build a one-stop data-driven health management platform."
+msgstr "我们的使命:打造一站式数据驱动的健康管理平台"
+
+#: authentication/templates/authentication/login.html:35
+#: authentication/templates/authentication/login_otp.html:35
+msgid ""
+"Distributed architecture is adopted to support multi-area deployment "
+"central node provides API, which can be extended horizontally and without concurrent access "
+"restrictions."
+msgstr ""
+"采纳分布式架构，支持多区域部署，中心节点提供 API，可横向扩展、无并发访问限制。"
+
+#: authentication/templates/authentication/login.html:38
+#: authentication/templates/authentication/login_otp.html:38
+msgid "Changes the world, starting with a little bit."
+msgstr "改变世界，从一点点开始。"
+
+#: authentication/templates/authentication/login.html:46
+#: authentication/templates/authentication/login.html:72
+#: authentication/templates/authentication/new_login.html:99
+#: templates/_header_bar.html:96
+msgid "Login"
+msgstr "登录"
+
+#: authentication/templates/authentication/login.html:54
+#: authentication/templates/authentication/new_login.html:79
+msgid "The user password has expired"
+msgstr "用户密码已过期"
+
+#: authentication/templates/authentication/login.html:57
+#: authentication/templates/authentication/new_login.html:82
+msgid "Captcha invalid"
+msgstr "验证码错误"
+
+#: authentication/templates/authentication/login.html:83
+#: authentication/templates/authentication/new_login.html:103
+#: users/templates/users/forgot_password.html:10
+#: users/templates/users/forgot_password.html:25
+msgid "Forgot password"
+msgstr "忘记密码"
+
+#: authentication/templates/authentication/login.html:89
+msgid "More login options"
+msgstr "更多登录方式"
+
+#: authentication/templates/authentication/login.html:93
+msgid "Keycloak"
+msgstr ""
+
+#: authentication/templates/authentication/login_otp.html:46
+#: users/templates/users/user_detail.html:91
+#: users/templates/users/user_profile.html:85
+msgid "MFA certification"
+msgstr "MFA认证"
+
+#: authentication/templates/authentication/login_otp.html:51
+#: users/templates/users/user_otp_authentication.html:11
+msgid ""
+"The account protection has been opened, please complete the following "
+"operations according to the prompts"
+msgstr "账号保护已开启，请根据提示完成以下操作"
+
+#: authentication/templates/authentication/login_otp.html:55
+#: users/templates/users/user_otp_authentication.html:13
+msgid "Open Authenticator and enter the 6-bit dynamic code"
+msgstr "请打开手机Google Authenticator应用，输入6位动态码"
+
+#: authentication/templates/authentication/login_otp.html:65
+#: users/templates/users/user_otp_authentication.html:23
+#: users/templates/users/user_otp_enable_bind.html:26
+msgid "Six figures"
+msgstr "6位数字"
+
+#: authentication/templates/authentication/login_otp.html:67
+#: users/templates/users/first_login.html:105
+#: users/templates/users/user_otp_authentication.html:26
+#: users/templates/users/user_otp_enable_bind.html:29
+#: users/templates/users/user_otp_enable_install_app.html:26
+#: users/templates/users/user_password_authentication.html:21
+msgid "Next"
+msgstr "下一步"
+
+#: authentication/templates/authentication/login_otp.html:70
+msgid "Can't provide security? Please contact the administrator!"
+msgstr "如果不能提供MFA验证码，请联系管理员!"
+
+#: authentication/templates/authentication/new_login.html:67
+msgid "Welcome back, please enter username and password to login"
+msgstr "欢迎回来，请输入用户名和密码登录"
+
+#: authentication/views/login.py:80
+msgid "Please enable cookies and try again."
+msgstr "设置你的浏览器支持cookie"
+
+#: authentication/views/login.py:172 users/views/user.py:399
+#: users/views/user.py:424
+msgid "MFA code invalid, or ntp sync server time"
+msgstr "MFA验证码不正确，或者服务器端时间不对"
+
+#: authentication/views/login.py:203
+msgid "Logout success"
+msgstr "退出登录成功"
+
+#: authentication/views/login.py:204
+msgid "Logout success, return login page"
+msgstr "退出登录成功，返回到登录页面"
+
+#: common/const.py:6
+#, python-format
+msgid "%(name)s was created successfully"
+msgstr "%(name)s 创建成功"
+
+#: common/const.py:7
+#, python-format
+msgid "%(name)s was updated successfully"
+msgstr "%(name)s 更新成功"
+
+#: common/fields/form.py:34
+msgid "Not a valid json"
+msgstr "不是合法json"
+
+#: common/fields/form.py:36
+msgid "Not a string type"
+msgstr "不是字符类型"
+
+#: common/fields/model.py:79
+msgid "Marshal dict data to char field"
+msgstr ""
+
+#: common/fields/model.py:83
+msgid "Marshal dict data to text field"
+msgstr ""
+
+#: common/fields/model.py:95
+msgid "Marshal list data to char field"
+msgstr ""
+
+#: common/fields/model.py:99
+msgid "Marshal list data to text field"
+msgstr ""
+
+#: common/fields/model.py:103
+msgid "Marshal data to char field"
+msgstr ""
+
+#: common/fields/model.py:107
+msgid "Marshal data to text field"
+msgstr ""
+
+#: common/fields/model.py:123
+msgid "Encrypt field using Secret Key"
+msgstr ""
+
+#: common/mixins.py:35 common/mixins/models.py:31
+msgid "is discard"
+msgstr ""
+
+#: common/mixins.py:36 common/mixins/models.py:32
+msgid "discard time"
+msgstr ""
+
+#: common/mixins/api.py:62
+#, python-format
+msgid "%(name)s was %(action)s successfully"
+msgstr "%(name)s %(action)s成功"
+
+#: common/mixins/api.py:63
+msgid "create"
+msgstr "创建"
+
+#: common/mixins/api.py:63
+msgid "update"
+msgstr "更新"
+
+#: common/validators.py:11
+msgid "Special char not allowed"
+msgstr "不能包含特殊字符"
+
+#: common/validators.py:23
+msgid "This field must be unique."
+msgstr "字段必须唯一"
+
+#: dolphindoctor/views.py:190
+msgid ""
+"<div>Luna is a separately deployed program, you need to deploy Luna, coco, "
+"configure nginx for url distribution,</div> </div>If you see this page, "
+"prove that you are not accessing the nginx listening port. Good luck.</div>"
+msgstr ""
+"<div>Luna是单独部署的一个程序，你需要部署luna，coco，配置nginx做url分发, </"
+"div><div>如果你看到了这个页面，证明你访问的不是nginx监听的端口，祝你好运</"
+"div>"
+
+#: ops/api/celery.py:54
+msgid "Waiting task start"
+msgstr "等待任务开始"
+
+#: ops/models/adhoc.py:38
+msgid "Interval"
+msgstr "间隔"
+
+#: ops/models/adhoc.py:38 settings/forms.py:158
+msgid "Units: seconds"
+msgstr "单位: 秒"
+
+#: ops/models/adhoc.py:39
+msgid "Crontab"
+msgstr "Crontab"
+
+#: ops/models/adhoc.py:39
+msgid "5 * * * *"
+msgstr "5 * * * *"
+
+#: ops/models/adhoc.py:41
+msgid "Callback"
+msgstr "回调"
+
+#: ops/models/adhoc.py:158 ops/templates/ops/adhoc_detail.html:114
+msgid "Tasks"
+msgstr "任务"
+
+#: ops/models/adhoc.py:159 ops/templates/ops/adhoc_detail.html:57
+#: ops/templates/ops/task_adhoc.html:60
+msgid "Pattern"
+msgstr "模式"
+
+#: ops/models/adhoc.py:160 ops/templates/ops/adhoc_detail.html:61
+msgid "Options"
+msgstr "选项"
+
+#: ops/models/adhoc.py:161 ops/templates/ops/adhoc_detail.html:53
+#: ops/templates/ops/command_execution_list.html:59
+#: ops/templates/ops/task_adhoc.html:59 ops/templates/ops/task_list.html:30
+#: settings/templates/settings/command_storage_create.html:49
+msgid "Hosts"
+msgstr "主机"
+
+#: ops/models/adhoc.py:162
+#: settings/templates/settings/replay_storage_create.html:52
+#: templates/index.html:89
+msgid "Host"
+msgstr "主机"
+
+#: ops/models/adhoc.py:163
+msgid "Run as admin"
+msgstr "再次执行"
+
+#: ops/models/adhoc.py:165 ops/templates/ops/adhoc_detail.html:82
+#: ops/templates/ops/task_adhoc.html:62
+msgid "Become"
+msgstr "Become"
+
+#: ops/models/adhoc.py:166 users/templates/users/user_group_detail.html:59
+#: visions/templates/visions/effect_detail.html:72
+#: visions/templates/visions/material_detail.html:72
+#: visions/templates/visions/video_detail.html:68
+msgid "Create by"
+msgstr "创建者"
+
+#: ops/models/adhoc.py:224
+msgid "{} Start task: {}"
+msgstr "{} 任务开始: {}"
+
+#: ops/models/adhoc.py:227
+msgid "{} Task finish"
+msgstr "{} 任务结束"
+
+#: ops/models/adhoc.py:325 visions/models/effect.py:17
+#: visions/models/material.py:17
+#: visions/templates/visions/vision_video_create_update.html:43
+#: visions/templates/visions/vision_video_detail.html:149
+msgid "Start time"
+msgstr "开始时间"
+
+#: ops/models/adhoc.py:326 visions/models/effect.py:18
+#: visions/models/material.py:18
+msgid "End time"
+msgstr "完成时间"
+
+#: ops/models/adhoc.py:327 ops/templates/ops/adhoc_history.html:57
+#: ops/templates/ops/task_history.html:63 ops/templates/ops/task_list.html:33
+msgid "Time"
+msgstr "时间"
+
+#: ops/models/adhoc.py:328 ops/templates/ops/adhoc_detail.html:106
+#: ops/templates/ops/adhoc_history.html:55
+#: ops/templates/ops/adhoc_history_detail.html:69
+#: ops/templates/ops/task_detail.html:84 ops/templates/ops/task_history.html:61
+msgid "Is finished"
+msgstr "是否完成"
+
+#: ops/models/adhoc.py:329 ops/templates/ops/adhoc_history.html:56
+#: ops/templates/ops/task_history.html:62
+msgid "Is success"
+msgstr "是否成功"
+
+#: ops/models/adhoc.py:330
+msgid "Adhoc raw result"
+msgstr "结果"
+
+#: ops/models/adhoc.py:331
+msgid "Adhoc result summary"
+msgstr "汇总"
+
+#: ops/models/command.py:21 ops/templates/ops/command_execution_list.html:61
+msgid "Command"
+msgstr "命令"
+
+#: ops/models/command.py:22
+msgid "Result"
+msgstr "结果"
+
+#: ops/models/command.py:57
+msgid "Task start"
+msgstr "任务开始"
+
+#: ops/models/command.py:71
+msgid "Command `{}` is forbidden ........"
+msgstr "命令 `{}` 不允许被执行 ......."
+
+#: ops/models/command.py:77
+msgid "Task end"
+msgstr "任务结束"
+
+#: ops/templates/ops/adhoc_detail.html:19
+#: ops/templates/ops/adhoc_history.html:19
+msgid "Version detail"
+msgstr "版本详情"
+
+#: ops/templates/ops/adhoc_detail.html:22
+#: ops/templates/ops/adhoc_history.html:22 ops/views/adhoc.py:128
+msgid "Version run history"
+msgstr "执行历史"
+
+#: ops/templates/ops/adhoc_detail.html:72
+#: ops/templates/ops/adhoc_detail.html:77
+#: ops/templates/ops/command_execution_list.html:62
+#: ops/templates/ops/task_adhoc.html:61
+msgid "Run as"
+msgstr "运行用户"
+
+#: ops/templates/ops/adhoc_detail.html:94 ops/templates/ops/task_list.html:28
+msgid "Run times"
+msgstr "执行次数"
+
+#: ops/templates/ops/adhoc_detail.html:98 ops/templates/ops/task_detail.html:76
+msgid "Last run"
+msgstr "最后运行"
+
+#: ops/templates/ops/adhoc_detail.html:102
+#: ops/templates/ops/adhoc_history_detail.html:65
+#: ops/templates/ops/task_detail.html:80
+msgid "Time delta"
+msgstr "运行时间"
+
+#: ops/templates/ops/adhoc_detail.html:110
+#: ops/templates/ops/adhoc_history_detail.html:73
+#: ops/templates/ops/task_detail.html:88
+msgid "Is success "
+msgstr "成功"
+
+#: ops/templates/ops/adhoc_detail.html:131
+#: ops/templates/ops/task_detail.html:109
+msgid "Last run failed hosts"
+msgstr "最后运行失败主机"
+
+#: ops/templates/ops/adhoc_detail.html:151
+#: ops/templates/ops/adhoc_detail.html:176
+#: ops/templates/ops/task_detail.html:129
+#: ops/templates/ops/task_detail.html:154
+msgid "No hosts"
+msgstr "没有主机"
+
+#: ops/templates/ops/adhoc_detail.html:161
+#: ops/templates/ops/task_detail.html:139
+msgid "Last run success hosts"
+msgstr "最后运行成功主机"
+
+#: ops/templates/ops/adhoc_history.html:30
+#: ops/templates/ops/task_history.html:36
+msgid "History of "
+msgstr "执行历史"
+
+#: ops/templates/ops/adhoc_history.html:53
+#: ops/templates/ops/task_history.html:59
+msgid "F/S/T"
+msgstr "失败/成功/总"
+
+#: ops/templates/ops/adhoc_history_detail.html:19 ops/views/adhoc.py:142
+msgid "Run history detail"
+msgstr "执行历史详情"
+
+#: ops/templates/ops/adhoc_history_detail.html:22
+#: ops/templates/ops/command_execution_list.html:63
+msgid "Output"
+msgstr "输出"
+
+#: ops/templates/ops/adhoc_history_detail.html:30
+msgid "History detail of"
+msgstr "执行历史详情"
+
+#: ops/templates/ops/adhoc_history_detail.html:53
+msgid "Task name"
+msgstr "任务名称"
+
+#: ops/templates/ops/adhoc_history_detail.html:84
+msgid "Failed assets"
+msgstr "失败资产"
+
+#: ops/templates/ops/adhoc_history_detail.html:104
+#: ops/templates/ops/adhoc_history_detail.html:129
+msgid "No assets"
+msgstr "没有资产"
+
+#: ops/templates/ops/adhoc_history_detail.html:114
+msgid "Success assets"
+msgstr "成功资产"
+
+#: ops/templates/ops/celery_task_log.html:4
+msgid "Task log"
+msgstr "任务列表"
+
+#: ops/templates/ops/command_execution_create.html:71
+msgid "Go"
+msgstr ""
+
+#: ops/templates/ops/command_execution_create.html:155
+msgid "Selected assets"
+msgstr "已选择资产"
+
+#: ops/templates/ops/command_execution_create.html:158
+msgid "In total"
+msgstr "总共"
+
+#: ops/templates/ops/command_execution_create.html:193
+msgid ""
+"Select the left asset, select the running system user, execute command in "
+"batch"
+msgstr "选择左侧资产, 选择运行的系统用户，批量执行命令"
+
+#: ops/templates/ops/command_execution_create.html:211
+msgid "Unselected assets"
+msgstr "没有选中资产"
+
+#: ops/templates/ops/command_execution_create.html:215
+msgid "No input command"
+msgstr "没有输入命令"
+
+#: ops/templates/ops/command_execution_create.html:219
+msgid "No system user was selected"
+msgstr "没有选择系统用户"
+
+#: ops/templates/ops/command_execution_create.html:264
+msgid "Pending"
+msgstr "等待"
+
+#: ops/templates/ops/command_execution_list.html:64
+msgid "Finished"
+msgstr "结束"
+
+#: ops/templates/ops/task_adhoc.html:19 ops/templates/ops/task_detail.html:20
+#: ops/templates/ops/task_history.html:19 ops/views/adhoc.py:72
+msgid "Task detail"
+msgstr "任务详情"
+
+#: ops/templates/ops/task_adhoc.html:22 ops/templates/ops/task_detail.html:23
+#: ops/templates/ops/task_history.html:22 ops/views/adhoc.py:86
+msgid "Task versions"
+msgstr "任务各版本"
+
+#: ops/templates/ops/task_adhoc.html:25 ops/templates/ops/task_detail.html:26
+#: ops/templates/ops/task_history.html:25
+msgid "Run history"
+msgstr "执行历史"
+
+#: ops/templates/ops/task_adhoc.html:28 ops/templates/ops/task_detail.html:29
+#: ops/templates/ops/task_history.html:28
+msgid "Last run output"
+msgstr "输出"
+
+#: ops/templates/ops/task_adhoc.html:36
+msgid "Versions of "
+msgstr "版本"
+
+#: ops/templates/ops/task_detail.html:68
+msgid "Total versions"
+msgstr "版本数量"
+
+#: ops/templates/ops/task_detail.html:92
+msgid "Contents"
+msgstr "内容"
+
+#: ops/templates/ops/task_list.html:29
+msgid "Versions"
+msgstr "版本"
+
+#: ops/templates/ops/task_list.html:63
+msgid "Run"
+msgstr "执行"
+
+#: ops/templates/ops/task_list.html:117
+msgid "Task start: "
+msgstr "任务开始: "
+
+#: ops/utils.py:51
+msgid "Update task content: {}"
+msgstr "更新任务内容: {}"
+
+#: ops/views/adhoc.py:45 ops/views/adhoc.py:71 ops/views/adhoc.py:85
+#: ops/views/adhoc.py:99 ops/views/adhoc.py:113 ops/views/adhoc.py:127
+#: ops/views/adhoc.py:141
+msgid "Ops"
+msgstr "作业中心"
+
+#: ops/views/adhoc.py:46 templates/_nav.html:98
+msgid "Task list"
+msgstr "任务列表"
+
+#: ops/views/adhoc.py:100
+msgid "Task run history"
+msgstr "执行历史"
+
+#: orgs/mixins.py:81 orgs/mixins/models.py:61 orgs/mixins/serializers.py:25
+#: orgs/models.py:27
+msgid "Organization"
+msgstr "组织"
+
+#: settings/api.py:28
+msgid "Test mail sent to {}, please check"
+msgstr "邮件已经发送{}, 请检查"
+
+#: settings/api.py:54
+msgid "Test ldap success"
+msgstr "连接LDAP成功"
+
+#: settings/api.py:91
+msgid "Match {} s users"
+msgstr "匹配 {} 个用户"
+
+#: settings/api.py:160
+msgid "succeed: {} failed: {} total: {}"
+msgstr "成功：{} 失败：{} 总数：{}"
+
+#: settings/api.py:182 settings/api.py:218
+msgid ""
+"Error: Account invalid (Please make sure the information such as Access key "
+"or Secret key is correct)"
+msgstr "错误：账户无效 （请确保 Access key 或 Secret key 等信息正确）"
+
+#: settings/api.py:188 settings/api.py:224
+msgid "Create succeed"
+msgstr "创建成功"
+
+#: settings/api.py:206 settings/api.py:244
+#: settings/templates/settings/terminal_setting.html:154
+msgid "Delete succeed"
+msgstr "删除成功"
+
+#: settings/forms.py:60
+msgid "Current SITE URL"
+msgstr "当前站点URL"
+
+#: settings/forms.py:64
+msgid "User Guide URL"
+msgstr "用户向导URL"
+
+#: settings/forms.py:65
+msgid "User first login update profile done redirect to it"
+msgstr "用户第一次登录，修改profile后重定向到地址"
+
+#: settings/forms.py:68
+msgid "Email Subject Prefix"
+msgstr "Email主题前缀"
+
+#: settings/forms.py:69
+msgid "Tips: Some word will be intercept by mail provider"
+msgstr "提示: 一些关键字可能会被邮件提供商拦截，如 跳板机、Dolphindoctor"
+
+#: settings/forms.py:75
+msgid "SMTP host"
+msgstr "SMTP主机"
+
+#: settings/forms.py:77
+msgid "SMTP port"
+msgstr "SMTP端口"
+
+#: settings/forms.py:79
+msgid "SMTP user"
+msgstr "SMTP账号"
+
+#: settings/forms.py:82
+msgid "SMTP password"
+msgstr "SMTP密码"
+
+#: settings/forms.py:84
+msgid "Tips: Some provider use token except password"
+msgstr "提示：一些邮件提供商需要输入的是Token"
+
+#: settings/forms.py:87
+msgid "Send user"
+msgstr "发送账号"
+
+#: settings/forms.py:89
+msgid "Tips: Send mail account, default SMTP account as the send account"
+msgstr "提示：发送邮件账号，默认使用SMTP账号作为发送账号"
+
+#: settings/forms.py:93
+msgid "Use SSL"
+msgstr "使用SSL"
+
+#: settings/forms.py:94
+msgid "If SMTP port is 465, may be select"
+msgstr "如果SMTP端口是465，通常需要启用SSL"
+
+#: settings/forms.py:97
+msgid "Use TLS"
+msgstr "使用TLS"
+
+#: settings/forms.py:98
+msgid "If SMTP port is 587, may be select"
+msgstr "如果SMTP端口是587，通常需要启用TLS"
+
+#: settings/forms.py:104
+msgid "LDAP server"
+msgstr "LDAP地址"
+
+#: settings/forms.py:107
+msgid "Bind DN"
+msgstr "绑定DN"
+
+#: settings/forms.py:114
+msgid "User OU"
+msgstr "用户OU"
+
+#: settings/forms.py:115
+msgid "Use | split User OUs"
+msgstr "使用|分隔各OU"
+
+#: settings/forms.py:119
+msgid "User search filter"
+msgstr "用户过滤器"
+
+#: settings/forms.py:120
+#, python-format
+msgid "Choice may be (cn|uid|sAMAccountName)=%(user)s)"
+msgstr "可能的选项是(cn或uid或sAMAccountName=%(user)s)"
+
+#: settings/forms.py:123
+msgid "User attr map"
+msgstr "LDAP属性映射"
+
+#: settings/forms.py:125
+msgid ""
+"User attr map present how to map LDAP user attr to dolphindoctor, username,"
+"name,email is dolphindoctor attr"
+msgstr ""
+"用户属性映射代表怎样将LDAP中用户属性映射到dolphindoctor用户上，username, "
+"name,email 是dolphindoctor的属性"
+
+#: settings/forms.py:134
+msgid "Enable LDAP auth"
+msgstr "启用LDAP认证"
+
+#: settings/forms.py:143
+msgid "All"
+msgstr "全部"
+
+#: settings/forms.py:144
+msgid "Auto"
+msgstr "自动"
+
+#: settings/forms.py:151
+msgid "Password auth"
+msgstr "密码认证"
+
+#: settings/forms.py:154
+msgid "Public key auth"
+msgstr "密钥认证"
+
+#: settings/forms.py:157
+msgid "Heartbeat interval"
+msgstr "心跳间隔"
+
+#: settings/forms.py:161
+msgid "List sort by"
+msgstr "资产列表排序"
+
+#: settings/forms.py:164
+msgid "List page size"
+msgstr "资产分页每页数量"
+
+#: settings/forms.py:167
+msgid "Session keep duration"
+msgstr "会话保留时长"
+
+#: settings/forms.py:168
+msgid ""
+"Units: days, Session, record, command will be delete if more than duration, "
+"only in database"
+msgstr ""
+"单位：天。 会话、录像、命令记录超过该时长将会被删除(仅影响数据库存储, oss等不"
+"受影响)"
+
+#: settings/forms.py:172
+msgid "Telnet login regex"
+msgstr "Telnet 成功正则表达式"
+
+#: settings/forms.py:173
+msgid "ex: Last\\s*login|success|成功"
+msgstr ""
+"登录telnet服务器成功后的提示正则表达式，如: Last\\s*login|success|成功 "
+
+#: settings/forms.py:184
+msgid "MFA Secondary certification"
+msgstr "MFA 二次认证"
+
+#: settings/forms.py:186
+msgid ""
+"After opening, the user login must use MFA secondary authentication (valid "
+"for all users, including administrators)"
+msgstr "开启后，用户登录必须使用MFA二次认证（对所有用户有效，包括管理员）"
+
+#: settings/forms.py:192
+msgid "Batch execute commands"
+msgstr "批量命令"
+
+#: settings/forms.py:193
+msgid "Allow user batch execute commands"
+msgstr "允许用户批量执行命令"
+
+#: settings/forms.py:198
+msgid "Limit the number of login failures"
+msgstr "限制登录失败次数"
+
+#: settings/forms.py:202
+msgid "No logon interval"
+msgstr "禁止登录时间间隔"
+
+#: settings/forms.py:204
+msgid ""
+"Tip: (unit/minute) if the user has failed to log in for a limited number of "
+"times, no login is allowed during this time interval."
+msgstr ""
+"提示：（单位：分）当用户登录失败次数达到限制后，那么在此时间间隔内禁止登录"
+
+#: settings/forms.py:211
+msgid "Connection max idle time"
+msgstr "SSH最大空闲时间"
+
+#: settings/forms.py:213
+msgid ""
+"If idle time more than it, disconnect connection(only ssh now) Unit: minute"
+msgstr "提示：（单位：分）如果超过该配置没有操作，连接会被断开（仅ssh）"
+
+#: settings/forms.py:219
+msgid "Password expiration time"
+msgstr "密码过期时间"
+
+#: settings/forms.py:221
+msgid ""
+"Tip: (unit: day) If the user does not update the password during the time, "
+"the user password will expire failure;The password expiration reminder mail "
+"will be automatic sent to the user by system within 5 days (daily) before "
+"the password expires"
+msgstr ""
+"提示：（单位：天）如果用户在此期间没有更新密码，用户密码将过期失效； 密码过期"
+"提醒邮件将在密码过期前5天内由系统（每天）自动发送给用户"
+
+#: settings/forms.py:230
+msgid "Password minimum length"
+msgstr "密码最小长度 "
+
+#: settings/forms.py:234
+msgid "Must contain capital letters"
+msgstr "必须包含大写字母"
+
+#: settings/forms.py:236
+msgid ""
+"After opening, the user password changes and resets must contain uppercase "
+"letters"
+msgstr "开启后，用户密码修改、重置必须包含大写字母"
+
+#: settings/forms.py:241
+msgid "Must contain lowercase letters"
+msgstr "必须包含小写字母"
+
+#: settings/forms.py:242
+msgid ""
+"After opening, the user password changes and resets must contain lowercase "
+"letters"
+msgstr "开启后，用户密码修改、重置必须包含小写字母"
+
+#: settings/forms.py:247
+msgid "Must contain numeric characters"
+msgstr "必须包含数字字符"
+
+#: settings/forms.py:248
+msgid ""
+"After opening, the user password changes and resets must contain numeric "
+"characters"
+msgstr "开启后，用户密码修改、重置必须包含数字字符"
+
+#: settings/forms.py:253
+msgid "Must contain special characters"
+msgstr "必须包含特殊字符"
+
+#: settings/forms.py:254
+msgid ""
+"After opening, the user password changes and resets must contain special "
+"characters"
+msgstr "开启后，用户密码修改、重置必须包含特殊字符"
+
+#: settings/forms.py:261
+msgid "Create user email subject"
+msgstr "创建用户邮件的主题"
+
+#: settings/forms.py:262
+msgid ""
+"Tips: When creating a user, send the subject of the email (eg:Create account "
+"successfully)"
+msgstr "提示: 创建用户时，发送设置密码邮件的主题 (例如: 创建用户成功)"
+
+#: settings/forms.py:266
+msgid "Create user honorific"
+msgstr "创建用户邮件的敬语"
+
+#: settings/forms.py:267
+msgid "Tips: When creating a user, send the honorific of the email (eg:Hello)"
+msgstr "提示: 创建用户时，发送设置密码邮件的敬语 (例如: 您好)"
+
+#: settings/forms.py:272
+msgid "Create user email content"
+msgstr "创建用户邮件的内容"
+
+#: settings/forms.py:273
+msgid "Tips:When creating a user, send the content of the email"
+msgstr "提示: 创建用户时，发送设置密码邮件的内容"
+
+#: settings/forms.py:276
+msgid "Signature"
+msgstr "署名"
+
+#: settings/forms.py:277
+msgid "Tips: Email signature (eg:dolphindoctor)"
+msgstr "提示: 邮件的署名 (例如: dolphindoctor)"
+
+#: settings/models.py:128 users/templates/users/reset_password.html:68
+#: users/templates/users/user_profile.html:20
+msgid "Setting"
+msgstr "设置"
+
+#: settings/templates/settings/_ldap_list_users_modal.html:7
+msgid "LDAP user list"
+msgstr "LDAP 用户列表"
+
+#: settings/templates/settings/_ldap_list_users_modal.html:9
+msgid "Please submit the LDAP configuration before import"
+msgstr "请先提交LDAP配置再进行导入"
+
+#: settings/templates/settings/_ldap_list_users_modal.html:39
+#: users/models/user.py:66 users/templates/users/user_detail.html:71
+#: users/templates/users/user_profile.html:59
+msgid "Email"
+msgstr "邮件"
+
+#: settings/templates/settings/_ldap_list_users_modal.html:40
+msgid "Existing"
+msgstr "已存在"
+
+#: settings/templates/settings/basic_setting.html:15
+#: settings/templates/settings/email_content_setting.html:15
+#: settings/templates/settings/email_setting.html:15
+#: settings/templates/settings/ldap_setting.html:15
+#: settings/templates/settings/security_setting.html:15
+#: settings/templates/settings/terminal_setting.html:16
+#: settings/templates/settings/terminal_setting.html:49 settings/views.py:20
+msgid "Basic setting"
+msgstr "基本设置"
+
+#: settings/templates/settings/basic_setting.html:18
+#: settings/templates/settings/email_content_setting.html:18
+#: settings/templates/settings/email_setting.html:18
+#: settings/templates/settings/ldap_setting.html:18
+#: settings/templates/settings/security_setting.html:18
+#: settings/templates/settings/terminal_setting.html:20 settings/views.py:47
+msgid "Email setting"
+msgstr "邮件设置"
+
+#: settings/templates/settings/basic_setting.html:21
+#: settings/templates/settings/email_content_setting.html:21
+#: settings/templates/settings/email_setting.html:21
+#: settings/templates/settings/ldap_setting.html:21
+#: settings/templates/settings/security_setting.html:21
+#: settings/templates/settings/terminal_setting.html:23 settings/views.py:186
+msgid "Email content setting"
+msgstr "邮件内容设置"
+
+#: settings/templates/settings/basic_setting.html:24
+#: settings/templates/settings/email_content_setting.html:24
+#: settings/templates/settings/email_setting.html:24
+#: settings/templates/settings/ldap_setting.html:24
+#: settings/templates/settings/security_setting.html:24
+#: settings/templates/settings/terminal_setting.html:27 settings/views.py:74
+msgid "LDAP setting"
+msgstr "LDAP设置"
+
+#: settings/templates/settings/basic_setting.html:27
+#: settings/templates/settings/email_content_setting.html:27
+#: settings/templates/settings/email_setting.html:27
+#: settings/templates/settings/ldap_setting.html:27
+#: settings/templates/settings/security_setting.html:27
+#: settings/templates/settings/terminal_setting.html:31 settings/views.py:104
+msgid "Terminal setting"
+msgstr "终端设置"
+
+#: settings/templates/settings/basic_setting.html:30
+#: settings/templates/settings/email_content_setting.html:30
+#: settings/templates/settings/email_setting.html:30
+#: settings/templates/settings/ldap_setting.html:30
+#: settings/templates/settings/security_setting.html:30
+#: settings/templates/settings/security_setting.html:45
+#: settings/templates/settings/terminal_setting.html:34 settings/views.py:159
+msgid "Security setting"
+msgstr "安全设置"
+
+#: settings/templates/settings/command_storage_create.html:52
+msgid "Tips: If there are multiple hosts, separate them with a comma (,)"
+msgstr "提示: 如果有多台主机，请使用逗号 ( , ) 进行分割"
+
+#: settings/templates/settings/command_storage_create.html:63
+msgid "Index"
+msgstr "索引"
+
+#: settings/templates/settings/command_storage_create.html:70
+msgid "Doc type"
+msgstr "文档类型"
+
+#: settings/templates/settings/email_content_setting.html:45
+msgid "Create User setting"
+msgstr "创建用户设置"
+
+#: settings/templates/settings/email_setting.html:64
+#: settings/templates/settings/ldap_setting.html:65
+msgid "Test connection"
+msgstr "测试连接"
+
+#: settings/templates/settings/ldap_setting.html:68
+msgid "Bulk import"
+msgstr "一键导入"
+
+#: settings/templates/settings/ldap_setting.html:116
+msgid ""
+"User is not currently selected, please check the user you want to import"
+msgstr "当前无勾选用户，请勾选你想要导入的用户"
+
+#: settings/templates/settings/replay_storage_create.html:66
+msgid "Bucket"
+msgstr "桶名称"
+
+#: settings/templates/settings/replay_storage_create.html:73
+msgid "Access key"
+msgstr ""
+
+#: settings/templates/settings/replay_storage_create.html:80
+msgid "Secret key"
+msgstr ""
+
+#: settings/templates/settings/replay_storage_create.html:87
+msgid "Container name"
+msgstr "容器名称"
+
+#: settings/templates/settings/replay_storage_create.html:94
+msgid "Account name"
+msgstr "账户名称"
+
+#: settings/templates/settings/replay_storage_create.html:101
+msgid "Account key"
+msgstr "账户密钥"
+
+#: settings/templates/settings/replay_storage_create.html:108
+msgid "Endpoint"
+msgstr "端点"
+
+#: settings/templates/settings/replay_storage_create.html:114
+#, python-brace-format
+msgid "OSS: http://{REGION_NAME}.aliyuncs.com"
+msgstr "OSS: http://{REGION_NAME}.aliyuncs.com"
+
+#: settings/templates/settings/replay_storage_create.html:116
+msgid "Example: http://oss-cn-hangzhou.aliyuncs.com"
+msgstr "如: http://oss-cn-hangzhou.aliyuncs.com"
+
+#: settings/templates/settings/replay_storage_create.html:118
+#, python-brace-format
+msgid "S3: http://s3.{REGION_NAME}.amazonaws.com"
+msgstr "S3: http://s3.{REGION_NAME}.amazonaws.com"
+
+#: settings/templates/settings/replay_storage_create.html:119
+#, python-brace-format
+msgid "S3(China): http://s3.{REGION_NAME}.amazonaws.com.cn"
+msgstr "S3(中国): http://s3.{REGION_NAME}.amazonaws.com.cn"
+
+#: settings/templates/settings/replay_storage_create.html:120
+msgid "Example: http://s3.cn-north-1.amazonaws.com.cn"
+msgstr "如: http://s3.cn-north-1.amazonaws.com.cn"
+
+#: settings/templates/settings/replay_storage_create.html:126
+msgid "Endpoint suffix"
+msgstr "端点后缀"
+
+#: settings/templates/settings/replay_storage_create.html:136
+msgid "Region"
+msgstr "地域"
+
+#: settings/templates/settings/replay_storage_create.html:141
+msgid "Beijing: cn-north-1"
+msgstr "北京: cn-north-1"
+
+#: settings/templates/settings/replay_storage_create.html:142
+msgid "Ningxia: cn-northwest-1"
+msgstr "宁夏: cn-northwest-1"
+
+#: settings/templates/settings/replay_storage_create.html:143
+msgid "More"
+msgstr "更多"
+
+#: settings/templates/settings/replay_storage_create.html:247
+msgid "Submitting"
+msgstr "提交中"
+
+#: settings/templates/settings/replay_storage_create.html:256
+msgid "Endpoint need contain protocol, ex: http"
+msgstr "端点需要包含协议，如 http"
+
+#: settings/templates/settings/security_setting.html:49
+msgid "Password check rule"
+msgstr "密码校验规则"
+
+#: settings/templates/settings/terminal_setting.html:79
+msgid "Command storage"
+msgstr "命令存储"
+
+#: settings/templates/settings/terminal_setting.html:98
+#: settings/templates/settings/terminal_setting.html:120
+#: users/templates/users/user_group_detail.html:95
+#: visions/templates/visions/vision_classify_asset.html:93
+#: visions/templates/visions/vision_effect_video_group.html:133
+#: visions/templates/visions/vision_effect_video_group.html:162
+#: visions/templates/visions/vision_gallery_area.html:91
+#: visions/templates/visions/vision_material_asset-template.html:91
+#: visions/templates/visions/vision_music_room.html:91
+#: visions/templates/visions/vision_video_asset.html:93
+#: visions/templates/visions/vision_video_combine_cabinet.html:91
+msgid "Add"
+msgstr "添加"
+
+#: settings/templates/settings/terminal_setting.html:101
+msgid "Replay storage"
+msgstr "录像存储"
+
+#: settings/templates/settings/terminal_setting.html:157
+msgid "Delete failed"
+msgstr "删除失败"
+
+#: settings/templates/settings/terminal_setting.html:162
+msgid "Are you sure about deleting it?"
+msgstr "您确定删除吗?"
+
+#: settings/utils.py:84
+msgid "Search no entry matched in ou {}"
+msgstr "在ou:{}中没有匹配条目"
+
+#: settings/utils.py:112
+msgid "The user source is not LDAP"
+msgstr "用户来源不是LDAP"
+
+#: settings/views.py:19 settings/views.py:46 settings/views.py:73
+#: settings/views.py:103 settings/views.py:131 settings/views.py:144
+#: settings/views.py:158 settings/views.py:185 templates/_nav.html:140
+msgid "Settings"
+msgstr "系统设置"
+
+#: settings/views.py:30 settings/views.py:57 settings/views.py:84
+#: settings/views.py:116 settings/views.py:169 settings/views.py:196
+msgid "Update setting successfully"
+msgstr "更新设置成功"
+
+#: settings/views.py:132
+msgid "Create replay storage"
+msgstr "创建录像存储"
+
+#: settings/views.py:145
+msgid "Create command storage"
+msgstr "创建命令存储"
+
+#: templates/_header_bar.html:31
+msgid "Help"
+msgstr "帮助"
+
+#: templates/_header_bar.html:38 users/templates/users/_base_otp.html:29
+msgid "Docs"
+msgstr "文档"
+
+#: templates/_header_bar.html:83 templates/_nav_user.html:34 users/forms.py:154
+#: users/templates/users/_user.html:43
+#: users/templates/users/first_login.html:39
+#: users/templates/users/user_password_update.html:40
+#: users/templates/users/user_profile.html:17
+#: users/templates/users/user_profile_update.html:37
+#: users/templates/users/user_profile_update.html:57
+#: users/templates/users/user_pubkey_update.html:37 users/views/user.py:232
+msgid "Profile"
+msgstr "个人信息"
+
+#: templates/_header_bar.html:86
+msgid "Admin page"
+msgstr "管理页面"
+
+#: templates/_header_bar.html:92
+msgid "Logout"
+msgstr "注销登录"
+
+#: templates/_header_bar.html:109 templates/_nav.html:4
+#: templates/_nav_audits.html:4
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: templates/_import_modal.html:12
+msgid "Download the imported template or use the exported CSV file format"
+msgstr "下载导入的模板或使用导出的csv格式"
+
+#: templates/_import_modal.html:13
+msgid "Download the import template"
+msgstr "下载导入模版"
+
+#: templates/_import_modal.html:17 templates/_update_modal.html:17
+msgid "Select the CSV file to import"
+msgstr "请选择csv文件导入"
+
+#: templates/_message.html:7
+#, python-format
+msgid ""
+"\n"
+"                Your password has expired, please click <a href="
+"\"%(user_password_update_url)s\"> this link </a> update password.\n"
+"            "
+msgstr ""
+"\n"
+"                您的密码已经过期，请点击 <a href="
+"\"%(user_password_update_url)s\"> 链接 </a> 更新密码\n"
+"        "
+
+#: templates/_message.html:14
+msgid "Your password will at"
+msgstr "您的密码将于"
+
+#: templates/_message.html:14
+msgid "expired. "
+msgstr "过期。"
+
+#: templates/_message.html:15
+#, python-format
+msgid ""
+"\n"
+"                please click <a href=\"%(user_password_update_url)s\"> this "
+"link </a> to update your password.\n"
+"            "
+msgstr ""
+"\n"
+"                请点击 <a href=\"%(user_password_update_url)s\"> 链接 </a> 更"
+"新密码\n"
+"        "
+
+#: templates/_message.html:27
+#, python-format
+msgid ""
+"\n"
+"        Your information was incomplete. Please click <a href="
+"\"%(first_login_url)s\"> this link </a>to complete your information.\n"
+"        "
+msgstr ""
+"\n"
+"                你的信息不完整,请点击 <a href=\"%(first_login_url)s\"> 链接 "
+"</a> 补充完整\n"
+"                "
+
+#: templates/_message.html:40
+#, python-format
+msgid ""
+"\n"
+"        Your ssh public key not set or expired. Please click <a href="
+"\"%(user_pubkey_update)s\"> this link </a>to update\n"
+"        "
+msgstr ""
+"\n"
+"                您的ssh密钥没有设置或已失效，请点击 <a href="
+"\"%(user_pubkey_update)s\"> 链接 </a> 更新\n"
+"        "
+
+#: templates/_nav.html:10 users/views/group.py:28 users/views/group.py:45
+#: users/views/group.py:62 users/views/group.py:79 users/views/group.py:96
+#: users/views/login.py:154 users/views/user.py:68 users/views/user.py:85
+#: users/views/user.py:129 users/views/user.py:196 users/views/user.py:218
+#: users/views/user.py:270 users/views/user.py:311
+msgid "Users"
+msgstr "用户管理"
+
+#: templates/_nav.html:13 users/views/user.py:69
+msgid "User list"
+msgstr "用户列表"
+
+#: templates/_nav.html:14 users/forms.py:286 users/models/group.py:26
+#: users/models/user.py:70 users/templates/users/_select_user_modal.html:16
+#: users/templates/users/user_detail.html:213
+#: users/templates/users/user_list.html:38
+msgid "User group"
+msgstr "用户组"
+
+#: templates/_nav.html:30 visions/views/effect.py:32 visions/views/effect.py:48
+#: visions/views/effect.py:64 visions/views/effect.py:79
+#: visions/views/material.py:32 visions/views/material.py:48
+#: visions/views/material.py:64 visions/views/material.py:79
+#: visions/views/video.py:32 visions/views/video.py:48
+#: visions/views/video.py:64 visions/views/video.py:79
+msgid "Visions"
+msgstr ""
+
+#: templates/_nav.html:33 visions/forms/video_combine.py:28
+#: visions/forms/video_combine.py:32 visions/models/video.py:32
+#: visions/models/video_combine.py:44
+#: visions/templates/visions/_video_back_elevation.html:58
+#: visions/templates/visions/_video_elevation.html:58
+#: visions/templates/visions/vision_effect_detail.html:94
+#: visions/templates/visions/vision_effect_list.html:51
+#: visions/templates/visions/vision_video_combine_list.html:53
+msgid "Video"
+msgstr ""
+
+#: templates/_nav.html:34 visions/models/gallery.py:31
+#: visions/models/music.py:49 visions/models/video_combine.py:37
+#: visions/templates/visions/vision_effect_detail.html:63
+#: visions/templates/visions/vision_effect_list.html:49
+#: visions/templates/visions/vision_gallery_detail.html:63
+#: visions/templates/visions/vision_gallery_list.html:49
+#: visions/templates/visions/vision_video_combine_detail.html:61
+#: visions/templates/visions/vision_video_combine_list.html:49
+#: visions/templates/visions/vision_video_detail.html:96
+#: visions/templates/visions/vision_video_list.html:84
+msgid "Music"
+msgstr ""
+
+#: templates/_nav.html:35 visions/forms/music.py:28 visions/forms/music.py:32
+#: visions/models/gallery.py:43 visions/models/music.py:39
+#: visions/models/video_combine.py:39
+#: visions/templates/visions/vision_effect_list.html:50
+#: visions/templates/visions/vision_music_list.html:53
+#: visions/templates/visions/vision_video_combine_list.html:50
+#: visions/templates/visions/vision_video_list.html:85
+msgid "Gallery"
+msgstr ""
+
+#: templates/_nav.html:36 visions/forms/gallery.py:28
+#: visions/forms/gallery.py:32 visions/models/effect.py:32
+#: visions/models/gallery.py:33 visions/models/video_combine.py:41
+#: visions/templates/visions/vision_gallery_list.html:50
+#: visions/templates/visions/vision_video_combine_list.html:51
+#: visions/templates/visions/vision_video_list.html:86
+msgid "Effect"
+msgstr ""
+
+#: templates/_nav.html:37 visions/models/classify.py:61
+#: visions/models/material.py:32
+#: visions/templates/visions/_video_back_elevation.html:268
+#: visions/templates/visions/_video_elevation.html:237
+#: visions/templates/visions/vision_classify_detail.html:85
+#: visions/templates/visions/vision_classify_list.html:49
+msgid "Material"
+msgstr ""
+
+#: templates/_nav.html:38 visions/models/classify.py:77
+#: visions/templates/visions/vision_material_list.html:49
+#: visions/templates/visions/vision_material_list.html:166
+msgid "Classify"
+msgstr ""
+
+#: templates/_nav.html:39 visions/models/video_combine.py:57
+#: visions/templates/visions/vision_effect_detail.html:90
+#: visions/templates/visions/vision_effect_list.html:52
+#: visions/templates/visions/vision_video_list.html:87
+msgid "Video combine"
+msgstr ""
+
+#: templates/_nav.html:95
+msgid "Job Center"
+msgstr "作业中心"
+
+#: templates/_nav.html:118
+msgid "XPack"
+msgstr ""
+
+#: templates/_nav.html:126
+msgid "Account list"
+msgstr "账户列表"
+
+#: templates/_nav.html:127
+msgid "Sync instance"
+msgstr "同步实例"
+
+#: templates/_nav_audits.html:11
+msgid "Sessions"
+msgstr "会话管理"
+
+#: templates/_nav_audits.html:14
+msgid "Session online"
+msgstr "在线会话"
+
+#: templates/_nav_audits.html:15
+msgid "Session offline"
+msgstr "历史会话"
+
+#: templates/_nav_audits.html:16
+msgid "Commands"
+msgstr "命令记录"
+
+#: templates/_nav_audits.html:26
+msgid "FTP log"
+msgstr "FTP日志"
+
+#: templates/_nav_audits.html:29
+msgid "Batch command"
+msgstr "批量命令"
+
+#: templates/_pagination.html:59
+msgid ""
+"Displays the results of items _START_ to _END_; A total of _TOTAL_ entries"
+msgstr "显示第 _START_ 至 _END_ 项结果; 总共 _TOTAL_ 项"
+
+#: templates/_update_modal.html:12
+msgid "Download the update template or use the exported CSV file format"
+msgstr "下载更新的模板或使用导出的csv格式"
+
+#: templates/_update_modal.html:13
+msgid "Download the update template"
+msgstr "下载更新模版"
+
+#: templates/captcha/image.html:3
+msgid "Play CAPTCHA as audio file"
+msgstr "语言播放验证码"
+
+#: templates/captcha/text_field.html:4
+msgid "Captcha"
+msgstr "验证码"
+
+#: templates/flash_message_standalone.html:47
+msgid "Return"
+msgstr "返回"
+
+#: templates/index.html:11
+msgid "Total users"
+msgstr "用户总数"
+
+#: templates/index.html:23
+msgid "Total hosts"
+msgstr "主机总数"
+
+#: templates/index.html:36
+msgid "Online users"
+msgstr "在线用户"
+
+#: templates/index.html:48
+msgid "Online sessions"
+msgstr "在线会话"
+
+#: templates/index.html:59
+msgid " Top 5 Active user"
+msgstr "活跃用户Top5"
+
+#: templates/index.html:60
+msgid "In the past week, a total of "
+msgstr "过去一周, 共有 "
+
+#: templates/index.html:60
+msgid " users have logged in "
+msgstr " 位用户登录 "
+
+#: templates/index.html:60
+msgid " times asset."
+msgstr " 次资产."
+
+#: templates/index.html:65
+msgid " times/week"
+msgstr " 次/周"
+
+#: templates/index.html:76
+msgid "Active user asset ratio"
+msgstr "活跃用户资产占比"
+
+#: templates/index.html:79
+msgid ""
+"The following graphs describe the percentage of active users per month and "
+"assets per user host per month, respectively."
+msgstr "以下图形分别描述一个月活跃用户和资产占所有用户主机的百分比"
+
+#: templates/index.html:104 templates/index.html:119
+msgid "Top 10 assets in a week"
+msgstr "一周Top10资产"
+
+#: templates/index.html:120
+msgid "Login frequency and last login record."
+msgstr "登录次数及最近一次登录记录."
+
+#: templates/index.html:131 templates/index.html:219
+msgid " times"
+msgstr " 次"
+
+#: templates/index.html:134
+msgid "The last time a user logged in"
+msgstr "最近一次登录用户"
+
+#: templates/index.html:136 templates/index.html:224
+msgid "At "
+msgstr "于"
+
+#: templates/index.html:142 templates/index.html:181 templates/index.html:230
+msgid "(No)"
+msgstr "(暂无)"
+
+#: templates/index.html:150
+msgid "Last 10 login"
+msgstr "最近十次登录"
+
+#: templates/index.html:156
+msgid "Login record"
+msgstr "登录记录"
+
+#: templates/index.html:157
+msgid "Last 10 login records."
+msgstr "最近十次登录记录."
+
+#: templates/index.html:170 templates/index.html:172
+msgid "Before"
+msgstr "前"
+
+#: templates/index.html:174
+msgid "Login in "
+msgstr "登录了"
+
+#: templates/index.html:192 templates/index.html:207
+msgid "Top 10 users in a week"
+msgstr "一周Top10用户"
+
+#: templates/index.html:208
+msgid "User login frequency and last login record."
+msgstr "用户登录次数及最近一次登录记录"
+
+#: templates/index.html:222
+msgid "The last time logged on to the host"
+msgstr "最近一次登录主机"
+
+#: templates/index.html:266
+msgid "Monthly data overview"
+msgstr "月数据总览"
+
+#: templates/index.html:267
+msgid "History summary in one month"
+msgstr "一个月内历史汇总"
+
+#: templates/index.html:275 templates/index.html:299
+msgid "Login count"
+msgstr "登录次数"
+
+#: templates/index.html:275 templates/index.html:306
+msgid "Active users"
+msgstr "活跃用户"
+
+#: templates/index.html:275 templates/index.html:313
+msgid "Active assets"
+msgstr "活跃资产"
+
+#: templates/index.html:340 templates/index.html:390
+msgid "Monthly active users"
+msgstr "月活跃用户"
+
+#: templates/index.html:340 templates/index.html:391
+msgid "Disable user"
+msgstr "禁用用户"
+
+#: templates/index.html:340 templates/index.html:392
+msgid "Month not logged in user"
+msgstr "月未登录用户"
+
+#: templates/index.html:366 templates/index.html:442
+msgid "Access to the source"
+msgstr "访问来源"
+
+#: templates/index.html:416 templates/index.html:466
+msgid "Month is logged into the host"
+msgstr "月被登录主机"
+
+#: templates/index.html:416 templates/index.html:467
+msgid "Disable host"
+msgstr "禁用主机"
+
+#: templates/index.html:416 templates/index.html:468
+msgid "Month not logged on host"
+msgstr "月未登录主机"
+
+#: templates/rest_framework/base.html:128
+msgid "Filters"
+msgstr "过滤"
+
+#: users/api/user.py:97
+msgid "You do not have permission."
+msgstr "你没有权限"
+
+#: users/api/user.py:190
+msgid "Could not reset self otp, use profile reset instead"
+msgstr "不能再该页面重置MFA, 请去个人信息页面重置"
+
+#: users/forms.py:33 users/models/user.py:74
+#: users/templates/users/_select_user_modal.html:15
+#: users/templates/users/user_detail.html:87
+#: users/templates/users/user_list.html:37
+#: users/templates/users/user_profile.html:55
+msgid "Role"
+msgstr "角色"
+
+#: users/forms.py:36 users/forms.py:233
+msgid "ssh public key"
+msgstr "ssh公钥"
+
+#: users/forms.py:37 users/forms.py:234
+msgid "ssh-rsa AAAA..."
+msgstr ""
+
+#: users/forms.py:38
+msgid "Paste user id_rsa.pub here."
+msgstr "复制用户公钥到这里"
+
+#: users/forms.py:52 users/templates/users/user_detail.html:221
+msgid "Join user groups"
+msgstr "添加到用户组"
+
+#: users/forms.py:87 users/forms.py:248
+msgid "Public key should not be the same as your old one."
+msgstr "不能和原来的密钥相同"
+
+#: users/forms.py:91 users/forms.py:252 users/serializers/v1.py:91
+msgid "Not a valid ssh public key"
+msgstr "ssh密钥不合法"
+
+#: users/forms.py:104 users/views/login.py:114 users/views/user.py:293
+msgid "* Your password does not meet the requirements"
+msgstr "* 您的密码不符合要求"
+
+#: users/forms.py:125
+msgid "Reset link will be generated and sent to the user"
+msgstr "生成重置密码链接，通过邮件发送给用户"
+
+#: users/forms.py:126
+msgid "Set password"
+msgstr "设置密码"
+
+#: users/forms.py:133
+msgid "Password strategy"
+msgstr "密码策略"
+
+#: users/forms.py:160
+msgid ""
+"Tip: when enabled, you will enter the MFA binding process the next time you "
+"log in. you can also directly bind in \"personal information -> quick "
+"modification -> change MFA Settings\"!"
+msgstr ""
+"提示：启用之后您将会在下次登录时进入MFA绑定流程；您也可以在（个人信息->快速修"
+"改->更改MFA设置）中直接绑定!"
+
+#: users/forms.py:170
+msgid "* Enable MFA authentication to make the account more secure."
+msgstr "* 启用MFA认证，使账号更加安全."
+
+#: users/forms.py:180
+msgid ""
+"In order to protect you and your company, please keep your account, password "
+"and key sensitive information properly. (for example: setting complex "
+"password, enabling MFA authentication)"
+msgstr ""
+"为了保护您和公司的安全，请妥善保管您的账户、密码和密钥等重要敏感信息；（如："
+"设置复杂密码，启用MFA认证）"
+
+#: users/forms.py:187 users/templates/users/first_login.html:48
+#: users/templates/users/first_login.html:107
+#: users/templates/users/first_login.html:130
+msgid "Finish"
+msgstr "完成"
+
+#: users/forms.py:193
+msgid "Old password"
+msgstr "原来密码"
+
+#: users/forms.py:198
+msgid "New password"
+msgstr "新密码"
+
+#: users/forms.py:203
+msgid "Confirm password"
+msgstr "确认密码"
+
+#: users/forms.py:213
+msgid "Old password error"
+msgstr "原来密码错误"
+
+#: users/forms.py:221
+msgid "Password does not match"
+msgstr "密码不一致"
+
+#: users/forms.py:231
+msgid "Automatically configure and download the SSH key"
+msgstr "自动配置并下载SSH密钥"
+
+#: users/forms.py:235
+msgid "Paste your id_rsa.pub here."
+msgstr "复制你的公钥到这里"
+
+#: users/forms.py:269 users/forms.py:274 users/forms.py:320
+msgid "Select users"
+msgstr "选择用户"
+
+#: users/models/user.py:37 users/models/user.py:449
+msgid "Administrator"
+msgstr "管理员"
+
+#: users/models/user.py:39
+#: visions/templates/visions/_video_back_elevation.html:267
+#: visions/templates/visions/_video_elevation.html:236
+msgid "Application"
+msgstr "应用程序"
+
+#: users/models/user.py:40
+msgid "Auditor"
+msgstr "审计员"
+
+#: users/models/user.py:43 users/templates/users/user_profile.html:92
+#: users/templates/users/user_profile.html:159
+#: users/templates/users/user_profile.html:162
+msgid "Disable"
+msgstr "禁用"
+
+#: users/models/user.py:44 users/templates/users/user_profile.html:90
+#: users/templates/users/user_profile.html:166
+msgid "Enable"
+msgstr "启用"
+
+#: users/models/user.py:45 users/templates/users/user_profile.html:88
+msgid "Force enable"
+msgstr "强制启用"
+
+#: users/models/user.py:77
+msgid "Avatar"
+msgstr "头像"
+
+#: users/models/user.py:80 users/templates/users/user_detail.html:82
+msgid "Wechat"
+msgstr "微信"
+
+#: users/models/user.py:102 users/templates/users/user_detail.html:107
+#: users/templates/users/user_profile.html:116
+msgid "Date expired"
+msgstr "失效日期"
+
+#: users/models/user.py:109 users/templates/users/user_detail.html:103
+#: users/templates/users/user_list.html:39
+#: users/templates/users/user_profile.html:100
+msgid "Source"
+msgstr "用户来源"
+
+#: users/models/user.py:113
+msgid "Date password last updated"
+msgstr "最后更新密码日期"
+
+#: users/models/user.py:139 users/templates/users/user_update.html:22
+#: users/views/login.py:46 users/views/login.py:107 users/views/user.py:283
+msgid "User auth from {}, go there change password"
+msgstr "用户认证源来自 {}, 请去相应系统修改密码"
+
+#: users/models/user.py:452
+msgid "Administrator is the super user of system"
+msgstr "Administrator是初始的超级管理员"
+
+#: users/serializers/v1.py:41
+msgid "Groups name"
+msgstr "用户组名"
+
+#: users/serializers/v1.py:42
+msgid "Source name"
+msgstr "用户来源名"
+
+#: users/serializers/v1.py:43
+msgid "Is first login"
+msgstr "首次登录"
+
+#: users/serializers/v1.py:44
+msgid "Role name"
+msgstr "角色名"
+
+#: users/serializers/v1.py:45
+msgid "Is valid"
+msgstr "账户是否有效"
+
+#: users/serializers/v1.py:46
+msgid "Is expired"
+msgstr " 是否过期"
+
+#: users/serializers/v1.py:47
+msgid "Avatar url"
+msgstr "头像路径"
+
+#: users/serializers/v1.py:55
+msgid "Role limit to {}"
+msgstr "角色只能为 {}"
+
+#: users/serializers/v1.py:63
+msgid "Password does not match security rules"
+msgstr "密码不满足安全规则"
+
+#: users/serializers_v2/user.py:36
+msgid "name not unique"
+msgstr "名称重复"
+
+#: users/templates/users/_base_otp.html:27
+msgid "Home page"
+msgstr "首页"
+
+#: users/templates/users/_base_otp.html:44
+msgid "Security token validation"
+msgstr "安全令牌验证"
+
+#: users/templates/users/_base_otp.html:44 users/templates/users/_user.html:13
+#: users/templates/users/user_profile_update.html:51
+msgid "Account"
+msgstr "账户"
+
+#: users/templates/users/_base_otp.html:44
+msgid "Follow these steps to complete the binding operation"
+msgstr "请按照以下步骤完成绑定操作"
+
+#: users/templates/users/_select_user_modal.html:5
+msgid "Please Select User"
+msgstr "选择用户"
+
+#: users/templates/users/_select_user_modal.html:17
+msgid "Asset num"
+msgstr "资产数量"
+
+#: users/templates/users/_user.html:26
+msgid "Security and Role"
+msgstr "角色安全"
+
+#: users/templates/users/_user_groups_import_modal.html:4
+msgid "Import user groups"
+msgstr "导入用户组"
+
+#: users/templates/users/_user_groups_update_modal.html:4
+#: users/views/group.py:63
+msgid "Update user group"
+msgstr "更新用户组"
+
+#: users/templates/users/_user_import_modal.html:4
+msgid "Import users"
+msgstr "导入用户"
+
+#: users/templates/users/_user_update_modal.html:4
+#: users/templates/users/user_update.html:4 users/views/user.py:130
+msgid "Update user"
+msgstr "更新用户"
+
+#: users/templates/users/_user_update_pk_modal.html:4
+msgid "Update User SSH Public Key"
+msgstr "更新ssh密钥"
+
+#: users/templates/users/first_login.html:19
+#: users/templates/users/first_login_done.html:19
+msgid "First Login"
+msgstr "首次登录"
+
+#: users/templates/users/first_login.html:72
+msgid "I agree with the terms and conditions."
+msgstr "我同意条款和条件"
+
+#: users/templates/users/first_login.html:73
+msgid "Please choose the terms and conditions."
+msgstr "请选择同意条款和条件"
+
+#: users/templates/users/first_login.html:101
+msgid "Previous"
+msgstr "上一步"
+
+#: users/templates/users/first_login_done.html:31
+msgid "Welcome to use dolphindoctor, visit "
+msgstr "欢迎使用Dolphindoctor开源跳板机系统"
+
+#: users/templates/users/first_login_done.html:32
+msgid "Use guide"
+msgstr "向导"
+
+#: users/templates/users/first_login_done.html:32
+msgid " for more information"
+msgstr "获取更多信息"
+
+#: users/templates/users/forgot_password.html:31
+msgid "Input your email, that will send a mail to your"
+msgstr "输入您的邮箱, 将会发一封重置邮件到您的邮箱中"
+
+#: users/templates/users/reset_password.html:40
+msgid "Always young, always with tears in my eyes. Stay foolish Stay hungry"
+msgstr "永远年轻，永远热泪盈眶 stay foolish stay hungry"
+
+#: users/templates/users/reset_password.html:46
+#: users/templates/users/user_detail.html:373 users/utils.py:88
+msgid "Reset password"
+msgstr "重置密码"
+
+#: users/templates/users/reset_password.html:59
+#: users/templates/users/user_create.html:15
+#: users/templates/users/user_password_update.html:61
+#: users/templates/users/user_update.html:13
+msgid "Your password must satisfy"
+msgstr "您的密码必须满足："
+
+#: users/templates/users/reset_password.html:60
+#: users/templates/users/user_create.html:16
+#: users/templates/users/user_password_update.html:62
+#: users/templates/users/user_update.html:14
+msgid "Password strength"
+msgstr "密码强度："
+
+#: users/templates/users/reset_password.html:66
+msgid "Password again"
+msgstr "再次输入密码"
+
+#: users/templates/users/reset_password.html:105
+#: users/templates/users/user_create.html:35
+#: users/templates/users/user_password_update.html:99
+#: users/templates/users/user_update.html:46
+msgid "Very weak"
+msgstr "很弱"
+
+#: users/templates/users/reset_password.html:106
+#: users/templates/users/user_create.html:36
+#: users/templates/users/user_password_update.html:100
+#: users/templates/users/user_update.html:47
+msgid "Weak"
+msgstr "弱"
+
+#: users/templates/users/reset_password.html:107
+#: users/templates/users/user_create.html:37
+#: users/templates/users/user_password_update.html:101
+#: users/templates/users/user_update.html:48
+msgid "Normal"
+msgstr "正常"
+
+#: users/templates/users/reset_password.html:108
+#: users/templates/users/user_create.html:38
+#: users/templates/users/user_password_update.html:102
+#: users/templates/users/user_update.html:49
+msgid "Medium"
+msgstr "一般"
+
+#: users/templates/users/reset_password.html:109
+#: users/templates/users/user_create.html:39
+#: users/templates/users/user_password_update.html:103
+#: users/templates/users/user_update.html:50
+msgid "Strong"
+msgstr "强"
+
+#: users/templates/users/reset_password.html:110
+#: users/templates/users/user_create.html:40
+#: users/templates/users/user_password_update.html:104
+#: users/templates/users/user_update.html:51
+msgid "Very strong"
+msgstr "很强"
+
+#: users/templates/users/user_create.html:4
+#: users/templates/users/user_list.html:28 users/views/user.py:86
+msgid "Create user"
+msgstr "创建用户"
+
+#: users/templates/users/user_detail.html:19
+#: users/templates/users/user_granted_asset.html:18 users/views/user.py:197
+msgid "User detail"
+msgstr "用户详情"
+
+#: users/templates/users/user_detail.html:22
+#: users/templates/users/user_granted_asset.html:21
+#: users/templates/users/user_group_detail.html:25
+#: users/templates/users/user_group_granted_asset.html:21
+msgid "Asset granted"
+msgstr "授权的资产"
+
+#: users/templates/users/user_detail.html:94
+msgid "Force enabled"
+msgstr "强制启用"
+
+#: users/templates/users/user_detail.html:119
+#: users/templates/users/user_profile.html:108
+msgid "Last login"
+msgstr "最后登录"
+
+#: users/templates/users/user_detail.html:123
+#: users/templates/users/user_profile.html:112
+msgid "Last password updated"
+msgstr "最后更新密码"
+
+#: users/templates/users/user_detail.html:158
+msgid "Force enabled MFA"
+msgstr "强制启用MFA"
+
+#: users/templates/users/user_detail.html:173
+msgid "Reset MFA"
+msgstr "重置MFA"
+
+#: users/templates/users/user_detail.html:182
+msgid "Send reset password mail"
+msgstr "发送重置密码邮件"
+
+#: users/templates/users/user_detail.html:185
+#: users/templates/users/user_detail.html:194
+msgid "Send"
+msgstr "发送"
+
+#: users/templates/users/user_detail.html:191
+msgid "Send reset ssh key mail"
+msgstr "发送重置密钥邮件"
+
+#: users/templates/users/user_detail.html:199
+#: users/templates/users/user_detail.html:461
+msgid "Unblock user"
+msgstr "解除登录限制"
+
+#: users/templates/users/user_detail.html:202
+msgid "Unblock"
+msgstr "解除"
+
+#: users/templates/users/user_detail.html:230
+#: visions/templates/visions/vision_classify_asset.html:121
+#: visions/templates/visions/vision_video_asset.html:121
+msgid "Join"
+msgstr "加入"
+
+#: users/templates/users/user_detail.html:316
+msgid "Goto profile page enable MFA"
+msgstr "请去个人信息页面启用自己的MFA"
+
+#: users/templates/users/user_detail.html:372
+msgid "An e-mail has been sent to the user`s mailbox."
+msgstr "已发送邮件到用户邮箱"
+
+#: users/templates/users/user_detail.html:383
+msgid "This will reset the user password and send a reset mail"
+msgstr "将失效用户当前密码，并发送重设密码邮件到用户邮箱"
+
+#: users/templates/users/user_detail.html:398
+msgid ""
+"The reset-ssh-public-key E-mail has been sent successfully. Please inform "
+"the user to update his new ssh public key."
+msgstr "重设密钥邮件将会发送到用户邮箱"
+
+#: users/templates/users/user_detail.html:399
+msgid "Reset SSH public key"
+msgstr "重置SSH密钥"
+
+#: users/templates/users/user_detail.html:409
+msgid "This will reset the user public key and send a reset mail"
+msgstr "将会失效用户当前密钥，并发送重置邮件到用户邮箱"
+
+#: users/templates/users/user_detail.html:427
+msgid "Successfully updated the SSH public key."
+msgstr "更新ssh密钥成功"
+
+#: users/templates/users/user_detail.html:428
+#: users/templates/users/user_detail.html:432
+msgid "User SSH public key update"
+msgstr "ssh密钥"
+
+#: users/templates/users/user_detail.html:477
+msgid "After unlocking the user, the user can log in normally."
+msgstr "解除用户登录限制后，此用户即可正常登录"
+
+#: users/templates/users/user_detail.html:491
+msgid "Reset user MFA success"
+msgstr "重置用户MFA成功"
+
+#: users/templates/users/user_group_detail.html:22
+#: users/templates/users/user_group_granted_asset.html:18
+#: users/views/group.py:80 visions/templates/visions/effect_detail.html:22
+#: visions/templates/visions/material_detail.html:22
+#: visions/templates/visions/video_detail.html:22
+msgid "User group detail"
+msgstr "用户组详情"
+
+#: users/templates/users/user_group_detail.html:86
+msgid "Add user"
+msgstr "添加用户"
+
+#: users/templates/users/user_group_list.html:28 users/views/group.py:46
+msgid "Create user group"
+msgstr "创建用户组"
+
+#: users/templates/users/user_group_list.html:114
+msgid "This will delete the selected groups !!!"
+msgstr "删除选择组"
+
+#: users/templates/users/user_group_list.html:123
+#: visions/templates/visions/effect_list.html:148
+#: visions/templates/visions/material_list.html:148
+#: visions/templates/visions/video_list.html:148
+msgid "UserGroups Deleted."
+msgstr "用户组删除"
+
+#: users/templates/users/user_group_list.html:124
+#: users/templates/users/user_group_list.html:129
+#: visions/templates/visions/effect_list.html:149
+#: visions/templates/visions/effect_list.html:154
+#: visions/templates/visions/material_list.html:149
+#: visions/templates/visions/material_list.html:154
+#: visions/templates/visions/video_list.html:149
+#: visions/templates/visions/video_list.html:154
+msgid "UserGroups Delete"
+msgstr "用户组删除"
+
+#: users/templates/users/user_group_list.html:128
+#: visions/templates/visions/effect_list.html:153
+#: visions/templates/visions/material_list.html:153
+#: visions/templates/visions/video_list.html:153
+msgid "UserGroup Deleting failed."
+msgstr "用户组删除失败"
+
+#: users/templates/users/user_list.html:40
+msgid "Validity"
+msgstr "有效"
+
+#: users/templates/users/user_list.html:252
+msgid "This will delete the selected users !!!"
+msgstr "删除选中用户 !!!"
+
+#: users/templates/users/user_list.html:268
+#: visions/templates/visions/effect_list.html:295
+#: visions/templates/visions/material_list.html:295
+#: visions/templates/visions/video_list.html:295
+msgid "User Deleted."
+msgstr "已被删除"
+
+#: users/templates/users/user_list.html:269
+#: users/templates/users/user_list.html:273
+#: visions/templates/visions/effect_list.html:296
+#: visions/templates/visions/effect_list.html:300
+#: visions/templates/visions/material_list.html:296
+#: visions/templates/visions/material_list.html:300
+#: visions/templates/visions/video_list.html:296
+#: visions/templates/visions/video_list.html:300
+msgid "User Delete"
+msgstr "删除"
+
+#: users/templates/users/user_list.html:272
+#: visions/templates/visions/effect_list.html:299
+#: visions/templates/visions/material_list.html:299
+#: visions/templates/visions/video_list.html:299
+msgid "User Deleting failed."
+msgstr "用户删除失败"
+
+#: users/templates/users/user_list.html:325
+msgid "User is expired"
+msgstr "用户已失效"
+
+#: users/templates/users/user_list.html:328
+msgid "User is inactive"
+msgstr "用户已禁用"
+
+#: users/templates/users/user_otp_authentication.html:6
+#: users/templates/users/user_password_authentication.html:6
+msgid "Authenticate"
+msgstr "验证身份"
+
+#: users/templates/users/user_otp_authentication.html:32
+msgid "Unbind"
+msgstr "解绑 MFA"
+
+#: users/templates/users/user_otp_enable_bind.html:6
+msgid "Bind"
+msgstr "绑定 MFA"
+
+#: users/templates/users/user_otp_enable_bind.html:14
+msgid ""
+"Use the mobile Google Authenticator application to scan the following qr "
+"code for a 6-bit verification code"
+msgstr "使用手机 Google Authenticator 应用扫描以下二维码，获取6位验证码"
+
+#: users/templates/users/user_otp_enable_install_app.html:6
+msgid "Install"
+msgstr "安装应用"
+
+#: users/templates/users/user_otp_enable_install_app.html:11
+msgid "Download and install the Google Authenticator application on your phone"
+msgstr "请在手机端下载并安装 Google Authenticator 应用"
+
+#: users/templates/users/user_otp_enable_install_app.html:14
+msgid "Android downloads"
+msgstr "Android手机下载"
+
+#: users/templates/users/user_otp_enable_install_app.html:19
+msgid "iPhone downloads"
+msgstr "iPhone手机下载"
+
+#: users/templates/users/user_otp_enable_install_app.html:23
+msgid ""
+"After installation, click the next step to enter the binding page (if "
+"installed, go to the next step directly)."
+msgstr "安装完成后点击下一步进入绑定页面（如已安装，直接进入下一步"
+
+#: users/templates/users/user_profile.html:95
+msgid "Administrator Settings force MFA login"
+msgstr "管理员设置强制使用MFA登录"
+
+#: users/templates/users/user_profile.html:120
+msgid "User groups"
+msgstr "用户组"
+
+#: users/templates/users/user_profile.html:152
+msgid "Set MFA"
+msgstr "设置MFA"
+
+#: users/templates/users/user_profile.html:174
+msgid "Update password"
+msgstr "更改密码"
+
+#: users/templates/users/user_profile.html:184
+msgid "Update MFA"
+msgstr "更改MFA"
+
+#: users/templates/users/user_profile.html:193
+msgid "Update SSH public key"
+msgstr "更改SSH密钥"
+
+#: users/templates/users/user_profile.html:201
+msgid "Reset public key and download"
+msgstr "重置并下载SSH密钥"
+
+#: users/templates/users/user_pubkey_update.html:51
+msgid "Old public key"
+msgstr "原来ssh密钥"
+
+#: users/templates/users/user_pubkey_update.html:59
+msgid "Fingerprint"
+msgstr "指纹"
+
+#: users/templates/users/user_pubkey_update.html:65
+msgid "Update public key"
+msgstr "更新密钥"
+
+#: users/templates/users/user_pubkey_update.html:68
+msgid "Or reset by server"
+msgstr "或者重置并下载密钥"
+
+#: users/templates/users/user_pubkey_update.html:94
+msgid ""
+"The new public key has been set successfully, Please download the "
+"corresponding private key."
+msgstr "新的公钥已设置成功，请下载对应的私钥"
+
+#: users/utils.py:28
+#, python-format
+msgid ""
+"\n"
+"        <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/"
+"bootstrap/3.2.0/css/bootstrap.min.css\">\n"
+"        <p style=\"text-indent:2em;\">\n"
+"            <span>\n"
+"                Username: %(username)s.\n"
+"            </span>\n"
+"            <span>\n"
+"                <a href=\"%(rest_password_url)s?token=%(rest_password_token)s"
+"\">click here to set your password</a>\n"
+"            </span>    \n"
+"            <span>\n"
+"                This link is valid for 1 hour. After it expires, <a href="
+"\"%(forget_password_url)s?email=%(email)s\">request new one</a>\n"
+"            </span> \n"
+"            <span>\n"
+"                <a href=\"%(login_url)s\">Login direct</a>\n"
+"            </span>\n"
+"        </p>\n"
+"        "
+msgstr ""
+"\n"
+"    <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/"
+"bootstrap/3.2.0/css/bootstrap.min.css\">\n"
+"    <p style=\"text-indent:2em;\">\n"
+"        <span>\n"
+"            用户名: %(username)s.\n"
+"        </span>\n"
+"        <span>\n"
+"            <a href=\"%(rest_password_url)s?token=%(rest_password_token)s\">"
+"请点击这里设置密码</a>\n"
+"        </span>    \n"
+"        <span>\n"
+"            这个链接有效期1小时, 超过时间您可以 <a href="
+"\"%(forget_password_url)s?email=%(email)s\">重新申请</a>\n"
+"        </span> \n"
+"        <span>\n"
+"            <a href=\"%(login_url)s\">---登录页面</a>\n"
+"        </span>\n"
+"    </p>\n"
+"    "
+
+#: users/utils.py:63
+msgid "Create account successfully"
+msgstr "创建账户成功"
+
+#: users/utils.py:67
+#, python-format
+msgid "Hello %(name)s"
+msgstr "您好 %(name)s"
+
+#: users/utils.py:90
+#, python-format
+msgid ""
+"\n"
+"    Hello %(name)s:\n"
+"    </br>\n"
+"    Please click the link below to reset your password, if not your request, "
+"concern your account security\n"
+"    </br>\n"
+"    <a href=\"%(rest_password_url)s?token=%(rest_password_token)s\">Click "
+"here reset password</a>\n"
+"    </br>\n"
+"    This link is valid for 1 hour. After it expires, <a href="
+"\"%(forget_password_url)s?email=%(email)s\">request new one</a>\n"
+"\n"
+"    </br>\n"
+"    ---\n"
+"\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">Login direct</a>\n"
+"\n"
+"    </br>\n"
+"    "
+msgstr ""
+"\n"
+"    您好 %(name)s:\n"
+"    </br>\n"
+"    请点击下面链接重置密码， 如果不是您申请的，请关注账号安全\n"
+"    </br>\n"
+"    <a href=\"%(rest_password_url)s?token=%(rest_password_token)s\">请点击这"
+"里设置密码 </a>\n"
+"    </br>\n"
+"    这个链接有效期1小时, 超过时间您可以<a href=\"%(forget_password_url)s?"
+"email=%(email)s\">重新申请</a>\n"
+"\n"
+"    </br>\n"
+"    ---\n"
+"\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">直接登录</a>\n"
+"\n"
+"    </br>\n"
+"    "
+
+#: users/utils.py:121
+msgid "Security notice"
+msgstr "安全通知"
+
+#: users/utils.py:123
+#, python-format
+msgid ""
+"\n"
+"    Hello %(name)s:\n"
+"    </br>\n"
+"    Your password will expire in %(date_password_expired)s,\n"
+"    </br>\n"
+"    For your account security, please click on the link below to update your "
+"password in time\n"
+"    </br>\n"
+"    <a href=\"%(update_password_url)s\">Click here update password</a>\n"
+"    </br>\n"
+"    If your password has expired, please click \n"
+"    <a href=\"%(forget_password_url)s?email=%(email)s\">Password expired</"
+"a> \n"
+"    to apply for a password reset email.\n"
+"\n"
+"    </br>\n"
+"    ---\n"
+"\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">Login direct</a>\n"
+"\n"
+"    </br>\n"
+"    "
+msgstr ""
+"\n"
+"    您好 %(name)s:\n"
+"    </br>\n"
+"    您的密码会在 %(date_password_expired)s 过期，\n"
+"    </br>\n"
+"    为了您的账号安全，请点击下面的链接及时更新密码\n"
+"    </br>\n"
+"    <a href=\"%(update_password_url)s\">请点击这里更新密码</a>\n"
+"    </br>\n"
+"    如果您的密码已经过期，请点击 \n"
+"    <a href=\"%(forget_password_url)s?email=%(email)s\">密码过期</a> \n"
+"    申请一份重置密码邮件。\n"
+"\n"
+"    </br>\n"
+"    ---\n"
+"\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">直接登录</a>\n"
+"\n"
+"    </br>\n"
+"    "
+
+#: users/utils.py:159
+msgid "SSH Key Reset"
+msgstr "重置ssh密钥"
+
+#: users/utils.py:161
+#, python-format
+msgid ""
+"\n"
+"    Hello %(name)s:\n"
+"    </br>\n"
+"    Your ssh public key has been reset by site administrator.\n"
+"    Please login and reset your ssh public key.\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">Login direct</a>\n"
+"\n"
+"    </br>\n"
+"    "
+msgstr ""
+"\n"
+"    你好 %(name)s:\n"
+"    </br>\n"
+"    您的密钥已被管理员重置,\n"
+"    请登录并重新设置您的密钥.\n"
+"    </br>\n"
+"    <a href=\"%(login_url)s\">Login direct</a>\n"
+"\n"
+"    </br>\n"
+"    "
+
+#: users/utils.py:194
+msgid "User not exist"
+msgstr "用户不存在"
+
+#: users/utils.py:196
+msgid "Disabled or expired"
+msgstr "禁用或失效"
+
+#: users/utils.py:209
+msgid "Password or SSH public key invalid"
+msgstr "密码或密钥不合法"
+
+#: users/views/group.py:29
+msgid "User group list"
+msgstr "用户组列表"
+
+#: users/views/group.py:97
+msgid "User group granted asset"
+msgstr "用户组授权资产"
+
+#: users/views/login.py:43
+msgid "Email address invalid, please input again"
+msgstr "邮箱地址错误，重新输入"
+
+#: users/views/login.py:59
+msgid "Send reset password message"
+msgstr "发送重置密码邮件"
+
+#: users/views/login.py:60
+msgid "Send reset password mail success, login your mail box and follow it "
+msgstr ""
+"发送重置邮件成功, 请登录邮箱查看, 按照提示操作 (如果没收到,请等待3-5分钟)"
+
+#: users/views/login.py:73
+msgid "Reset password success"
+msgstr "重置密码成功"
+
+#: users/views/login.py:74
+msgid "Reset password success, return to login page"
+msgstr "重置密码成功，返回到登录页面"
+
+#: users/views/login.py:89 users/views/login.py:105
+msgid "Token invalid or expired"
+msgstr "Token错误或失效"
+
+#: users/views/login.py:101
+msgid "Password not same"
+msgstr "密码不一致"
+
+#: users/views/login.py:154
+msgid "First login"
+msgstr "首次登录"
+
+#: users/views/user.py:148
+msgid "Bulk update user success"
+msgstr "批量更新用户成功"
+
+#: users/views/user.py:176
+msgid "Bulk update user"
+msgstr "批量更新用户"
+
+#: users/views/user.py:219
+msgid "User granted assets"
+msgstr "用户授权资产"
+
+#: users/views/user.py:252
+msgid "Profile setting"
+msgstr "个人信息设置"
+
+#: users/views/user.py:271
+msgid "Password update"
+msgstr "密码更新"
+
+#: users/views/user.py:312
+msgid "Public key update"
+msgstr "密钥更新"
+
+#: users/views/user.py:354
+msgid "Password invalid"
+msgstr "用户名或密码无效"
+
+#: users/views/user.py:454
+msgid "MFA enable success"
+msgstr "MFA 绑定成功"
+
+#: users/views/user.py:455
+msgid "MFA enable success, return login page"
+msgstr "MFA 绑定成功，返回到登录页面"
+
+#: users/views/user.py:457
+msgid "MFA disable success"
+msgstr "MFA 解绑成功"
+
+#: users/views/user.py:458
+msgid "MFA disable success, return login page"
+msgstr "MFA 解绑成功，返回登录页面"
+
+#: visions/forms/classify.py:44 visions/forms/gallery.py:40
+#: visions/forms/music.py:40 visions/forms/video_combine.py:40
+msgid "Asset or group at least one required"
+msgstr ""
+
+#: visions/forms/effect.py:39 visions/forms/effect.py:44
+#: visions/templates/visions/vision_gallery_area.html:82
+msgid "Select effects"
+msgstr ""
+
+#: visions/forms/material.py:39 visions/forms/material.py:44
+msgid "Select materials"
+msgstr ""
+
+#: visions/forms/video.py:39 visions/forms/video.py:44
+#: visions/templates/visions/vision_effect_video_group.html:153
+#: visions/templates/visions/vision_video_combine_cabinet.html:82
+msgid "Select videos"
+msgstr ""
+
+#: visions/models/classify.py:29
+msgid "Switch"
+msgstr ""
+
+#: visions/models/classify.py:30
+msgid "X86"
+msgstr ""
+
+#: visions/models/classify.py:31
+msgid "VM"
+msgstr ""
+
+#: visions/models/classify.py:32
+msgid "Storage"
+msgstr ""
+
+#: visions/models/classify.py:33
+msgid "Small Machine"
+msgstr ""
+
+#: visions/models/classify.py:34
+msgid "Firewall"
+msgstr ""
+
+#: visions/models/classify.py:35
+msgid "Load Balancer"
+msgstr ""
+
+#: visions/models/classify.py:36
+msgid "Optical Switch"
+msgstr ""
+
+#: visions/models/classify.py:37
+msgid "Power Linux"
+msgstr ""
+
+#: visions/models/classify.py:38
+msgid "Appliance"
+msgstr ""
+
+#: visions/models/classify.py:39
+msgid "Chassis"
+msgstr ""
+
+#: visions/models/classify.py:40
+msgid "Patch Panel"
+msgstr ""
+
+#: visions/models/classify.py:41
+msgid "Physical Visions"
+msgstr ""
+
+#: visions/models/classify.py:45
+msgid "1"
+msgstr ""
+
+#: visions/models/classify.py:46
+msgid "2c"
+msgstr ""
+
+#: visions/models/classify.py:47
+msgid "3"
+msgstr ""
+
+#: visions/models/classify.py:53
+#: visions/templates/visions/vision_classify_detail.html:65
+msgid "Height"
+msgstr ""
+
+#: visions/models/classify.py:54
+#: visions/templates/visions/vision_classify_detail.html:69
+msgid "Weight"
+msgstr ""
+
+#: visions/models/classify.py:55
+#: visions/templates/visions/vision_classify_detail.html:73
+msgid "Rated power"
+msgstr ""
+
+#: visions/models/classify.py:57
+#: visions/templates/visions/_video_back_elevation.html:262
+#: visions/templates/visions/_video_elevation.html:231
+#: visions/templates/visions/vision_classify_detail.html:77
+#: visions/templates/visions/vision_classify_list.html:50
+msgid "Device Type"
+msgstr ""
+
+#: visions/models/classify.py:59
+#: visions/templates/visions/vision_classify_detail.html:81
+msgid "SNMP Version"
+msgstr ""
+
+#: visions/models/classify.py:63
+#: visions/templates/visions/vision_classify_detail.html:98
+msgid "Front picture file"
+msgstr ""
+
+#: visions/models/classify.py:65
+#: visions/templates/visions/vision_classify_detail.html:102
+msgid "Rear picture file"
+msgstr ""
+
+#: visions/models/effect.py:15 visions/templates/visions/effect_detail.html:56
+#: visions/templates/visions/effect_list.html:36
+msgid "Method"
+msgstr ""
+
+#: visions/models/effect.py:16 visions/templates/visions/effect_detail.html:60
+msgid "Time duration"
+msgstr "时长"
+
+#: visions/models/material.py:15
+#: visions/templates/visions/material_detail.html:56
+#: visions/templates/visions/material_list.html:36
+msgid "Video name"
+msgstr "视频名称"
+
+#: visions/models/material.py:16
+#: visions/templates/visions/material_detail.html:60
+msgid "Video path"
+msgstr "视频路径"
+
+#: visions/models/music.py:32
+#: visions/templates/visions/vision_music_detail.html:69
+#: visions/templates/visions/vision_video_detail.html:141
+msgid "Max power"
+msgstr ""
+
+#: visions/models/music.py:34
+#: visions/templates/visions/vision_music_detail.html:73
+#: visions/templates/visions/vision_music_list.html:49
+msgid "Manager"
+msgstr ""
+
+#: visions/models/music.py:36
+#: visions/templates/visions/vision_music_detail.html:77
+#: visions/templates/visions/vision_music_list.html:50
+msgid "Space"
+msgstr ""
+
+#: visions/models/music.py:37
+#: visions/templates/visions/vision_music_detail.html:81
+#: visions/templates/visions/vision_music_list.html:51
+msgid "Longitude"
+msgstr ""
+
+#: visions/models/music.py:38
+#: visions/templates/visions/vision_music_detail.html:85
+#: visions/templates/visions/vision_music_list.html:52
+msgid "Latitude"
+msgstr ""
+
+#: visions/models/video.py:15
+msgid "show"
+msgstr ""
+
+#: visions/models/video.py:16 visions/templates/visions/video_detail.html:64
+#: visions/templates/visions/video_list.html:38
+msgid "Show Time"
+msgstr ""
+
+#: visions/models/video_combine.py:47
+#: visions/templates/visions/vision_video_combine_detail.html:81
+#: visions/templates/visions/vision_video_combine_list.html:52
+msgid "Video quantity"
+msgstr ""
+
+#: visions/templates/visions/_effects_import_modal.html:4
+msgid "Import effects"
+msgstr ""
+
+#: visions/templates/visions/_effects_update_modal.html:4
+#: visions/views/effect.py:65
+msgid "Update effect"
+msgstr ""
+
+#: visions/templates/visions/_materials_import_modal.html:4
+msgid "Import materials"
+msgstr ""
+
+#: visions/templates/visions/_materials_update_modal.html:4
+#: visions/views/material.py:65
+msgid "Update material"
+msgstr ""
+
+#: visions/templates/visions/_music_map_offline.html:1752
+#: visions/templates/visions/_music_map_online.html:86
+#: visions/templates/visions/vision_music_detail.html:90
+msgid "Gallery count"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:58
+msgid "Back"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:259
+#: visions/templates/visions/_video_elevation.html:228
+msgid "Band Management IP"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:260
+#: visions/templates/visions/_video_elevation.html:229
+msgid "In-Band Management IP"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:261
+#: visions/templates/visions/_video_elevation.html:230
+msgid "Service"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:263
+#: visions/templates/visions/_video_elevation.html:232
+#: visions/templates/visions/vision_video_detail.html:125
+msgid "Position"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:264
+#: visions/templates/visions/_video_elevation.html:233
+msgid "Department"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:265
+#: visions/templates/visions/_video_elevation.html:234
+msgid "Bearing Project"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:266
+#: visions/templates/visions/_video_elevation.html:235
+msgid "Bearing System"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:269
+#: visions/templates/visions/_video_elevation.html:238
+msgid "Project Manager"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:270
+#: visions/templates/visions/_video_elevation.html:239
+msgid "Installed Time"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:271
+#: visions/templates/visions/_video_elevation.html:240
+msgid "Maintenance Expire Time"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:272
+#: visions/templates/visions/_video_elevation.html:241
+msgid "Collection Node"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:273
+#: visions/templates/visions/_video_elevation.html:242
+msgid "Effect Name"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:274
+#: visions/templates/visions/_video_elevation.html:243
+msgid "Location"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:275
+#: visions/templates/visions/_video_elevation.html:244
+msgid "Location Assign"
+msgstr ""
+
+#: visions/templates/visions/_video_back_elevation.html:292
+#: visions/templates/visions/_video_elevation.html:259
+#: visions/templates/visions/vision_video_detail.html:133
+msgid "U location"
+msgstr ""
+
+#: visions/templates/visions/_videos_import_modal.html:4
+msgid "Import videos"
+msgstr ""
+
+#: visions/templates/visions/_videos_update_modal.html:4
+#: visions/views/video.py:65
+msgid "Update video"
+msgstr ""
+
+#: visions/templates/visions/effect_detail.html:64
+#: visions/templates/visions/effect_list.html:37
+#: visions/templates/visions/material_detail.html:64
+#: visions/templates/visions/material_list.html:37
+msgid "Start Time"
+msgstr ""
+
+#: visions/templates/visions/effect_detail.html:68
+#: visions/templates/visions/effect_list.html:38
+#: visions/templates/visions/material_detail.html:68
+#: visions/templates/visions/material_list.html:38
+msgid "End Time"
+msgstr ""
+
+#: visions/templates/visions/effect_list.html:28
+#: visions/templates/visions/vision_effect_list.html:41
+#: visions/views/effect.py:49
+msgid "Create effect"
+msgstr ""
+
+#: visions/templates/visions/effect_list.html:139
+#: visions/templates/visions/effect_list.html:279
+msgid "This will delete the selected effects !!!"
+msgstr ""
+
+#: visions/templates/visions/material_list.html:28
+#: visions/templates/visions/vision_material_list.html:41
+#: visions/views/material.py:49
+msgid "Create material"
+msgstr ""
+
+#: visions/templates/visions/material_list.html:139
+#: visions/templates/visions/material_list.html:279
+msgid "This will delete the selected materials !!!"
+msgstr ""
+
+#: visions/templates/visions/video_detail.html:60
+#: visions/templates/visions/video_list.html:37
+msgid "Show"
+msgstr ""
+
+#: visions/templates/visions/video_list.html:28
+#: visions/templates/visions/vision_video_list.html:52
+#: visions/views/video.py:49
+msgid "Create video"
+msgstr ""
+
+#: visions/templates/visions/video_list.html:139
+#: visions/templates/visions/video_list.html:279
+msgid "This will delete the selected videos !!!"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_asset.html:22
+#: visions/templates/visions/vision_classify_detail.html:22
+#: visions/templates/visions/vision_video_asset.html:22
+#: visions/templates/visions/vision_video_detail.html:56
+msgid "Assets and asset groups"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_asset.html:76
+#: visions/templates/visions/vision_video_asset.html:76
+msgid "Add asset to this vision"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_asset.html:104
+#: visions/templates/visions/vision_video_asset.html:104
+msgid "Add node to this vision"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_detail.html:90
+#: visions/templates/visions/vision_video_detail.html:153
+msgid "Asset count"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_detail.html:94
+#: visions/templates/visions/vision_video_detail.html:157
+msgid "Node count"
+msgstr ""
+
+#: visions/templates/visions/vision_classify_list.html:41
+msgid "Create Classify"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_create_update.html:38
+#: visions/templates/visions/vision_effect_detail.html:82
+msgid "Start Point"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_create_update.html:47
+#: visions/templates/visions/vision_effect_detail.html:86
+msgid "End Point"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_detail.html:24
+#: visions/templates/visions/vision_effect_video_group.html:22
+msgid "Video combines or videos"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_detail.html:78
+msgid "Explain"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_detail.html:132
+#: visions/templates/visions/vision_gallery_detail.html:110
+#: visions/templates/visions/vision_video_detail.html:196
+msgid "Elevation"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_list.html:185
+msgid "Video combines"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_video_group.html:30
+msgid "Video combine list of "
+msgstr ""
+
+#: visions/templates/visions/vision_effect_video_group.html:72
+#: visions/templates/visions/vision_video_combine_cabinet.html:30
+msgid "Video list of "
+msgstr ""
+
+#: visions/templates/visions/vision_effect_video_group.html:116
+msgid "Add video combine to this vision effect"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_video_group.html:124
+msgid "Select video combines"
+msgstr ""
+
+#: visions/templates/visions/vision_effect_video_group.html:145
+msgid "Add video to this vision effect"
+msgstr ""
+
+#: visions/templates/visions/vision_gallery_area.html:22
+#: visions/templates/visions/vision_gallery_detail.html:24
+#: visions/templates/visions/vision_gallery_list.html:173
+msgid "Effects"
+msgstr ""
+
+#: visions/templates/visions/vision_gallery_area.html:74
+msgid "Add effect to this vision gallery"
+msgstr ""
+
+#: visions/templates/visions/vision_gallery_detail.html:72
+msgid "Effect count"
+msgstr ""
+
+#: visions/templates/visions/vision_gallery_list.html:41
+msgid "Create gallery"
+msgstr ""
+
+#: visions/templates/visions/vision_material_asset-template.html:22
+#: visions/templates/visions/vision_material_detail.html:22
+msgid "Classifys"
+msgstr ""
+
+#: visions/templates/visions/vision_material_asset-template.html:74
+msgid "Add Classify to this vision material"
+msgstr ""
+
+#: visions/templates/visions/vision_material_asset-template.html:82
+msgid "Select Classifys"
+msgstr ""
+
+#: visions/templates/visions/vision_material_detail.html:62
+msgid "Classify count"
+msgstr ""
+
+#: visions/templates/visions/vision_music_detail.html:26
+#: visions/templates/visions/vision_music_list.html:170
+#: visions/templates/visions/vision_music_room.html:22
+msgid "Gallerys"
+msgstr ""
+
+#: visions/templates/visions/vision_music_detail.html:128
+msgid "Map"
+msgstr ""
+
+#: visions/templates/visions/vision_music_list.html:41
+msgid "Create music"
+msgstr ""
+
+#: visions/templates/visions/vision_music_room.html:74
+msgid "Add gallery to this vision music"
+msgstr ""
+
+#: visions/templates/visions/vision_music_room.html:82
+msgid "Select gallerys"
+msgstr ""
+
+#: visions/templates/visions/vision_video_combine_cabinet.html:22
+#: visions/templates/visions/vision_video_combine_detail.html:22
+#: visions/templates/visions/vision_video_combine_list.html:188
+msgid "Videos"
+msgstr ""
+
+#: visions/templates/visions/vision_video_combine_cabinet.html:74
+msgid "Add video to this vision video combine"
+msgstr ""
+
+#: visions/templates/visions/vision_video_combine_detail.html:86
+msgid "Video count"
+msgstr ""
+
+#: visions/templates/visions/vision_video_combine_list.html:41
+msgid "Create video combine"
+msgstr ""
+
+#: visions/templates/visions/vision_video_detail.html:121
+msgid "Purpose"
+msgstr ""
+
+#: visions/templates/visions/vision_video_detail.html:129
+#: visions/templates/visions/vision_video_list.html:83
+msgid "U quantity"
+msgstr ""
+
+#: visions/templates/visions/vision_video_detail.html:145
+msgid "Max bearing"
+msgstr ""
+
+#: visions/templates/visions/vision_video_list.html:7
+msgid ""
+"Video name are suggested to be written in the format of \"Video Group Name - "
+"Video Number\". It is important to include the underline and Video Number."
+"For example: A-01"
+msgstr ""
+
+#: visions/views/classify.py:23 visions/views/classify.py:53
+#: visions/views/classify.py:68 visions/views/classify.py:83
+#: visions/views/classify.py:115 visions/views/gallery.py:23
+#: visions/views/gallery.py:48 visions/views/gallery.py:63
+#: visions/views/gallery.py:78 visions/views/gallery.py:110
+#: visions/views/music.py:23 visions/views/music.py:47
+#: visions/views/music.py:62 visions/views/music.py:77
+#: visions/views/music.py:109 visions/views/video_combine.py:23
+#: visions/views/video_combine.py:48 visions/views/video_combine.py:63
+#: visions/views/video_combine.py:78 visions/views/video_combine.py:110
+msgid "visions"
+msgstr ""
+
+#: visions/views/classify.py:24
+msgid "Classify list"
+msgstr ""
+
+#: visions/views/classify.py:54
+msgid "Create vision Classify"
+msgstr ""
+
+#: visions/views/classify.py:69 visions/views/classify.py:84
+msgid "Update vision Classify"
+msgstr ""
+
+#: visions/views/classify.py:116
+msgid "Classify asset list"
+msgstr ""
+
+#: visions/views/effect.py:33
+msgid "Effect list"
+msgstr ""
+
+#: visions/views/effect.py:80
+msgid "Effect detail"
+msgstr ""
+
+#: visions/views/effect.py:95
+msgid "Bulk update effect success"
+msgstr ""
+
+#: visions/views/effect.py:122
+msgid "Bulk update effect"
+msgstr ""
+
+#: visions/views/gallery.py:24
+msgid "Gallery list"
+msgstr ""
+
+#: visions/views/gallery.py:49
+msgid "Create vision gallery"
+msgstr ""
+
+#: visions/views/gallery.py:64 visions/views/gallery.py:79
+msgid "Update vision gallery"
+msgstr ""
+
+#: visions/views/gallery.py:111
+msgid "Gallery asset list"
+msgstr ""
+
+#: visions/views/material.py:33
+msgid "Material list"
+msgstr ""
+
+#: visions/views/material.py:80
+msgid "Material detail"
+msgstr ""
+
+#: visions/views/material.py:95
+msgid "Bulk update material success"
+msgstr ""
+
+#: visions/views/material.py:122
+msgid "Bulk update material"
+msgstr ""
+
+#: visions/views/music.py:24
+msgid "Music list"
+msgstr ""
+
+#: visions/views/music.py:48
+msgid "Create vision music"
+msgstr ""
+
+#: visions/views/music.py:63 visions/views/music.py:78
+msgid "Update vision music"
+msgstr ""
+
+#: visions/views/music.py:110
+msgid "Music asset list"
+msgstr ""
+
+#: visions/views/video.py:33
+msgid "Video list"
+msgstr ""
+
+#: visions/views/video.py:80
+msgid "Video detail"
+msgstr ""
+
+#: visions/views/video.py:95
+msgid "Bulk update video success"
+msgstr ""
+
+#: visions/views/video.py:122
+msgid "Bulk update video"
+msgstr ""
+
+#: visions/views/video_combine.py:24
+msgid "Video combine list"
+msgstr ""
+
+#: visions/views/video_combine.py:49
+msgid "Create vision video combine"
+msgstr ""
+
+#: visions/views/video_combine.py:64 visions/views/video_combine.py:79
+msgid "Update vision video combine"
+msgstr ""
+
+#: visions/views/video_combine.py:111
+msgid "Video combine asset list"
+msgstr ""
+
+#~ msgid "Browser"
+#~ msgstr "浏览器"
+
+#~ msgid "Database tools"
+#~ msgstr "数据库工具"
+
+#~ msgid "Virtualization tools"
+#~ msgstr "虚拟化工具"
+
+#~ msgid "Custom"
+#~ msgstr "自定义"
+
+#~ msgid "Target URL"
+#~ msgstr "目标URL"
+
+#~ msgid "Login username"
+#~ msgstr "登录账号"
+
+#~ msgid "Login password"
+#~ msgstr "登录密码"
+
+#~ msgid "Database IP"
+#~ msgstr "数据库IP"
+
+#~ msgid "Database name"
+#~ msgstr "数据库名"
+
+#~ msgid "Database username"
+#~ msgstr "数据库账号"
+
+#~ msgid "Database password"
+#~ msgstr "数据库密码"
+
+#~ msgid "Target address"
+#~ msgstr "目标地址"
+
+#~ msgid "Operating parameter"
+#~ msgstr "运行参数"
+
+#~ msgid "App type"
+#~ msgstr "应用类型"
+
+#~ msgid "App path"
+#~ msgstr "应用路径"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"
+
+#~ msgid "RemoteApp"
+#~ msgstr "远程应用"
+
+#~ msgid ""
+#~ "Before using this feature, make sure that the application loader has been "
+#~ "uploaded to the application server and successfully published as a "
+#~ "RemoteApp application"
+#~ msgstr ""
+#~ "使用此功能前，请确保已将应用加载器上传到应用服务器并成功发布为一个"
+#~ "RemoteApp应用"
+
+#~ msgid "Download application loader"
+#~ msgstr "下载应用加载器"
+
+#~ msgid "Create RemoteApp"
+#~ msgstr "创建远程应用"
+
+#~ msgid "Applications"
+#~ msgstr "应用管理"
+
+#~ msgid "RemoteApp list"
+#~ msgstr "远程应用列表"
+
+#~ msgid "Update RemoteApp"
+#~ msgstr "更新远程应用"
+
+#~ msgid "RemoteApp detail"
+#~ msgstr "远程应用详情"
+
+#~ msgid "My RemoteApp"
+#~ msgstr "我的远程应用"
+
+#~ msgid "Domain"
+#~ msgstr "网域"
+
+#~ msgid ""
+#~ "If your have some network not connect with each other, you can set domain"
+#~ msgstr ""
+#~ "如果有多个的互相隔离的网络，设置资产属于的网域，使用网域网关跳转登录"
+
+#~ msgid "Content should not be contain: {}"
+#~ msgstr "内容不能包含: {}"
+
+#~ msgid "Password should not contain special characters"
+#~ msgstr "不能包含特殊字符"
+
+#~ msgid "SSH gateway support proxy SSH,RDP,VNC"
+#~ msgstr "SSH网关，支持代理SSH,RDP和VNC"
+
+#~ msgid "Regex"
+#~ msgstr "正则表达式"
+
+#~ msgid "Deny"
+#~ msgstr "拒绝"
+
+#~ msgid "Allow"
+#~ msgstr "允许"
+
+#~ msgid "Filter"
+#~ msgstr "过滤器"
+
+#~ msgid "1-100, the higher will be match first"
+#~ msgstr "优先级可选范围为1-100，1最低优先级，100最高优先级"
+
+#~ msgid "Content"
+#~ msgstr "内容"
+
+#~ msgid "One line one command"
+#~ msgstr "每行一个命令"
+
+#~ msgid "Command filter rule"
+#~ msgstr "命令过滤规则"
+
+#~ msgid "Gateway"
+#~ msgstr "网关"
+
+#~ msgid "Rules"
+#~ msgstr "规则"
+
+#~ msgid "Binding to system user"
+#~ msgstr "绑定到系统用户"
+
+#~ msgid ""
+#~ "System user bound some command filter, each command filter has some rules,"
+#~ msgstr "系统用户可以绑定一些命令过滤器，一个过滤器可以定义一些规则"
+
+#~ msgid "When user login asset with this system user, then run a command,"
+#~ msgstr "当用户使用这个系统用户登录资产，然后执行一个命令"
+
+#~ msgid "The command will be filter by rules, higher priority rule run first,"
+#~ msgstr "这个命令需要被绑定过滤器的所有规则匹配，高优先级先被匹配,"
+
+#~ msgid ""
+#~ "When a rule matched, if rule action is allow, then allow command execute,"
+#~ msgstr "当一个规则匹配到了，如果规则的动作是 允许, 这个命令会被放行,"
+
+#~ msgid "else if action is deny, then command with be deny,"
+#~ msgstr "如果规则的动作是 禁止，命令将会被禁止执行,"
+
+#~ msgid "else match next rule, if none matched, allowed"
+#~ msgstr "否则就匹配下一个规则，如果最后没有匹配到规则，则允许执行"
+
+#~ msgid "Create command filter"
+#~ msgstr "创建命令过滤器"
+
+#~ msgid "Command filter rule list"
+#~ msgstr "命令过滤器规则列表"
+
+#~ msgid "Create rule"
+#~ msgstr "创建规则"
+
+#~ msgid "Strategy"
+#~ msgstr "策略"
+
+#~ msgid "Gateway list"
+#~ msgstr "网关列表"
+
+#~ msgid "Create gateway"
+#~ msgstr "创建网关"
+
+#~ msgid "Can be connected"
+#~ msgstr "可连接"
+
+#~ msgid "The connection fails"
+#~ msgstr "连接失败"
+
+#~ msgid ""
+#~ "The domain function is added to address the fact that some environments "
+#~ "(such as the hybrid cloud) cannot be connected directly by jumping on the "
+#~ "gateway server."
+#~ msgstr ""
+#~ "网域功能是为了解决部分环境（如：混合云）无法直接连接而新增的功能，原理是通"
+#~ "过网关服务器进行跳转登录。"
+
+#~ msgid "DPD => Domain gateway => Target assets"
+#~ msgstr "DPD => 网域网关 => 目标资产"
+
+#~ msgid "Create domain"
+#~ msgstr "创建网域"
+
+#~ msgid "Command filter list"
+#~ msgstr "命令过滤器列表"
+
+#~ msgid "Update command filter"
+#~ msgstr "更新命令过滤器"
+
+#~ msgid "Command filter detail"
+#~ msgstr "命令过滤器详情"
+
+#~ msgid "Create command filter rule"
+#~ msgstr "创建命令过滤器规则"
+
+#~ msgid "Update command filter rule"
+#~ msgstr "更新命令过滤器规则"
+
+#~ msgid "Domain list"
+#~ msgstr "网域列表"
+
+#~ msgid "Update domain"
+#~ msgstr "更新网域"
+
+#~ msgid "Domain detail"
+#~ msgstr "网域详情"
+
+#~ msgid "Domain gateway list"
+#~ msgstr "域网关列表"
+
+#~ msgid "Update gateway"
+#~ msgstr "创建网关"
+
+#~ msgid "Command execution log"
+#~ msgstr "命令执行"
+
+#~ msgid "Command execution list"
+#~ msgstr "命令执行列表"
+
+#~ msgid "Command execution"
+#~ msgstr "命令执行"
+
+#~ msgid ""
+#~ "Tips: The RDP protocol does not support separate controls for uploading "
+#~ "or downloading files"
+#~ msgstr "提示：RDP 协议不支持单独控制上传或下载文件"
+
+#~ msgid "User or group at least one required"
+#~ msgstr "用户和用户组至少选一个"
+
+#~ msgid "Upload file"
+#~ msgstr "上传文件"
+
+#~ msgid "Download file"
+#~ msgstr "下载文件"
+
+#~ msgid "Upload download"
+#~ msgstr "上传下载"
+
+#~ msgid "Actions"
+#~ msgstr "动作"
+
+#~ msgid "Asset permission"
+#~ msgstr "资产授权"
+
+#~ msgid "RemoteApp permission"
+#~ msgstr "远程应用授权"
+
+#~ msgid "Users and user groups"
+#~ msgstr "用户或用户组"
+
+#~ msgid "Assets and node"
+#~ msgstr "资产或节点"
+
+#~ msgid "Add asset to this permission"
+#~ msgstr "添加资产"
+
+#~ msgid "Add node to this permission"
+#~ msgstr "添加节点"
+
+#~ msgid "Validity period"
+#~ msgstr "有效期"
+
+#~ msgid "User count"
+#~ msgstr "用户数量"
+
+#~ msgid "User group count"
+#~ msgstr "用户组数量"
+
+#~ msgid "System user count"
+#~ msgstr "系统用户数量"
+
+#~ msgid "Select system users"
+#~ msgstr "选择系统用户"
+
+#~ msgid "Create permission"
+#~ msgstr "创建授权规则"
+
+#~ msgid "User list of "
+#~ msgstr "用户列表"
+
+#~ msgid "Add user to asset permission"
+#~ msgstr "添加用户"
+
+#~ msgid "Add user group to asset permission"
+#~ msgstr "添加用户组"
+
+#~ msgid "Select user groups"
+#~ msgstr "选择用户组"
+
+#~ msgid "RemoteApp count"
+#~ msgstr "远程应用数量"
+
+#~ msgid "RemoteApp list of "
+#~ msgstr "远程应用列表"
+
+#~ msgid "Add RemoteApp to this permission"
+#~ msgstr "添加远程应用"
+
+#~ msgid "Select RemoteApp"
+#~ msgstr "选择远程应用"
+
+#~ msgid "Add user to this permission"
+#~ msgstr "添加用户"
+
+#~ msgid "Add user group to this permission"
+#~ msgstr "添加用户组"
+
+#~ msgid "Empty"
+#~ msgstr "空"
+
+#~ msgid "Perms"
+#~ msgstr "权限管理"
+
+#~ msgid "Asset permission list"
+#~ msgstr "资产授权列表"
+
+#~ msgid "Create asset permission"
+#~ msgstr "创建权限规则"
+
+#~ msgid "Update asset permission"
+#~ msgstr "更新资产授权"
+
+#~ msgid "Asset permission detail"
+#~ msgstr "资产授权详情"
+
+#~ msgid "Asset permission user list"
+#~ msgstr "资产授权用户列表"
+
+#~ msgid "Asset permission asset list"
+#~ msgstr "资产授权资产列表"
+
+#~ msgid "RemoteApp permission list"
+#~ msgstr "远程应用授权列表"
+
+#~ msgid "Create RemoteApp permission"
+#~ msgstr "创建远程应用授权规则"
+
+#~ msgid "Update RemoteApp permission"
+#~ msgstr "更新远程应用授权规则"
+
+#~ msgid "RemoteApp permission detail"
+#~ msgstr "远程应用授权详情"
+
+#~ msgid "RemoteApp permission user list"
+#~ msgstr "远程应用授权用户列表"
+
+#~ msgid "RemoteApp permission RemoteApp list"
+#~ msgstr "远程应用授权远程应用列表"
+
+#~ msgid "Commercial support"
+#~ msgstr "商业支持"
+
+#~ msgid "User page"
+#~ msgstr "用户页面"
+
+#~ msgid "Command filters"
+#~ msgstr "命令过滤"
+
+#~ msgid "Web terminal"
+#~ msgstr "Web终端"
+
+#~ msgid "File manager"
+#~ msgstr "文件管理"
+
+#~ msgid "Terminal"
+#~ msgstr "终端管理"
+
+#~ msgid "My Applications"
+#~ msgstr "我的应用"
+
+#~ msgid "Input"
+#~ msgstr "输入"
+
+#~ msgid "Session"
+#~ msgstr "会话"
+
+#~ msgid ""
+#~ "Command can store in server db or ES, default to server, more see docs"
+#~ msgstr ""
+#~ "命令支持存储到服务器端数据库、ES中，默认存储的服务器端数据库，更多查看文档"
+
+#~ msgid ""
+#~ "Replay file can store in server disk, AWS S3, Aliyun OSS, default to "
+#~ "server, more see docs"
+#~ msgstr ""
+#~ "录像文件支持存储到服务器端硬盘、AWS S3、 阿里云 OSS 中，默认存储到服务器端"
+#~ "硬盘, 更多查看文档"
+
+#~ msgid "Remote Address"
+#~ msgstr "远端地址"
+
+#~ msgid "HTTP Port"
+#~ msgstr "HTTP端口"
+
+#~ msgid "Session Online"
+#~ msgstr "在线会话"
+
+#~ msgid "CPU Usage"
+#~ msgstr "CPU使用"
+
+#~ msgid "Memory Used"
+#~ msgstr "内存使用"
+
+#~ msgid "Connections"
+#~ msgstr "连接数"
+
+#~ msgid "Threads"
+#~ msgstr "线程数"
+
+#~ msgid "Boot Time"
+#~ msgstr "运行时间"
+
+#~ msgid "Replay"
+#~ msgstr "回放"
+
+#~ msgid "Date last active"
+#~ msgstr "最后活跃日期"
+
+#~ msgid "Date end"
+#~ msgstr "结束日期"
+
+#~ msgid "Args"
+#~ msgstr "参数"
+
+#~ msgid "Export command"
+#~ msgstr "导出命令"
+
+#~ msgid "Goto"
+#~ msgstr "转到"
+
+#~ msgid "Session detail"
+#~ msgstr "会话详情"
+
+#~ msgid "Command list"
+#~ msgstr "命令记录列表"
+
+#~ msgid "There is no command about this session"
+#~ msgstr "该会话没有命令记录"
+
+#~ msgid "Replay session"
+#~ msgstr "回放会话"
+
+#~ msgid "Monitor session"
+#~ msgstr "监控"
+
+#~ msgid "Terminate session"
+#~ msgstr "终止会话"
+
+#~ msgid "Login from"
+#~ msgstr "登录来源"
+
+#~ msgid "Duration"
+#~ msgstr "时长"
+
+#~ msgid "Terminate selected"
+#~ msgstr "终断所选"
+
+#~ msgid "Confirm finished"
+#~ msgstr "确认已完成"
+
+#~ msgid "Terminate task send, waiting ..."
+#~ msgstr "终断任务已发送，请等待"
+
+#~ msgid "Terminate"
+#~ msgstr "终断"
+
+#~ msgid "Finish session success"
+#~ msgstr "标记会话完成成功"
+
+#~ msgid "Terminal detail"
+#~ msgstr "终端详情"
+
+#~ msgid "SSH port"
+#~ msgstr "SSH端口"
+
+#~ msgid "Http port"
+#~ msgstr "HTTP端口"
+
+#~ msgid "Addr"
+#~ msgstr "地址"
+
+#~ msgid "Alive"
+#~ msgstr "在线"
+
+#~ msgid "Accept"
+#~ msgstr "接受"
+
+#~ msgid "Reject"
+#~ msgstr "拒绝"
+
+#~ msgid "Accept terminal registration"
+#~ msgstr "接受终端注册"
+
+#~ msgid "Info"
+#~ msgstr "信息"
+
+#~ msgid "Session online list"
+#~ msgstr "在线会话"
+
+#~ msgid "Terminal list"
+#~ msgstr "终端列表"
+
+#~ msgid "Update terminal"
+#~ msgstr "更新终端"
+
+#~ msgid "Redirect to web terminal"
+#~ msgstr "重定向到web terminal"
+
+#~ msgid "Connect ssh terminal"
+#~ msgstr "连接ssh终端"
+
+#~ msgid ""
+#~ "You should use your ssh client tools connect terminal: {} <br /> <br />{}"
+#~ msgstr "你可以使用ssh客户端工具连接终端"
+
+#, fuzzy
+#~| msgid "Replay"
+#~ msgid "Video play"
+#~ msgstr "回放"
+
+#~ msgid "Password length"
+#~ msgstr "密码长度"
+
+#~ msgid "* For security, please do not change root user's password"
+#~ msgstr "* 为了安全，请不要更改root用户的密码"
+
+#~ msgid "* Please enter custom password"
+#~ msgstr "* 请输入自定义密码"
+
+#~ msgid "* Please enter a valid crontab expression"
+#~ msgstr "* 请输入有效的 crontab 表达式"
+
+#~ msgid "Periodic perform"
+#~ msgstr "定时执行"
+
+#~ msgid ""
+#~ "Tips: The username of the user on the asset to be modified. if the user "
+#~ "exists, change the password; If the user does not exist, create the user."
+#~ msgstr ""
+#~ "提示：用户名为将要修改的资产上的用户的用户名。如果用户存在，则修改密码；如"
+#~ "果用户不存在，则创建用户。"
+
+#~ msgid "Tips: (Units: hour)"
+#~ msgstr "提示：（单位： 时）"
+
+#~ msgid ""
+#~ "eg: Every Sunday 03:05 run <5 3 * * 0> <br> Tips: Using 5 digits linux "
+#~ "crontab expressions <min hour day month week> (<a href='https://tool.lu/"
+#~ "crontab/' target='_blank'>Online tools</a>) <br>Note: If both Regularly "
+#~ "perform and Cycle perform are set, give priority to Regularly perform"
+#~ msgstr ""
+#~ "eg：每周日 03:05 执行 <5 3 * * 0> <br> 提示： 使用5位 Linux crontab 表达"
+#~ "式 <分 时 日 月 星期> （<a href='https://tool.lu/crontab/' "
+#~ "target='_blank'>在线工具</a>） <br>注意： 如果同时设置了定期执行和周期执"
+#~ "行，优先使用定期执行"
+
+#~ msgid "Change auth plan"
+#~ msgstr "改密计划"
+
+#~ msgid "Custom password"
+#~ msgstr "自定义密码"
+
+#~ msgid "All assets use the same random password"
+#~ msgstr "所有资产使用相同的随机密码"
+
+#~ msgid "All assets use different random password"
+#~ msgstr "所有资产使用不同的随机密码"
+
+#~ msgid "Cycle perform"
+#~ msgstr "周期执行"
+
+#~ msgid "Regularly perform"
+#~ msgstr "定期执行"
+
+#~ msgid "Password rules"
+#~ msgstr "密码规则"
+
+#~ msgid "For security, do not change {} user's password"
+#~ msgstr "* 为了安全，禁止更改 {} 用户的密码"
+
+#~ msgid "Assets is empty, please add the asset"
+#~ msgstr "资产为空，请添加资产"
+
+#~ msgid "Change auth plan snapshot"
+#~ msgstr "改密计划快照"
+
+#~ msgid "Change auth plan execution"
+#~ msgstr "改密计划执行"
+
+#~ msgid "Change auth plan execution subtask"
+#~ msgstr "改密计划执行子任务"
+
+#~ msgid "Authentication failed"
+#~ msgstr "认证失败"
+
+#~ msgid "Connection timeout"
+#~ msgstr "连接超时"
+
+#~ msgid "Plan execution list"
+#~ msgstr "执行列表"
+
+#~ msgid "Add asset to this plan"
+#~ msgstr "添加资产"
+
+#~ msgid "Add node to this plan"
+#~ msgstr "添加节点"
+
+#~ msgid ""
+#~ "When the user password on the asset is changed, the action is performed "
+#~ "using the admin user associated with the asset"
+#~ msgstr "更改资产上的用户密码时，将会使用与该资产关联的管理用户进行操作"
+
+#~ msgid "Length"
+#~ msgstr "长度"
+
+#~ msgid "Yes"
+#~ msgstr "是"
+
+#~ msgid "No"
+#~ msgstr "否"
+
+#~ msgid "Run plan manually"
+#~ msgstr "手动执行计划"
+
+#~ msgid "Execute failed"
+#~ msgstr "执行失败"
+
+#~ msgid "Execution list of plan"
+#~ msgstr "执行列表"
+
+#~ msgid "Log"
+#~ msgstr "日志"
+
+#~ msgid "Retry"
+#~ msgstr "重试"
+
+#~ msgid "Run failed"
+#~ msgstr "执行失败"
+
+#~ msgid "Create plan"
+#~ msgstr "创建计划"
+
+#~ msgid "Plan list"
+#~ msgstr "计划列表"
+
+#~ msgid "Update plan"
+#~ msgstr "更新计划"
+
+#~ msgid "Plan execution task list"
+#~ msgstr "执行任务列表"
+
+#~ msgid "Account unavailable"
+#~ msgstr "账户无效"
+
+#~ msgid "Select account"
+#~ msgstr "选择账户"
+
+#~ msgid "Select regions"
+#~ msgstr "选择地域"
+
+#~ msgid "Select instances"
+#~ msgstr "选择实例"
+
+#~ msgid "Select node"
+#~ msgstr "选择节点"
+
+#~ msgid "Cloud center"
+#~ msgstr "云管中心"
+
+#~ msgid "Available"
+#~ msgstr "有效"
+
+#~ msgid "Unavailable"
+#~ msgstr "无效"
+
+#~ msgid "Provider"
+#~ msgstr "云服务商"
+
+#~ msgid "Cloud account"
+#~ msgstr "云账号"
+
+#~ msgid "Regions"
+#~ msgstr "地域"
+
+#~ msgid "Instances"
+#~ msgstr "实例"
+
+#~ msgid "Date last sync"
+#~ msgstr "最后同步日期"
+
+#~ msgid "Sync instance task"
+#~ msgstr "同步实例任务"
+
+#~ msgid "Succeed"
+#~ msgstr "成功"
+
+#~ msgid "Date sync"
+#~ msgstr "同步日期"
+
+#~ msgid "Exist"
+#~ msgstr "存在"
+
+#~ msgid "Sync task"
+#~ msgstr "同步任务"
+
+#~ msgid "Sync instance task history"
+#~ msgstr "同步实例任务历史"
+
+#~ msgid "Instance"
+#~ msgstr "实例"
+
+#~ msgid "Aliyun"
+#~ msgstr "阿里云"
+
+#~ msgid "AWS (China)"
+#~ msgstr "AWS (中国)"
+
+#~ msgid "AWS (International)"
+#~ msgstr "AWS (国际)"
+
+#~ msgid "Qcloud"
+#~ msgstr "腾讯云"
+
+#~ msgid "Account detail"
+#~ msgstr "账户详情"
+
+#~ msgid "Create account"
+#~ msgstr "创建账户"
+
+#~ msgid "Loading..."
+#~ msgstr "加载中..."
+
+#~ msgid "Sync task detail"
+#~ msgstr "同步任务详情"
+
+#~ msgid "Sync task history"
+#~ msgstr "同步历史列表"
+
+#~ msgid "Sync instance list"
+#~ msgstr "同步实例列表"
+
+#~ msgid "Total count"
+#~ msgstr "总数"
+
+#~ msgid "Succeed count"
+#~ msgstr "成功"
+
+#~ msgid "Exist count"
+#~ msgstr "存在"
+
+#~ msgid "Create sync instance task"
+#~ msgstr "创建同步实例任务"
+
+#~ msgid "Run count"
+#~ msgstr "执行次数"
+
+#~ msgid "Instance count"
+#~ msgstr "实例个数"
+
+#~ msgid "Sync success"
+#~ msgstr "同步成功"
+
+#~ msgid "Sync instance task list"
+#~ msgstr "同步实例任务列表"
+
+#~ msgid "Create sync Instance task"
+#~ msgstr "创建同步实例任务"
+
+#~ msgid "Title of login page"
+#~ msgstr "登录页面标题"
+
+#~ msgid ""
+#~ "Tips: This will be displayed on the enterprise user login page. (eg: "
+#~ "Welcome to the Dolphindoctor)"
+#~ msgstr ""
+#~ "提示：将会显示在企业版用户登录页面（eg: 欢迎使用Dolphindoctor）"
+
+#~ msgid "Image of login page"
+#~ msgstr "登录页面图片"
+
+#~ msgid ""
+#~ "Tips: This will be displayed on the enterprise user login page. (suggest "
+#~ "image size: 492px*472px)"
+#~ msgstr "提示：将会显示在企业版用户登录页面（建议图片大小为: 492*472px）"
+
+#~ msgid "Website icon"
+#~ msgstr "网站图标"
+
+#~ msgid "Tips: website icon. (suggest image size: 16px*16px)"
+#~ msgstr "提示：网站图标（建议图片大小为: 16px*16px）"
+
+#~ msgid "Logo of management page"
+#~ msgstr "管理页面logo"
+
+#~ msgid ""
+#~ "Tips: This will appear at the top left of the administration page. "
+#~ "(suggest image size: 185px*55px)"
+#~ msgstr "提示：将会显示在管理页面左上方（建议图片大小为: 185px*55px）"
+
+#~ msgid "Logo of logout page"
+#~ msgstr "退出页面logo"
+
+#~ msgid ""
+#~ "Tips: This will be displayed on the enterprise user logout page. (suggest "
+#~ "image size: 82px*82px)"
+#~ msgstr "提示：将会显示在企业版用户退出页面（建议图片大小为：82px*82px）"
+
+#~ msgid "Interface settings"
+#~ msgstr "界面设置"
+
+#~ msgid "Interface setting"
+#~ msgstr "界面设置"
+
+#~ msgid "Restore Default"
+#~ msgstr "恢复默认"
+
+#~ msgid "This will restore default Settings of the interface !!!"
+#~ msgstr "您确定要恢复默认初始化吗？"
+
+#~ msgid "Restore default successfully."
+#~ msgstr "恢复默认成功！"
+
+#~ msgid "Restore default failed."
+#~ msgstr "恢复默认失败！"
+
+#~ msgid "Interface"
+#~ msgstr "界面"
+
+#~ msgid "It is already in the default setting state!"
+#~ msgstr "当前已经是初始化状态！"
+
+#~ msgid "License"
+#~ msgstr "许可证"
+
+#~ msgid "Standard edition"
+#~ msgstr "标准版"
+
+#~ msgid "Enterprise edition"
+#~ msgstr "企业版"
+
+#~ msgid "License file"
+#~ msgstr "许可证文件"
+
+#~ msgid "Please Import License"
+#~ msgstr "请导入许可证"
+
+#~ msgid "License has expired"
+#~ msgstr "许可证已经过期"
+
+#~ msgid "The license will at "
+#~ msgstr "许可证将在 "
+
+#~ msgid " expired."
+#~ msgstr " 过期。"
+
+#~ msgid "License detail"
+#~ msgstr "许可证详情"
+
+#~ msgid "No license"
+#~ msgstr "暂无许可证"
+
+#~ msgid "Subscription ID"
+#~ msgstr "订阅授权ID"
+
+#~ msgid "Corporation"
+#~ msgstr "公司"
+
+#~ msgid "Expired"
+#~ msgstr "过期时间"
+
+#~ msgid "Unlimited"
+#~ msgstr "无限制"
+
+#~ msgid "Concurrent connections"
+#~ msgstr "并发连接"
+
+#~ msgid "Technology consulting"
+#~ msgstr "技术咨询"
+
+#~ msgid "Consult"
+#~ msgstr "咨询"
+
+#~ msgid "License import successfully"
+#~ msgstr "许可证导入成功"
+
+#~ msgid "License is invalid"
+#~ msgstr "无效的许可证"
+
+#~ msgid "Admin"
+#~ msgstr "管理员"
+
+#~ msgid "Organizations"
+#~ msgstr "组织管理"
+
+#~ msgid "Org detail"
+#~ msgstr "组织详情"
+
+#~ msgid "Add admin"
+#~ msgstr "添加管理员"
+
+#~ msgid "Create organization "
+#~ msgstr "创建组织"
+
+#~ msgid "Orgs"
+#~ msgstr "组织管理"
+
+#~ msgid "Org list"
+#~ msgstr "组织列表"
+
+#~ msgid "Vault"
+#~ msgstr "密码匣子"
+
+#~ msgid "Import vault"
+#~ msgstr "导入密码"
+
+#~ msgid "vault list"
+#~ msgstr "密码匣子"
+
+#~ msgid "vault create"
+#~ msgstr "创建"
+
+#~ msgid "Org"
+#~ msgstr "组织"
+
+#~ msgid "already exists"
+#~ msgstr "已经存在"
+
+#~ msgid "Invalid file."
+#~ msgstr "文件不合法"
+
+#~ msgid "Refresh all node assets amount"
+#~ msgstr "刷新所有节点资产数量"
+
+#~ msgid "Rename failed, do not change the root node name"
+#~ msgstr "重命名失败，不能更改root节点的名称"
+
+#~ msgid "Failed to update SSH public key."
+#~ msgstr "更新密钥失败"
+
+#~ msgid "Unreachable assets"
+#~ msgstr "不可达资产"
+
+#~ msgid "Reachable assets"
+#~ msgstr "可连接资产"
+
+#~ msgid "User does not exist"
+#~ msgstr "用户不存在"
+
+#~ msgid "Restore default successfully！"
+#~ msgstr "恢复默认成功！"
+
+#~ msgid "The initial password has been cleared."
+#~ msgstr "当前初始密码已经清除."
+
+#~ msgid "Clear initial password successfully."
+#~ msgstr "清除初始密码成功."
+
+#~ msgid "User Initial Password"
+#~ msgstr "用户初始密码"
+
+#~ msgid "Clear initial password"
+#~ msgstr "清除初始密码"
+
+#~ msgid "This will be clear the initial password !!!"
+#~ msgstr "这将会清除用户初始密码!!!"
+
+#~ msgid "Clear Initial Password"
+#~ msgstr "清除初始密码"
+
+#~ msgid "Clear initial password failed."
+#~ msgstr "清除初始密码失败."
+
+#~ msgid "INITIAL_PASSWORD"
+#~ msgstr "初始化密码"
+
+#~ msgid "CUSTOM_PASSWORD"
+#~ msgstr "自定义密码"
+
+#~ msgid "EMAIL_SET_PASSWORD"
+#~ msgstr "邮件设置密码"
+
+#~ msgid ""
+#~ "This will use the default initial password by the system. Please go to "
+#~ "the system Settings application to set the initial password"
+#~ msgstr "这将会使用系统设置的初始密码. 请先到系统设置应用里去设置初始密码."
+
+#~ msgid "The password cannot be the same as the initial password"
+#~ msgstr "密码设置不能和系统设置的初始密码一致"
+
+#~ msgid "Update user groups"
+#~ msgstr "更新用户组"
+
+# msgid "Update user"
+# msgstr "更新用户"
+#~ msgid ""
+#~ "\n"
+#~ "        <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/"
+#~ "bootstrap/3.2.0/css/bootstrap.min.css\">\n"
+#~ "        <p style=\"text-indent:2em;\">\n"
+#~ "            <span>\n"
+#~ "                <a href=\"%(rest_password_url)s?token="
+#~ "%(rest_password_token)s\">click here to set your password</a>\n"
+#~ "            </span>    \n"
+#~ "            <span>\n"
+#~ "                This link is valid for 1 hour. After it expires, <a href="
+#~ "\"%(forget_password_url)s?email=%(email)s\">request new one</a>\n"
+#~ "            </span> \n"
+#~ "            <span>\n"
+#~ "                <a href=\"%(login_url)s\">Login direct</a>\n"
+#~ "            </span>\n"
+#~ "        </p>\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "        <link rel=\"stylesheet\" href=\"//maxcdn.bootstrapcdn.com/"
+#~ "bootstrap/3.2.0/css/bootstrap.min.css\">\n"
+#~ "        <p style=\"text-indent:2em;\">\n"
+#~ "            <span>\n"
+#~ "                <a href=\"%(rest_password_url)s?token="
+#~ "%(rest_password_token)s\">请点击这里设置密码</a>\n"
+#~ "            </span>    \n"
+#~ "            <span>\n"
+#~ "                这个链接有效期1小时, 超过时间您可以, <a href="
+#~ "\"%(forget_password_url)s?email=%(email)s\">重新申请</a>\n"
+#~ "            </span> \n"
+#~ "            <span>\n"
+#~ "                <a href=\"%(login_url)s\">Login direct</a>\n"
+#~ "            </span>\n"
+#~ "        </p>\n"
+#~ "        "
+
+#~ msgid "Template"
+#~ msgstr "模板"
+
+#~ msgid "Download"
+#~ msgstr "下载"
+
+#~ msgid "Asset csv file"
+#~ msgstr "资产csv文件"
+
+#~ msgid "If set id, will use this id update asset existed"
+#~ msgstr "如果设置了id，则会使用该行信息更新该id的资产"
+
+#~ msgid "Users csv file"
+#~ msgstr "用户csv文件"
+
+#~ msgid "If set id, will use this id update user existed"
+#~ msgstr "如果设置了id，则会使用该行信息更新该id的用户"
+
+#~ msgid "Monitor"
+#~ msgstr "监控"
+
+#, fuzzy
+#~| msgid "Select user"
+#~ msgid "Select time"
+#~ msgstr "选择用户"
+
+#, fuzzy
+#~| msgid "Select Asset"
+#~ msgid "Select host"
+#~ msgstr "选择资产"
+
+#~ msgid "Beijing Duizhan Tech, Inc."
+#~ msgstr "北京堆栈科技有限公司"
+
+#~ msgid "Sync User"
+#~ msgstr "同步用户"
+
+#~ msgid "Have user but attr mapping error"
+#~ msgstr "有用户但attr映射错误"
+
+#~ msgid ""
+#~ "Import {} users successfully; import {} users failed, the database "
+#~ "already exists with the same name"
+#~ msgstr "导入 {} 个用户成功; 导入 {} 这些用户失败，数据库已经存在同名的用户"
+
+#~ msgid ""
+#~ "Import {} users successfully; import {} users failed, the database "
+#~ "already exists with the same name; import {}users failed, "
+#~ "Because’TypeError' object has no attribute 'keys'"
+#~ msgstr ""
+#~ "导入 {} 个用户成功; 导入 {} 这些用户失败，数据库已经存在同名的用户; 导入 "
+#~ "{} 这些用户失败，因为对象没有属性'keys'"
+
+#~ msgid "Import {} users successfully"
+#~ msgstr "导入 {} 个用户成功"
+
+#~ msgid ""
+#~ "Import {} users successfully;import {} users failed, Because’TypeError' "
+#~ "object has no attribute 'keys'"
+#~ msgstr "导入 {} 个用户成功; 导入 {} 这些用户失败，因为对象没有属性'keys'"
+
+#~ msgid "Invalid private key"
+#~ msgstr "ssh密钥不合法"
+
+#, fuzzy
+#~| msgid "CPU count"
+#~ msgid "Cpu count"
+#~ msgstr "CPU数量"
+
+#~ msgid "Login Dolphindoctor"
+#~ msgstr "登录 Dolphindoctor"
+
+#, fuzzy
+#~| msgid "Delete succeed"
+#~ msgid "Delete success！"
+#~ msgstr "删除成功"
+
+#, fuzzy
+#~| msgid "Username does not exist"
+#~ msgid "This license does not exist！"
+#~ msgstr "用户名不存在"
+
+#~ msgid "Valid"
+#~ msgstr "账户状态"
+
+#~ msgid "Error: Account invalid"
+#~ msgstr "错误: 账户无效"
+
+#~ msgid "Asset has been disabled, skip: {}"
+#~ msgstr "资产被禁用，跳过：{}"
+
+#~ msgid "Asset may not be support ansible, skip: {}"
+#~ msgstr "资产或许不支持ansible, 跳过: {}"
+
+#~ msgid "No assets, task stop"
+#~ msgstr "没有匹配到资产，结束任务"
+
+#~ msgid "Update assets hardware info period"
+#~ msgstr "定期更新资产硬件信息"
+
+#~ msgid "Date finished"
+#~ msgstr "结束日期"
+
+#~ msgid "User id"
+#~ msgstr "用户"
+
+#~ msgid "Start execute"
+#~ msgstr "开始执行"
+
+#~ msgid "Start"
+#~ msgstr "开始"
+
+#~ msgid "User login settings"
+#~ msgstr "用户登录设置"
+
+#~ msgid "Bit"
+#~ msgstr " 位"
+
+#~ msgid ""
+#~ "Set terminal storage setting, `default` is the using as default,You can "
+#~ "set other storage and some terminal using"
+#~ msgstr "设置终端命令存储，default是默认用的存储方式"
+
+#~ msgid ""
+#~ "Set replay storage setting, `default` is the using as default,You can set "
+#~ "other storage and some terminal using"
+#~ msgstr "设置终端录像存储，default是默认用的存储方式"
+
+#~ msgid "Sync instance task detail"
+#~ msgstr "同步实例任务详情"
+
+#~ msgid "Sync task instance"
+#~ msgstr "同步实例列表"
+
+#~ msgid "Sync instance task instance"
+#~ msgstr "同步实例任务实例"
+
+#~ msgid "Get sync task error"
+#~ msgstr "获取同步任务"
+
+#~ msgid ""
+#~ "Are you sure to remove authentication information for the system user ?"
+#~ msgstr "你确定清除该系统用户的认证信息吗 ?"
+
+#~ msgid "success"
+#~ msgstr "成功"
+
+#~ msgid "Task has been send, Go to ops task list seen result"
+#~ msgstr "任务已下发，查看ops任务列表"
+
+#~ msgid "Task has been send, seen left assets status"
+#~ msgstr "任务已下发，查看左侧资产状态"
+
+#~ msgid "OK"
+#~ msgstr "完成"
+
+#~ msgid "Update MFA settings"
+#~ msgstr "更改MFA设置"
+
+#~ msgid "MFA code invalid"
+#~ msgstr "MFA码认证失败"
+
+#~ msgid "Chinese"
+#~ msgstr "中文"
+
+#~ msgid "* required Must set exact system platform, Windows, Linux ..."
+#~ msgstr "* required 必须准确设置操作系统平台，如Windows, Linux ..."
+
+#~ msgid "Clear"
+#~ msgstr "清除"
+
+#~ msgid "MFA setting"
+#~ msgstr "MFA 设置"

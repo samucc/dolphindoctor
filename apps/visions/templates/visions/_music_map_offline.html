@@ -1,0 +1,1814 @@
+{% load i18n %}
+{% load static %}
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"-->
+
+<style>
+#map { position:absolute;
+	top: 55px;
+    bottom: 55px;
+	max-width: 585px;
+	width:100%;
+}
+.mapboxgl-popup {
+	max-width: 400px;
+	font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+</style>
+
+<div id='map'></div>
+
+<script>
+    var style1 = {
+      "version": 8,
+      "sources": {
+        "countries": {
+          "type": "vector",
+          // "url": "mapbox://map-id"
+          // "url": "http://tileserver.com/layer.json",
+          "tiles": [location.origin+"/static/plugins/mapbox/countries/{z}/{x}/{y}.pbf"],
+          "maxzoom": 7
+        }
+      },
+      "glyphs": location.origin+"/static/plugins/mapbox/fonts/{fontstack}/{range}.pbf",
+      "layers": [{
+        "id": "background",
+        "type": "background",
+        "paint": {
+          "background-color": "#ddeeff"
+        }
+      },{
+        "id": "country-glow-outer",
+        "type": "line",
+        "source": "countries",
+        "source-layer": "country",
+        "layout": {
+          "line-join":"round"
+        },
+        "paint": {
+          "line-color": "#226688",
+          "line-width": 5,
+          "line-opacity": {
+            "stops": [[0,0],[1,0.1]]
+          }
+        }
+      },{
+        "id": "country-glow-inner",
+        "type": "line",
+        "source": "countries",
+        "source-layer": "country",
+        "layout": {
+          "line-join":"round"
+        },
+        "paint": {
+          "line-color": "#226688",
+          "line-width": {
+            "stops": [[0,1.2],[1,1.6],[2,2],[3,2.4]]
+          },
+          "line-opacity":0.8,
+        }
+      // rainbow start
+      },{
+        "id": "effect-white",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'ATA'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#F0F8FF"
+        }
+      },{
+        "id": "effect-red",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'AFG','ALD','BEN','BLR','BWA','COK','COL','DNK','DOM','ERI','FIN','FRA','FRO','GIB','GNB','GNQ','GRC','GTM','JPN','KIR','LKA','MHL','MMR','MWI','NCL','OMN','RWA','SMR','SVK','SYR','TCD','TON','URY','WLF'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#fdaf6b"
+        }
+      },{
+        "id": "effect-orange",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'AZE','BGD','CHL','CMR','CSI','DEU','DJI','GUY','HUN','IOA','JAM','LBN','LBY','LSO','MDG','MKD','MNG','MRT','NIU','NZL','PCN','PYF','SAU','SHN','STP','TTO','UGA','UZB','ZMB'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#fdc663"
+        }
+      },{
+        "id": "effect-yellow",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'AGO','ASM','ATF','BDI','BFA','BGR','BLZ','BRA','CHN','CRI','ESP','HKG','HRV','IDN','IRN','ISR','KNA','LBR','LCA','MAC','MUS','NOR','PLW','POL','PRI','SDN','TUN','UMI','USA','USG','VIR','VUT'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#fae364"
+        }
+      },{
+        "id": "effect-green",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'ARE','ARG','BHS','CIV','CLP','DMA','ETH','GAB','GRD','GRL','HMD','IND','IOT','IRL','IRQ','ITA','KOS','LUX','MEX','NAM','NER','PHL','PRT','RUS','SEN','SUR','TZA','VAT'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#d3e46f"
+        }
+      },{
+        "id": "effect-turquoise",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'AUT','BEL','BHR','BMU','BRB','CYN','DZA','EST','FLK','GMB','GUM','HND','JEY','KGZ','LIE','MAF','MDA','NGA','NRU','SLB','SOL','SRB','SWZ','THA','TUR','VEN','VGB'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#aadb78"
+        }
+      },{
+        "id": "effect-blue",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'AIA','BIH','BLM','BRN','CAF','CHE','COM','CPV','CUB','ECU','ESB','FSM','GAZ','GBR','GEO','KEN','LTU','MAR','MCO','MDV','NFK','NPL','PNG','PRY','QAT','SLE','SPM','SYC','TCA','TKM','TLS','VNM','WEB','WSB','YEM','ZWE'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#a3cec5"
+        }
+      },{
+        "id": "effect-purple",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'ABW','ALB','AND','ATC','BOL','COD','CUW','CYM','CYP','EGY','FJI','GGY','IMN','KAB','KAZ','KWT','LAO','MLI','MNP','MSR','MYS','NIC','NLD','PAK','PAN','PRK','ROU','SGS','SVN','SWE','TGO','TWN','VCT','ZAF'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#ceb5cf"
+        }
+      },{
+        "id": "effect-pink",
+        "type": "fill",
+        "source": "countries",
+        "filter":["in","ADM0_A3",'ARM','ATG','AUS','BTN','CAN','COG','CZE','GHA','GIN','HTI','ISL','JOR','KHM','KOR','LVA','MLT','MNE','MOZ','PER','SAH','SGP','SLV','SOM','TJK','TUV','UKR','WSM'],
+        "source-layer": "country",
+        "paint": {
+          "fill-color": "#f3c1d3"
+        }
+      // rainbow end
+      },{
+        "id": "geo-lines",
+        "type": "line",
+        "source": "countries",
+        "source-layer": "geo-lines",
+        "paint": {
+          "line-color": "#226688",
+          "line-width": {
+            "stops": [[0,0.2],[4,1]]
+          },
+          "line-dasharray":[6,2]
+        }
+      },{
+        "id": "land-border-country",
+        "type": "line",
+        "source": "countries",
+        "source-layer": "land-border-country",
+        "paint": {
+          "line-color": "#fff",
+          "line-width": {
+            "base":1.5,
+            "stops": [[0,0],[1,0.8],[2,1]]
+          }
+        }
+      },{
+        "id": "state",
+        "type": "line",
+        "source": "countries",
+        "source-layer": "state",
+        "minzoom": 3,
+        "filter": ["in","ADM0_A3",'USA','CAN','AUS'],
+        "paint": {
+          "line-color": "#226688",
+          "line-opacity": 0.25,
+          "line-dasharray":[6,2,2,2],
+          "line-width": 1.2
+        }
+      // LABELS
+      },{
+        "id": "country-abbrev",
+        "type": "symbol",
+        "source": "countries",
+        "source-layer": "country-name",
+        "minzoom":1.8,
+        "maxzoom":3,
+        "layout": {
+          "text-field": "{ABBREV}",
+          "text-font": ["Open Sans Semibold"],
+          "text-transform": "uppercase",
+          "text-max-width": 20,
+          "text-size": {
+            "stops": [[3,10],[4,11],[5,12],[6,16]]
+          },
+          "text-letter-spacing": {
+            "stops": [[4,0],[5,1],[6,2]]
+          },
+          "text-line-height": {
+            "stops": [[5,1.2],[6,2]]
+          }
+        },
+        "paint": {
+          "text-halo-color": "#fff",
+          "text-halo-width": 1.5
+        }
+      },{
+        "id": "country-name",
+        "type": "symbol",
+        "source": "countries",
+        "source-layer": "country-name",
+        "minzoom":3,
+        "layout": {
+          "text-field": "{NAME}",
+          "text-font": ["Open Sans Semibold"],
+          "text-transform": "uppercase",
+          "text-max-width": 20,
+          "text-size": {
+            "stops": [[3,10],[4,11],[5,12],[6,16]]
+          }
+        },
+        "paint": {
+          "text-halo-color": "#fff",
+          "text-halo-width": 1.5
+        }
+      },{
+        "id": "geo-lines-lables",
+        "type": "symbol",
+        "source": "countries",
+        "source-layer": "geo-lines",
+        "minzoom":1,
+        "layout": {
+          "text-field": "{DISPLAY}",
+          "text-font": ["Open Sans Semibold"],
+          "text-offset": [0,1],
+          "symbol-placement": "line",
+          "symbol-spacing": 600,
+          "text-size": 9
+        },
+        "paint": {
+          "text-color": "#226688",
+          "text-halo-width": 1.5
+        }
+      }]
+    };
+    var style2 = {
+      "version": 8,
+      "sources": {
+        "osm-tiles": {
+          "type": "raster",
+          "tiles": [location.origin+"/static/plugins/mapbox/tile/{z}/{x}/{y}.png"],
+          "maxzoom": 8
+        }
+      },
+      "glyphs": location.origin+"/static/plugins/mapbox/fonts/{fontstack}/{range}.pbf",
+      "layers": [{
+          "id": "123",
+           "type": "raster",
+           "source": "osm-tiles",
+           "source-layer": "osmtiles"
+      }
+        ]
+    };
+    var style3_layers = [
+{
+"id": "landcover_grass",
+"type": "fill",
+"metadata": {
+"mapbox:group": "1456970288113.8113"
+},
+"source": "composite",
+"source-layer": "landcover",
+"maxzoom": 14,
+"filter": [
+"==",
+"class",
+"grass"
+],
+"layout": {},
+"paint": {
+"fill-color": "hsl(75, 62%, 81%)",
+"fill-opacity": {
+"base": 1.5,
+"stops": [
+[
+2,
+0.3
+],
+[
+7,
+0
+]
+]
+},
+"fill-antialias": false
+}
+},
+{
+"id": "landcover_crop",
+"type": "fill",
+"metadata": {
+"mapbox:group": "1456970288113.8113"
+},
+"source": "composite",
+"source-layer": "landcover",
+"maxzoom": 14,
+"filter": [
+"==",
+"class",
+"crop"
+],
+"layout": {},
+"paint": {
+"fill-color": "hsl(75, 62%, 81%)",
+"fill-opacity": {
+"base": 1.5,
+"stops": [
+[
+2,
+0.3
+],
+[
+7,
+0
+]
+]
+},
+"fill-antialias": false
+}
+}];
+    var style3_layers = [
+{
+"id": "landcover_grass",
+"type": "fill",
+"metadata": {
+"mapbox:group": "1456970288113.8113"
+},
+"source": "composite",
+"source-layer": "landcover",
+"maxzoom": 14,
+"filter": [
+"==",
+"class",
+"grass"
+],
+"layout": {},
+"paint": {
+"fill-color": "hsl(75, 62%, 81%)",
+"fill-opacity": {
+"base": 1.5,
+"stops": [
+[
+2,
+0.3
+],
+[
+7,
+0
+]
+]
+},
+"fill-antialias": false
+}
+},
+{
+"id": "landcover_crop",
+"type": "fill",
+"metadata": {
+"mapbox:group": "1456970288113.8113"
+},
+"source": "composite",
+"source-layer": "landcover",
+"maxzoom": 14,
+"filter": [
+"==",
+"class",
+"crop"
+],
+"layout": {},
+"paint": {
+"fill-color": "hsl(75, 62%, 81%)",
+"fill-opacity": {
+"base": 1.5,
+"stops": [
+[
+2,
+0.3
+],
+[
+7,
+0
+]
+]
+},
+"fill-antialias": false
+}
+}];
+    var style3 = {
+      "version": 8,
+        "metadata": {
+"mapbox:autocomposite": true,
+"mapbox:type": "default",
+"mapbox:origin": "streets-v10",
+"mapbox:groups": {
+"1444934828655.3389": {
+"name": "Aeroways",
+"collapsed": true
+},
+"1444933322393.2852": {
+"name": "POI labels (scalerank 1)",
+"collapsed": true
+},
+"1444855786460.0557": {
+"name": "Roads",
+"collapsed": true
+},
+"1444933575858.6992": {
+"name": "Highway shields",
+"collapsed": true
+},
+"1444934295202.7542": {
+"name": "Admin boundaries",
+"collapsed": true
+},
+"1444856151690.9143": {
+"name": "State labels",
+"collapsed": true
+},
+"1444933721429.3076": {
+"name": "Road labels",
+"collapsed": true
+},
+"1444933358918.2366": {
+"name": "POI labels (scalerank 2)",
+"collapsed": true
+},
+"1444933808272.805": {
+"name": "Water labels",
+"collapsed": true
+},
+"1444933372896.5967": {
+"name": "POI labels (scalerank 3)",
+"collapsed": true
+},
+"1444855799204.86": {
+"name": "Bridges",
+"collapsed": true
+},
+"1444856087950.3635": {
+"name": "Marine labels",
+"collapsed": true
+},
+"1456969573402.7817": {
+"name": "Hillshading",
+"collapsed": true
+},
+"1444862510685.128": {
+"name": "City labels",
+"collapsed": true
+},
+"1444855769305.6016": {
+"name": "Tunnels",
+"collapsed": true
+},
+"1456970288113.8113": {
+"name": "Landcover",
+"collapsed": true
+},
+"1444856144497.7825": {
+"name": "Country labels",
+"collapsed": true
+},
+"1444933456003.5437": {
+"name": "POI labels (scalerank 4)",
+"collapsed": true
+}
+}
+},
+      "sources": {
+        "composite": {
+            "type": "vector",
+            "bounds": [
+-180,
+-85,
+180,
+85
+],
+"center": [
+0,
+0,
+0
+],
+        // "url": location.origin+"/static/plugins/mapbox/mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7.json",
+        "tiles": [location.origin+"/static/plugins/mapbox/streets/{z}/{x}/{y}.vector.pbf?t="+Date.now()],
+            "vector_layers": [
+{
+"description": "Generalized landcover classification",
+"fields": {
+"class": "One of: wood, scrub, grass, crop, snow"
+},
+"id": "landcover",
+"maxzoom": 22,
+"minzoom": 0,
+"source": "mapbox.mapbox-terrain-v2",
+"source_name": "Mapbox Terrain V2"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: shadow, highlight",
+"level": "Brightness %. One of: 94, 90, 89, 78, 67, 56"
+},
+"id": "hillshade",
+"maxzoom": 22,
+"minzoom": 0,
+"source": "mapbox.mapbox-terrain-v2",
+"source_name": "Mapbox Terrain V2"
+},
+{
+"description": "Elevation contour polygons",
+"fields": {
+"ele": "Integer. The elevation of the contour in meters",
+"index": "Indicator for every 2nd, 5th, or 10th contour. Coastlines are given -1. One of: 2, 5, 10, -1, null"
+},
+"id": "contour",
+"maxzoom": 22,
+"minzoom": 0,
+"source": "mapbox.mapbox-terrain-v2",
+"source_name": "Mapbox Terrain V2"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: agriculture, cemetery, glacier, grass, hospital, industrial, park, parking, piste, pitch, rock, sand, school, scrub, wood, aboriginal_lands",
+"type": "OSM tag, more specific than class"
+},
+"id": "landuse",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: river, canal, stream, stream_intermittent, ditch, drain",
+"type": "One of: river, canal, stream, ditch, drain"
+},
+"id": "waterway",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {},
+"id": "water",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"type": "One of: runway, taxiway, apron"
+},
+"id": "aeroway",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: fence, hedge, cliff, gate"
+},
+"id": "barrier_line",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"extrude": "String. Whether building should be extruded when rendering in 3D. One of: 'true', 'false'",
+"height": "Number. Height of building or part of building.",
+"min_height": "Number. Height of bottom of building or part of building, if it does not start at ground level.",
+"type": "In most cases, values will be that of the primary key from OpenStreetMap tags.",
+"underground": "Text. Whether building is underground. One of: 'true', 'false'"
+},
+"id": "building",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: national_park, wetland, wetland_noveg",
+"type": "OSM tag, more specific than class"
+},
+"id": "landuse_overlay",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: 'motorway', 'motorway_link', 'trunk', 'primary', 'secondary', 'tertiary', 'link', 'street', 'street_limited', 'pedestrian', 'construction', 'track', 'service', 'ferry', 'path', 'golf'",
+"layer": "Number. Specifies z-ordering in the case of overlapping road segments. Common range is -5 to 5. Available from zoom level 13+.",
+"oneway": "Text. Whether traffic on the road is one-way. One of: 'true', 'false'.",
+"structure": "Text. One of: 'none', 'bridge', 'tunnel', 'ford'. Available from zoom level 13+.",
+"type": "In most cases, values will be that of the primary key from OpenStreetMap tags."
+},
+"id": "road",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"admin_level": "The OSM administrative level of the boundary",
+"disputed": "Number. Disputed boundaries are 1, all others are 0.",
+"iso_3166_1": "The ISO 3166-1 alpha-2 code(s) of the state(s) a boundary is part of. Format: 'AA' or 'AA-BB'",
+"maritime": "Number. Maritime boundaries are 1, all others are 0."
+},
+"id": "admin",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"code": "ISO 3166-1 Alpha-2 code",
+"name": "Local name of the country",
+"name_ar": "Arabic name of the country",
+"name_de": "German name of the country",
+"name_en": "English name of the country",
+"name_es": "Spanish name of the country",
+"name_fr": "French name of the country",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the country",
+"name_ru": "Russian name of the country",
+"name_zh": "Chinese name of the country",
+"parent": "ISO 3166-1 Alpha-2 code of the administering/parent state, if any",
+"scalerank": "Number, 1-6. Useful for styling text sizes.",
+"type": "One of: country, territory, disputed territory, sar"
+},
+"id": "country_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"labelrank": "Number, 1-6. Useful for styling text sizes.",
+"name": "Local or international name of the water body",
+"name_ar": "Arabic name of the water body",
+"name_de": "German name of the water body",
+"name_en": "English name of the water body",
+"name_es": "Spanish name of the water body",
+"name_fr": "French name of the water body",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the water body",
+"name_ru": "Russian name of the water body",
+"name_zh": "Chinese name of the water body",
+"placement": "One of: point, line"
+},
+"id": "marine_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"abbr": "Abbreviated state name",
+"effect": "The effect of the state in kilometers²",
+"name": "Local name of the state",
+"name_ar": "Arabic name of the state",
+"name_de": "German name of the state",
+"name_en": "English name of the state",
+"name_es": "Spanish name of the state",
+"name_fr": "French name of the state",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the state",
+"name_ru": "Russian name of the state",
+"name_zh": "Chinese name of the state"
+},
+"id": "state_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"capital": "Admin level the city is a capital of, if any. One of: 2, 3, 4, 5, 6, null",
+"ldir": "A hint for label placement at low zoom levels. One of: N, E, S, W, NE, SE, SW, NW, null",
+"localrank": "Number. Priority relative to nearby places. Useful for limiting label density.",
+"name": "Local name of the place",
+"name_ar": "Arabic name of the place",
+"name_de": "German name of the place",
+"name_en": "English name of the place",
+"name_es": "Spanish name of the place",
+"name_fr": "French name of the place",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the place",
+"name_ru": "Russian name of the place",
+"name_zh": "Chinese name of the place",
+"name_zh-Hans": "Simplified Chinese name of the place",
+"scalerank": "Number, 0-9 or null. Useful for styling text & marker sizes.",
+"type": "One of: city, town, village, hamlet, suburb, neighbourhood, island, islet, archipelago, residential, aboriginal_lands"
+},
+"id": "place_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"effect": "The effect of the water polygon in Mercator meters²",
+"name": "Local name of the water body",
+"name_ar": "Arabic name of the water body",
+"name_de": "German name of the water body",
+"name_en": "English name of the water body",
+"name_es": "Spanish name of the water body",
+"name_fr": "French name of the water body",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the water body",
+"name_ru": "Russian name of the water body",
+"name_zh": "Chinese name of the water body",
+"name_zh-Hans": "Simplified Chinese name of the water body"
+},
+"id": "water_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"maki": "One of: airport, airfield, heliport, rocket",
+"name": "Local name of the airport",
+"name_ar": "Arabic name of the airport",
+"name_de": "German name of the airport",
+"name_en": "English name of the airport",
+"name_es": "Spanish name of the airport",
+"name_fr": "French name of the airport",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the airport",
+"name_ru": "Russian name of the airport",
+"name_zh": "Chinese name of the airport",
+"name_zh-Hans": "Simplified Chinese name of the airport",
+"ref": "A 3-4 character IATA, FAA, ICAO, or other reference code",
+"scalerank": "Number 1-4. Useful for styling icon sizes."
+},
+"id": "airport_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"maki": "One of: rail, rail-metro, rail-light, entrance",
+"name": "Local name of the station",
+"name_ar": "Arabic name of the station",
+"name_de": "German name of the station",
+"name_en": "English name of the station",
+"name_es": "Spanish name of the station",
+"name_fr": "French name of the station",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the station",
+"name_ru": "Russian name of the station",
+"name_zh": "Chinese name of the station",
+"name_zh-Hans": "Simplified Chinese name of the station",
+"network": "The network(s) that the station serves. Useful for icon styling."
+},
+"id": "rail_station_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"elevation_ft": "Integer elevation in feet",
+"elevation_m": "Integer elevation in meters",
+"maki": "One of: 'mountain', 'volcano'",
+"name": "Local name of the peak",
+"name_ar": "Arabic name of the peak",
+"name_de": "German name of the peak",
+"name_en": "English name of the peak",
+"name_es": "Spanish name of the peak",
+"name_fr": "French name of the peak",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the peak",
+"name_ru": "Russian name of the peak",
+"name_zh": "Chinese name of the peak",
+"name_zh-Hans": "Simplified Chinese name of the peak"
+},
+"id": "mountain_peak_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"localrank": "Number. Priority relative to nearby POIs. Useful for limiting label density.",
+"maki": "The name of the Maki icon that should be used for the POI",
+"name": "Local name of the POI",
+"name_ar": "Arabic name of the POI",
+"name_de": "German name of the POI",
+"name_en": "English name of the POI",
+"name_es": "Spanish name of the POI",
+"name_fr": "French name of the POI",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the POI",
+"name_ru": "Russian name of the POI",
+"name_zh": "Chinese name of the POI",
+"name_zh-Hans": "Simplified Chinese name of the POI",
+"ref": "Short reference code, if any",
+"scalerank": "Number. 1-5. Useful for styling icon sizes and minimum zoom levels.",
+"type": "The original OSM tag value"
+},
+"id": "poi_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "The class of road the junction is on. Matches the classes in the road layer.",
+"name": "A longer name",
+"ref": "A short identifier",
+"reflen": "The number of characters in the ref field.",
+"type": "The type of road the junction is on. Matches the types in the road layer."
+},
+"id": "motorway_junction",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: 'motorway', 'motorway_link', 'trunk', 'primary', 'secondary', 'tertiary', 'link', 'street', 'street_limited', 'pedestrian', 'construction', 'track', 'service', 'ferry', 'path', 'golf'",
+"iso_3166_2": "Text. The ISO 3166-2 code of the state/province/region the road is in.",
+"len": "Number. Approximate length of the road segment in Mercator meters.",
+"localrank": "Number. Used for shield points only. Priority relative to nearby shields. Useful for limiting shield density.",
+"name": "Local name of the road",
+"name_ar": "Arabic name of the road",
+"name_de": "German name of the road",
+"name_en": "English name of the road",
+"name_es": "Spanish name of the road",
+"name_fr": "French name of the road",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the road",
+"name_ru": "Russian name of the road",
+"name_zh": "Chinese name of the road",
+"name_zh-Hans": "Simplified Chinese name of the road",
+"ref": "Route number of the road",
+"reflen": "Number. How many characters long the ref tag is. Useful for shield styling.",
+"shield": "The shield style to use. One of: default, mx-federal, mx-state, us-highway, us-highway-alternate, us-highway-business, us-highway-duplex, us-interstate, us-interstate-business, us-interstate-duplex, us-interstate-truck, us-state"
+},
+"id": "road_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"class": "One of: river, canal, stream, stream_intermittent",
+"name": "Local name of the waterway",
+"name_ar": "Arabic name of the waterway",
+"name_de": "German name of the waterway",
+"name_en": "English name of the waterway",
+"name_es": "Spanish name of the waterway",
+"name_fr": "French name of the waterway",
+"name_ja": "Japanese name of the country",
+"name_ko": "Korean name of the country",
+"name_pt": "Portuguese name of the waterway",
+"name_ru": "Russian name of the waterway",
+"name_zh": "Chinese name of the waterway",
+"name_zh-Hans": "Simplified Chinese name of the waterway",
+"type": "One of: river, canal, stream"
+},
+"id": "waterway_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+},
+{
+"description": "",
+"fields": {
+"house_num": "House number"
+},
+"id": "housenum_label",
+"source": "mapbox.mapbox-streets-v7",
+"source_name": "Mapbox Streets v7"
+}
+]
+        }
+        },
+     "sprite": location.origin+"/static/plugins/mapbox/sprites/sprite",
+     "glyphs": location.origin+"/static/plugins/mapbox/fonts/{fontstack}/{range}.pbf",
+
+      "layers":style3_layers,
+        "visibility": "public",
+"created": "1970-01-01T00:00:00.000Z",
+"modified": "1970-01-01T00:00:00.000Z",
+"owner": "mapbox",
+"id": "streets-v10",
+"draft": false
+    };
+
+    var style4 = {
+        "version": 8,
+        "name": "Mapbox Streets",
+        "sprite": "mapbox://sprites/mapbox/streets-v8",
+        "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+         "sources": {
+             "osm-tiles": {
+                 "type": "raster",
+                 "tiles": [
+                   "http://c.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  ],
+                 "tileSize": 256
+             }
+        },
+      "layers":[{
+          "id": "123",
+           "type": "raster",
+           "source": "osm-tiles",
+           "source-layer": "osmtiles"
+      }]
+    };
+
+    // "sources": {
+    //     "composite": {
+    //         "scheme": "tms",
+    //         "type": "vector",
+    //     // "url": location.origin+"/static/plugins/mapbox/mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7.json",
+    //     "tiles": [location.origin+"/static/plugins/mapbox/streets/{z}/{x}/{y}.vector.pbf?"],
+    //     "type": "vector"
+    //     }
+    //     },
+
+    var style5 = {
+                "version": 8,
+                "sprite": location.origin+"/static/plugins/mapbox/sprites/sprite",
+                "glyphs": location.origin+"/static/plugins/mapbox/fonts/{fontstack}/{range}.pbf",
+                "sources": {
+                    "china": {
+                        "type": "vector",
+                        "scheme": "tms",
+                        "tiles": [
+                            // "http://localhost:8080/geoserver/gwc/service/tms/1.0.0/china:china_map@EPSG:900913@pbf/{z}/{x}/{y}.pbf",
+                           // "http://test.sharegis.cn/mapbox/maptile/{z}/{x}/{y}.pbf"
+                            location.origin+"/static/plugins/mapbox/streets/{z}/{x}/{y}.vector.pbf?t="+Date.now()
+                        ]
+                    }
+                },
+                "layers": [{
+                    "id": "background",
+                    "type": "background",
+                    "layout": {},
+                    "paint": {
+                        "background-color": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    11,
+                                    "hsl(35, 32%, 91%)"
+                                ],
+                                [
+                                    13,
+                                    "hsl(35, 12%, 89%)"
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "river",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "river",
+                    "minzoom": 5,
+                    "maxzoom": 15,
+                    "paint": {
+                        "line-color": "#a0cfdf",
+                        "line-width": {
+                            "base": 1.4,
+                            "stops": [
+                                [
+                                    8,
+                                    0.5
+                                ],
+                                [
+                                    20,
+                                    15
+                                ]
+                            ]
+                        }
+                    }
+                }, {
+                    "id": "lake",
+                    "type": "fill",
+                    "source": "china",
+                    "source-layer": "lake",
+                    "paint": {
+                        "fill-color": "hsl(195, 50%, 75%)"
+                    }
+                }, {
+                    "id": "road_major",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "road",
+                    "minzoom": 4,
+                    "maxzoom": 15,
+                    "layout": {
+                        "line-cap": "round",
+                        "line-join": "round"
+                    },
+                    "paint": {
+                        "line-width": {
+                            "base": 1.5,
+                            "stops": [
+                                [
+                                    5,
+                                    0.75
+                                ],
+                                [
+                                    18,
+                                    32
+                                ]
+                            ]
+                        },
+                        "line-color": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    8,
+                                    "hsl(26, 87%, 62%)"
+                                ],
+                                [
+                                    9,
+                                    "hsl(26, 100%, 68%)"
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "road--case",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "road",
+                    "minzoom": 10,
+                    "maxzoom": 15,
+                    "layout": {
+                        "line-cap": "round",
+                        "line-join": "round"
+                    },
+                    "paint": {
+                        "line-width": {
+                            "base": 1.5,
+                            "stops": [
+                                [
+                                    10,
+                                    1
+                                ],
+                                [
+                                    16,
+                                    2
+                                ]
+                            ]
+                        },
+                        "line-color": "hsl(0, 0%, 100%)",
+                        "line-gap-width": {
+                            "base": 1.5,
+                            "stops": [
+                                [
+                                    5,
+                                    0.75
+                                ],
+                                [
+                                    18,
+                                    32
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "boundaries-bg",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "border",
+                    "minzoom": 1,
+                    "layout": {
+                        "line-join": "miter"
+                    },
+                    "paint": {
+                        "line-width": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    3.5
+                                ],
+                                [
+                                    10,
+                                    8
+                                ]
+                            ]
+                        },
+                        "line-color": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    6,
+                                    "hsl(35, 12%, 89%)"
+                                ],
+                                [
+                                    8,
+                                    "hsl(230, 49%, 90%)"
+                                ]
+                            ]
+                        },
+                        "line-opacity": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    0
+                                ],
+                                [
+                                    4,
+                                    0.5
+                                ]
+                            ]
+                        },
+                        "line-translate": [
+                            0,
+                            0
+                        ],
+                        "line-blur": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    0
+                                ],
+                                [
+                                    10,
+                                    2
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "admin-2-boundaries",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "border",
+                    "minzoom": 1,
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
+                    "paint": {
+                        "line-color": "hsl(230, 8%, 51%)",
+                        "line-width": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    0.5
+                                ],
+                                [
+                                    10,
+                                    2
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "provincepoint",
+                    "type": "symbol",
+                    "source": "china",
+                    "source-layer": "provincepoint",
+                    "maxzoom": 16,
+                    "layout": {
+                        "icon-image": "dot-11",
+                        "text-font": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7,
+                                    [
+                                        "Microsoft YaHei",
+                                    ]
+                                ],
+                                [
+                                    8,
+                                    [
+                                        "Microsoft YaHei",
+                                    ]
+                                ]
+                            ]
+                        },
+                        "text-offset": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7.99,
+                                    [
+                                        0,
+                                        0.15
+                                    ]
+                                ],
+                                [
+                                    8,
+                                    [
+                                        0,
+                                        0
+                                    ]
+                                ]
+                            ]
+                        },
+                        "text-anchor": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7,
+                                    "top"
+                                ],
+                                [
+                                    8,
+                                    "center"
+                                ]
+                            ]
+                        },
+                        "text-field": "{name}",
+                        "text-max-width": 7,
+                        "text-size": {
+                            "base": 0.9,
+                            "stops": [
+                                [
+                                    4,
+                                    12
+                                ],
+                                [
+                                    10,
+                                    22
+                                ]
+                            ]
+                        }
+                    },
+                    "paint": {
+                        "text-color": "hsl(0, 0%, 0%)",
+                        "text-halo-color": "hsl(0, 0%, 100%)",
+                        "text-halo-width": 1,
+                        "icon-opacity": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7.99,
+                                    1
+                                ],
+                                [
+                                    8,
+                                    0
+                                ]
+                            ]
+                        },
+                        "text-halo-blur": 1
+                    },
+                    "interactive": true
+                }, {
+                    "id": "admin-3-4-boundaries",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "province",
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
+                    "paint": {
+                        "line-dasharray": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    6,
+                                    [
+                                        2,
+                                        0
+                                    ]
+                                ],
+                                [
+                                    7,
+                                    [
+                                        2,
+                                        2,
+                                        6,
+                                        2
+                                    ]
+                                ]
+                            ]
+                        },
+                        "line-width": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7,
+                                    0.75
+                                ],
+                                [
+                                    12,
+                                    1.5
+                                ]
+                            ]
+                        },
+                        "line-opacity": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    2,
+                                    0
+                                ],
+                                [
+                                    3,
+                                    1
+                                ]
+                            ]
+                        },
+                        "line-color": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    "hsl(230, 14%, 77%)"
+                                ],
+                                [
+                                    7,
+                                    "hsl(230, 8%, 62%)"
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "admin-3-4-boundaries-bg",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "province",
+                    "layout": {
+                        "line-join": "bevel"
+                    },
+                    "paint": {
+                        "line-color": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    8,
+                                    "hsl(35, 12%, 89%)"
+                                ],
+                                [
+                                    16,
+                                    "hsl(230, 49%, 90%)"
+                                ]
+                            ]
+                        },
+                        "line-width": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7,
+                                    3.75
+                                ],
+                                [
+                                    12,
+                                    5.5
+                                ]
+                            ]
+                        },
+                        "line-opacity": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    7,
+                                    0
+                                ],
+                                [
+                                    8,
+                                    0.75
+                                ]
+                            ]
+                        },
+                        "line-dasharray": [
+                            1,
+                            0
+                        ],
+                        "line-translate": [
+                            0,
+                            0
+                        ],
+                        "line-blur": {
+                            "base": 1,
+                            "stops": [
+                                [
+                                    3,
+                                    0
+                                ],
+                                [
+                                    8,
+                                    3
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                }, {
+                    "id": "road-rail",
+                    "type": "line",
+                    "source": "china",
+                    "source-layer": "railway",
+                    "minzoom": 5,
+                    "layout": {
+                        "line-join": "round"
+                    },
+                    "paint": {
+                        "line-color": {
+                            "stops": [
+                                [
+                                    10,
+                                    "hsl(50, 17%, 82%)"
+                                ],
+                                [
+                                    13,
+                                    "hsl(230, 10%, 74%)"
+                                ]
+                            ]
+                        },
+                        "line-width": {
+                            "base": 1.5,
+                            "stops": [
+                                [
+                                    11,
+                                    0.5
+                                ],
+                                [
+                                    17,
+                                    1
+                                ]
+                            ]
+                        }
+                    },
+                    "interactive": true
+                },
+        {
+            "id": "road-rail-tracks",
+            "type": "line",
+            "source": "china",
+            "source-layer": "railway",
+            "minzoom": 5,
+            "layout": {
+                "line-join": "round"
+            },
+            "paint": {
+                "line-color": {
+                    "stops": [
+                        [
+                           10,
+                            "hsl(50, 17%, 82%)"
+                        ],
+                        [
+                            13,
+                            "hsl(230, 10%, 74%)"
+                        ]
+                    ]
+                },
+                "line-width": {
+                    "base": 1.5,
+                    "stops": [
+                        [
+                            11,
+                            4
+                        ],
+                        [
+                            17,
+                            8
+                        ]
+                    ]
+                },
+                "line-dasharray": [
+                    0.1,
+                    15
+                ],
+                "line-opacity": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            10.75,
+                            0
+                        ],
+                        [
+                            11,
+                            1
+                        ]
+                    ]
+                }
+            },
+            "interactive": true
+        }, {
+            "id": "place-city-sm",
+            "type": "symbol",
+            "source": "china",
+            "source-layer": "countypoint",
+            "minzoom": 6,
+            "layout": {
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            6,
+                            12
+                        ],
+                        [
+                            14,
+                            22
+                        ]
+                    ]
+                },
+                "icon-image": "dot-9",
+                "text-font": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            7,
+                            [
+                                "Microsoft YaHei"
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                "Microsoft YaHei"
+                            ]
+                        ]
+                    ]
+                },
+                "text-offset": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            7.99,
+                            [
+                                0,
+                                -0.2
+                            ]
+                        ],
+                        [
+                            8,
+                            [
+                                0,
+                                0
+                            ]
+                        ]
+                    ]
+                },
+                "text-anchor": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            7,
+                            "bottom"
+                        ],
+                        [
+                            8,
+                            "center"
+                        ]
+                    ]
+                },
+                "text-field": "{name}",
+                "text-max-width": 7
+            },
+            "paint": {
+                "text-color": "hsl(0, 0%, 0%)",
+                "text-halo-color": "hsl(0, 0%, 100%)",
+                "text-halo-width": 1.25,
+                "icon-opacity": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            7.99,
+                            1
+                        ],
+                        [
+                            8,
+                            0
+                        ]
+                    ]
+                }
+            },
+            "interactive": true
+        }, {
+            "id": "county-primary",
+            "type": "line",
+            "source": "china",
+            "source-layer": "county",
+            "minzoom": 7,
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round"
+            },
+            "paint": {
+                "line-width": {
+                    "base": 1.5,
+                    "stops": [
+                        [
+                            5,
+                            0.75
+                        ],
+                        [
+                            18,
+                            32
+                        ]
+                    ]
+                },
+                "line-color": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            5,
+                            "hsl(35, 32%, 91%)"
+                        ],
+                        [
+                            7,
+                            "hsl(0, 0%, 100%)"
+                        ]
+                    ]
+                },
+                "line-opacity": 1
+            },
+            "interactive": true
+        } , {
+            "id": "landcover_crop",
+                "type": "fill",
+                "source": "china",
+                "source-layer": "province",
+                "maxzoom": 14,
+                "layout": {},
+                "paint": {
+                    "fill-color": "hsl(75, 62%, 81%)",
+                    "fill-opacity": {
+                        "base": 1.5,
+                        "stops": [
+                            [
+                                2,
+                                0.3
+                            ],
+                            [
+                                7,
+                                0
+                            ]
+                        ]
+                    },
+                    "fill-antialias": false
+                },
+                "interactive": true
+            }],
+                "_ssl": true
+            };
+
+	var music_longitude = '{{ object.longitude }}';
+	var music_latitude = '{{ object.latitude }}';
+	point = [];
+	// mapboxgl.accessToken = 'pk.eyJ1IjoiYWJ1ZHVsZW11c2EiLCJhIjoiY2p3cTBmYmNwMjNkdjN5bnN3bTJra29qeSJ9.kcz_P7jl3iI8vRZZa283cQ';
+
+	var map = new mapboxgl.Map({
+		container: 'map',
+		// style: "{% static 'plugins/mapbox/streets-v10.json' %}",
+        style:style2,
+		center: [108.7070345879, 34.2957018227],
+		zoom: 3
+	});
+
+	// mapboxgl.setRTLTextPlugin("{% static 'js/plugins/mapbox/mapbox-gl-rtl-text.js' %}");
+	// map.addControl(new MapboxLanguage({defaultLanguage: 'zh'}));
+
+	var size = 200;
+
+	var pulsingDot = {
+		width: size,
+		height: size,
+		data: new Uint8Array(size * size * 4),
+
+		onAdd: function() {
+			var canvas = document.createElement('canvas');
+			canvas.width = this.width;
+			canvas.height = this.height;
+			this.context = canvas.getContext('2d');
+		},
+
+		render: function() {
+			var duration = 1000;
+			var t = (performance.now() % duration) / duration;
+
+			var radius = size / 2 * 0.3;
+			var outerRadius = size / 2 * 0.7 * t + radius;
+			var context = this.context;
+
+			// draw outer circle
+			context.clearRect(0, 0, this.width, this.height);
+			context.beginPath();
+			context.arc(this.width / 2, this.height / 2, outerRadius, 0, Math.PI * 2);
+			context.fillStyle = 'rgba(255, 200, 200,' + (1 - t) + ')';
+			context.fill();
+
+			// draw inner circle
+			context.beginPath();
+			context.arc(this.width / 2, this.height / 2, radius, 0, Math.PI * 2);
+			context.fillStyle = 'rgba(255, 100, 100, 1)';
+			context.strokeStyle = 'white';
+			context.lineWidth = 2 + 4 * (1 - t);
+			context.fill();
+			context.stroke();
+
+			// update this image's data with data from the canvas
+			this.data = context.getImageData(0, 0, this.width, this.height).data;
+
+			// keep the map repainting
+			map.triggerRepaint();
+
+			// return `true` to let the map know that the image was updated
+			return true;
+		}
+	};
+
+	if (music_longitude != 'None' & music_latitude != 'None'){
+		var music_description = "<strong>{{ object.name }}</strong><p>{% trans 'Gallery count' %}:{{ object.gallerys.count }}</p>";
+
+		map.on('load', function () {
+
+			map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 });
+
+			map.addLayer({
+				"id": "points",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"properties": {
+								"description": music_description,
+								"icon": "theatre"
+							},
+							"geometry": {
+								"type": "Point",
+								"coordinates": [music_longitude, music_latitude]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "pulsing-dot",
+					// "icon-image": "{icon}-15",
+					"icon-allow-overlap": true
+				}
+			});
+
+			// When a click event occurs on a feature in the places layer, open a popup at the
+			// location of the feature, with description HTML from its properties.
+			map.on('click', 'points', function (e) {
+				var coordinates = e.features[0].geometry.coordinates.slice();
+				var description = e.features[0].properties.description;
+
+				// Ensure that if the map is zoomed out such that multiple
+				// copies of the feature are visible, the popup appears
+				// over the copy being pointed to.
+				while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+					coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+				}
+
+				new mapboxgl.Popup().setLngLat(coordinates).setHTML(description).addTo(map);
+			});
+
+			// Change the cursor to a pointer when the mouse is over the places layer.
+			map.on('mouseenter', 'points', function () {
+				map.getCanvas().style.cursor = 'pointer';
+			});
+
+			// Change it back to a pointer when it leaves.
+			map.on('mouseleave', 'points', function () {
+				map.getCanvas().style.cursor = '';
+			});
+		});
+
+	}
+
+</script>

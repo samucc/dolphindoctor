@@ -1,0 +1,169 @@
+{% load i18n %}
+{% load static %}
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"-->
+
+<style type="text/css">
+.effect_elevation{margin:0 auto 0 auto; min-height:450px;}
+@media screen and (max-width: 360px) {.effect_elevation {width:340px}}
+
+.front{background-color: #f0f0f0;	color: #666;text-align: center;padding: 3px;border-radius: 0px;}
+div.seatCharts-cell {color: #182C4E;height: 30px;width: 30px;line-height: 25px;margin: 2px;float: left;text-align: center;outline: none;font-size: 13px;}
+div.seatCharts-seat {color: #fff;cursor: pointer;-webkit-border-radius: 0px;-moz-border-radius: 0px;border-radius: 0px;}
+div.seatCharts-row {height: 30px;}
+div.seatCharts-seat.available {background-color: #BADEA1;}
+div.seatCharts-seat.focused {background-color: #76B474;border: none;}
+div.seatCharts-seat.selected {background-color: #E6CBC4;}
+div.seatCharts-seat.unavailable {background-color: #472B34;}
+div.seatCharts-container {padding: 10px;float: left; border: 1px solid #f0f0f0;}
+div.seatCharts-legend {padding-left: 0px;position: absolute;bottom: 16px;}
+//ul.seatCharts-legendList {padding-left: 0px;}
+.seatCharts-legendItem{float:left; width:90px;margin-top: 10px;line-height: 2;}
+span.seatCharts-legendDescription {margin-left: 5px;line-height: 30px;}
+.checkout-button {display: block;width:80px; height:24px; line-height:20px;margin: 10px auto;border:1px solid #999;font-size: 14px; cursor:pointer}
+#selected-seats {max-height: 150px;overflow-y: auto;overflow-x: none;width: 200px;}
+#selected-seats li{float:left; width:130px; height:50px; line-height:26px; border:1px solid #d3d3d3; background:#f7f7f7; margin:6px; font-size:14px; font-weight:bold; text-align:center}
+</style>
+
+<div id="main">
+   <div class="effect_elevation">
+
+   		<div id="seat-map">
+			<div class="front">{{ object.name }}</div>
+			<div><span style="width:15px;height:15px;display: inline-block;    background-color: #BADEA1;"></span><span>可占: </span><span id="available"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+			<span style="width:15px;height:15px;display: inline-block;    background-color: #472B34;"></span><span>已占: </span><span id="unavailable"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+			</div>
+			<span>选择：</span><span id="selected-seat"></span>
+			<div id="legend"></div>
+		</div>
+		<div style="clear:both"></div>
+   </div>
+
+  <br/>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	var uid = "{{ object.id }}";
+	var the_url = '{% url "api-visions:vision-effect-asset-list" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', uid);
+	$.ajax({
+		url: the_url,
+		type: "GET",
+		dataType: "json",
+		success: function(data) {
+			var videos = data[0].videos;
+			var unavailable_video_array = new Array();
+			var video_mid_id_dict = new Array();
+			for(var i =0;i<videos.length;i++){
+			    unavailable_video_array.push(videos[i].mid)
+				video_mid_id_dict[videos[i].mid] = videos[i].id
+			}
+
+			var maps = data[0].maps;
+			var map_array = new Array();
+			for(var i =0;i<maps.length;i++){
+			    map_array.push(maps[i])
+			}
+
+			init_effect_assets(data[0].columns,data[0].rows,map_array,unavailable_video_array,video_mid_id_dict);
+		}
+	});
+	//setInterval(function() {
+	//	$.ajax({
+	//		type     : 'get',
+	//		url      : 'book.php',
+	//		dataType : 'json',
+	//		success  : function(response) {
+	//			//遍历所有座位
+	//			$.each(response.bookings, function(index, booking) {
+	//				//将已售出的座位状态设置为已售出
+	//				sc.status(booking.seat_id, 'unavailable');
+	//			});
+	//		}
+	//	});
+	//}, 10000); //每10秒
+
+});
+function init_effect_assets(columns,rows,maps,unavailable_video_array,video_mid_id_dict){
+    var $cart = $('#selected-seat'); //座位区
+	var $counter = $('#counter');
+	var $total = $('#total');
+	var effect_name = '{{ object.name }}';
+	$('#elevation_div').css("width",(columns.length+1)*40);
+	$('#elevation_div').css('min-width', "500px");
+	// var columns = ['A列', '-', 'B列', '-', 'C', '-', 'D', '-','E', '-','F列', '-'];
+	// var rows = ['01','02','03','04','05','06','07','08','09'];
+	var sc = $('#seat-map').seatCharts({
+		map: maps,
+		// [ //座位图
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_',
+		// 	'c_c_c_c_c_c_'
+		// ],
+		seats: { //定义座位属性
+			c: {
+				price   : 100,
+				classes : 'video',
+				category: '机柜'
+			}
+		},
+		naming : { //定义行列等信息
+			top : true,
+			columns: columns,
+			rows: rows,
+			getLabel : function (character, row, column) {
+				return column+row;
+			}
+		},
+		legend : { //定义图例
+			node : $('#legend'),
+			//items : [
+			//	[ 'c', 'available',   '未占' ],
+			//	[ 'c', 'unavailable', '已占']
+			//]
+		},
+		click: function () {
+			if (this.status() == 'available') {//可选座
+				sc.find('selected').status("available");
+				$cart.text(effect_name+':'+this.settings.label+'机柜');
+				return 'selected';
+			} else if (this.status() == 'selected') {//已选中
+				$cart.html("");
+				return 'available';
+			} else if (this.status() == 'unavailable') {//已售出
+			    sc.find('selected').status("available");
+			    $cart.text(effect_name+':'+this.settings.label+'机柜');
+				if (this.settings.id in video_mid_id_dict){
+				    var video_id = video_mid_id_dict[this.settings.id];
+				    var detail_url = '{% url "visions:vision-video-detail" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', video_id);;
+				    window.location.assign(detail_url)
+				}
+				return 'unavailable';
+			} else {
+				return this.style();
+			}
+		},
+	});
+    //已售出不可选座
+    // sc.get(['01_A列', '04_A列', '07_B列', '07_F列']).status('unavailable');
+	sc.get(unavailable_video_array).status('unavailable');
+	$('#available').text(sc.find('available').length);
+	$('#unavailable').text(sc.find('unavailable').length);
+}
+//计算总金额
+//function recalculateTotal(sc,price) {
+//	var total = 0;
+//	sc.find('selected').each(function () {
+//		total += price;
+//	});
+//	return total;
+//}
+</script>

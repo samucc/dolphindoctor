@@ -1,0 +1,302 @@
+{% load i18n %}
+{% load static %}
+<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"-->
+
+<style>
+    .titleBackBlock {
+        width: 315px;
+        height: 10px;
+        border: solid 18px;
+        margin: 0 auto;
+        background-color: black;
+    }
+
+    .parentBackBlock {
+        width: 315px;
+        border: solid 18px;
+        margin: 0 auto;
+        background-color: dimgrey
+    }
+
+    .innerContentBackBlock {
+        width: 100%;
+        height: 100%;
+        background-color: dimgrey
+    }
+
+    .effectBackBlock {
+        width: 280px;
+        height: 11px;
+        margin: 0 auto;
+        margin-top: 3px;
+        background-color: black;
+        text-align: center;
+    }
+
+    .effectBackBlockWithImg {
+        width: 280px;
+        height: 16px;
+        margin: 0 auto;
+        margin-top: 3px;
+        background-color: black;
+        text-align: center;
+        background-image: url({% static 'img/default_video_back.jpg' %});
+        background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        color: transparent;
+    }
+
+    .backBlockFont {
+        line-height: 12px;
+        color: white;
+        font-size: 10px;
+        text-align:left;
+        margin-left:-16px;
+    }
+</style>
+<div class="titleBackBlock" align="center">
+    <font color="white" style="font-weight: bold">{% trans "Video" %} ：{{ object.name }} {% trans "Back" %}</font>
+</div>
+<div class="parentBackBlock">
+    <div class="innerContentBackBlock">
+    </div>
+</div>
+<!--script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script-->
+
+<script>
+    $(function () {
+        $( document ).tooltip({
+            position: { my: "left+50 center", at: "right center" },
+            items: "[data-geo]",
+            content: function() {
+                var element = $( this );
+                if ( element.is( "[data-geo]" ) ) {
+                    var text = element.text().split(',');
+                    var content = '';
+                    if (text.length != 1) {
+                        for(var i = 0;i < text.length;i++){
+                            content += "<div>"+text[i]+"</div>";
+                        }
+                    }else{
+                        content += "<div>单元 "+text[0]+" 可使用</div>";
+                    }
+                    return content;
+                }
+
+            }
+        });
+
+        var u_quantity = '{{ object.u_quantity }}';
+        if(u_quantity == "None"){
+            u_quantity = 48
+        }
+
+        var uid = "{{ object.id }}";
+        var the_url = '{% url "api-visions:vision-video-asset-list" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', uid);
+        $.ajax({
+            url: the_url,
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                init_video_back_assets(data,u_quantity);
+
+            }
+        });
+
+        // var array = new Array();
+        // array.push({index: 1, name: '11', length: 2, type: 1,ip:"0.0.0.0"})
+        // array.push({index: 10, name: '22', length: 2, type: 1,ip:"0.0.0.1"})
+        // array.push({index: 25, name: '23', length: 2, type: 1,ip:"0.0.0.2"})
+        // init(u_quantity, array)
+    })
+
+    function init_video_back_assets(data,u_quantity){
+        var asset_array = new Array();
+        var video_interval = 1;// 每间隔X个U位放置一个机器
+        var length = 2;
+        var ip_list = new Array();
+        var band_manager_ip_list = new Array();
+        var inband_manager_ip_list = new Array();
+        for(var i = 0;i < data.length;i++){
+            var index = i;//0-0 1-3 2-6 3-9 4-12  5-15
+            if (index != 0){
+                index = (length + video_interval)*i;
+            }
+            var ip = data[i]['ip'];
+            var band_manager_ip = data[i]['band_manage_ip'];
+            var inband_manager_ip = data[i]['inband_manage_ip'];
+            ip_list.push(ip);
+            if (band_manager_ip != null){
+                band_manager_ip_list.push(band_manager_ip);
+            }
+            if (inband_manager_ip != null){
+                inband_manager_ip_list.push(inband_manager_ip);
+            }
+            var asset_dict = {index: index, length:length,
+                          id: data[i]['id'], ip: ip, hostname: data[i]['hostname'],
+                          band_manage_ip: band_manager_ip,inband_manage_ip:inband_manager_ip,
+                          service:data[i]['service'],device_type:data[i]['device_type'],
+                          position:data[i]['position'],u_location:data[i]['u_location'],
+                          department:data[i]['department'],bearing_project:data[i]['bearing_project'],
+                          bearing_system:data[i]['bearing_system'],application:data[i]['application'],
+                          material:data[i]['material'],project_manager:data[i]['project_manager'],
+                          installed_time: data[i]['installed_time'],
+                          maintenance_expire_time: data[i]['maintenance_expire_time'],
+                          collection:data[i]['collection'],effect_name:data[i]['effect_name'],
+                          location:data[i]['location'], location_assign:data[i]['location_assign']}
+            asset_array.push(asset_dict)
+
+        }
+        init_back(u_quantity, asset_array);
+        //根据带外IP获取IPMI信息；根据业务IP获取SNMP信息； AJAX获取数据在机柜上显示其运行的灯
+        //以IP为ID查询到DIV，修改其background-color
+        // if(band_manager_ip_list.length > 0){
+        var data = "['"+band_manager_ip_list.join("','")+"']";
+        var the_url = '{% url "api-assets:ipmisensor-list"%}';
+        $.ajax({
+            url: the_url,
+            data:{"instance__in":data},
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                video_back_light(data);
+            }
+        });
+        // }
+        // if(ip_list.length > 0) {
+        // var data = "['" + ip_list.join("','") + "']";
+        // var the_url = '{% url "api-assets:snmp-list"%}';
+        // $.ajax({
+        //     url: the_url,
+        //     data: {"instance__in": data},
+        //     type: "GET",
+        //     dataType: "json",
+        //     success: function (data) {
+        //         video_back_light(data);
+        //     }
+        // });
+        // }
+    }
+    function video_back_light(assets){
+        for(var i = 0; i < assets.length; i++){
+            var sensor_id = assets[i].sensor_id;
+            var sensor_name = assets[i].name;
+            var instance = assets[i].instance;
+            var up = assets[i].state;
+            if (sensor_id=="151"){
+                var div_id = instance+"_power0";
+                var instance_div = document.getElementById(div_id);
+                if(instance_div == null){
+                    continue;
+                }
+                if(up){
+                    instance_div.style.background="green";
+                    instance_div.classList.add("headerBox");
+                }else{
+                    instance_div.style.background="red";
+                    instance_div.classList.add("headerBox");
+                }
+            }
+            if (sensor_id=="153"){
+                var div_id = instance+"_power1";
+                var instance_div = document.getElementById(div_id);
+                if(instance_div == null){
+                    continue;
+                }
+                if(up){
+                    instance_div.style.background="green";
+                    instance_div.classList.add("headerBox");
+                }else{
+                    instance_div.style.background="red";
+                    instance_div.classList.add("headerBox");
+                }
+            }
+            if (sensor_id=="34"){
+                var div_id = instance+"_nic";
+                var instance_div = document.getElementById(div_id);
+                if(instance_div == null){
+                    continue;
+                }
+                if(up){
+                    instance_div.style.background="green";
+                    instance_div.classList.add("headerBox");
+                }else{
+                    instance_div.style.background="red";
+                    instance_div.classList.add("headerBox");
+                }
+            }
+        }
+    }
+
+    function init_back(unitCount, unitArray) {
+        var backBlockInterval = 3;//单元的间隔
+        var backBlockHeight = 12;//单元高度
+        var map = {};
+        for (var i = 0; i < unitArray.length; i++) {
+            map[unitArray[i].index + unitArray[i].length - 1] = unitArray[i];
+        }
+        var parentBackBlockHeight = (backBlockHeight + backBlockInterval+1) * unitCount + 'px';
+        $('.parentBackBlock').css('height', parentBackBlockHeight);
+        var content = "";
+        for (var i = unitCount; i >= 1; i--) {
+            if (typeof(map[i]) == 'undefined') {
+			    if (i < 10){
+					content += '<div class="effectBackBlock" align="center" data-geo=""><div class="backBlockFont">0' + i + '</div></div>'
+				} else{
+					content += '<div class="effectBackBlock" align="center" data-geo=""><div class="backBlockFont">' + i + '</div></div>'
+				}
+            } else {
+                var id = map[i]['id'];
+                var the_url = '{% url "assets:asset-detail" pk=DEFAULT_PK %}'.replace('{{ DEFAULT_PK }}', id);
+                var hostname = map[i]['hostname'];
+                var ip = map[i]['ip'];
+                var device_type = map[i]['device_type'];
+                var band_manager_ip = map[i]['band_manage_ip'];
+                var inband_manager_ip = map[i]['inband_manage_ip'];
+                var content_str = '{% trans "Hostname" %}: '+hostname+','+
+                    '{% trans "IP" %}: '+ip +','+
+                    '{% trans "Band Management IP" %}: '+band_manager_ip+','+
+                    '{% trans "In-Band Management IP" %}: '+inband_manager_ip+','+
+                    '{% trans "Service" %}: '+map[i]['service']+','+
+                    '{% trans "Device Type" %}: '+device_type+','+
+                    '{% trans "Position" %}: '+map[i]['position']+','+
+                    '{% trans "Department" %}: '+map[i]['department']+','+
+                    '{% trans "Bearing Project" %}: '+map[i]['bearing_project']+','+
+                    '{% trans "Bearing System" %}: '+map[i]['bearing_system']+','+
+                    '{% trans "Application" %}: '+map[i]['application']+','+
+                    '{% trans "Material" %}: '+map[i]['material']+','+
+                    '{% trans "Project Manager" %}: '+map[i]['project_manager']+','+
+                    '{% trans "Installed Time" %}: '+map[i]['installed_time']+','+
+                    '{% trans "Maintenance Expire Time" %}: '+map[i]['maintenance_expire_time']+','+
+                    '{% trans "Collection Node" %}: '+map[i]['collection']+','+
+                    '{% trans "Effect Name" %}: '+map[i]['effect_name']+','+
+                    '{% trans "Location" %}: '+map[i]['location']+','+
+                    '{% trans "Location Assign" %}: '+map[i]['location_assign']
+                ;
+
+                var length = parseInt(map[i].length);
+                var height = backBlockHeight * (length) + backBlockInterval * (length - 1) + 'px';
+                i -= (length - 1);
+                var light_ip = ip;//IPMI使用带外IP，SNMP使用业务IP
+                if (device_type == 'x86' && band_manager_ip != null){
+                    light_ip = band_manager_ip;
+                }
+                console.log(ip,device_type,band_manager_ip,light_ip);
+                content += '<a href="'+the_url+'" class="text-center">'+
+                    '<p style="display:flex;float:left;color:white;height:20px;width:90%;font-size:10px;"></p>'+
+                    '<div id="'+light_ip+'_power0" style="position: relative;top: 18px;left: -108px;float:right;background-color:#acb6b4;width:10px;height:10px;border-radius: 8px;color:white;"></div>'+
+                    '<div id="'+light_ip+'_power1" style="position: relative;top: 18px;left: -40px;float:right;background-color:#acb6b4;width:10px;height:10px;border-radius: 8px;color:white;"></div>'+
+                    '<div id="'+light_ip+'_nic" style="position: relative;top: 11px;left: -89%;float:right;background-color:#acb6b4;width:10px;height:10px;border-radius: 8px;color:white;"></div>'+
+                    '<div class="effectBackBlockWithImg" align="center" style="height: ' + height + '" data-geo="">'
+                    + content_str +',{% trans "U location" %}: '+ i+'-'+(i+length-1)+
+                    '</div>'+
+                    '</a>'
+
+
+            }
+
+        }
+        $('.innerContentBackBlock').append(content)
+    }
+</script>
