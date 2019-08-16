@@ -20,6 +20,7 @@ api_v1 = [
    path('authentication/v1/', include('authentication.urls.api_urls', namespace='api-auth')),
    path('common/v1/', include('common.urls.api_urls', namespace='api-common')),
    path('visions/v1/', include('visions.urls.api_urls', namespace='api-visions')),
+   path('surveys/v1/', include('surveys.urls.api_urls', namespace='api-surveys')),
 ]
 
 api_v2 = [
@@ -36,6 +37,7 @@ app_view_patterns = [
     path('orgs/', include('orgs.urls.views_urls', namespace='orgs')),
     path('auth/', include('authentication.urls.view_urls'), name='auth'),
     path('visions/', include('visions.urls.views_urls', namespace='visions')),
+    path('surveys/', include('surveys.urls.views_urls', namespace='surveys')),
 ]
 
 

@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'common.apps.CommonConfig',
     'audits.apps.AuditsConfig',
     'visions.apps.VisionsConfig',
+    'surveys.apps.SurveysConfig',
     'authentication.apps.AuthenticationConfig',  # authentication
     'rest_framework',
     'rest_framework_swagger',

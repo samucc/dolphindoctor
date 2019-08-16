@@ -127,6 +127,7 @@ class GalleryAddAssetApi(RetrieveUpdateAPIView):
 
 class GalleryAssetListApi(RetrieveAPIView):
     queryset = Gallery.objects.all()
+    serializer_class = serializers.GalleryUpdateAssetSerializer
     vision_classes = (IsOrgAdmin,)
 
     def retrieve(self, request, *args, **kwargs):

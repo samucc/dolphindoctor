@@ -182,6 +182,7 @@ class UserProfileApi(generics.RetrieveAPIView):
 
 class UserResetOTPApi(generics.RetrieveAPIView):
     queryset = User.objects.all()
+    serializer_class = UserSerializer
     permission_classes = (IsOrgAdmin,)
 
     def retrieve(self, request, *args, **kwargs):

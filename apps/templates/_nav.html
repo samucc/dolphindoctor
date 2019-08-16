@@ -25,6 +25,14 @@
         <li id="label"><a href="{% url 'assets:label-list' %}">{% trans 'Labels' %}</a></li>
     </ul>
 </li>
+<li id="surveys">
+    <a>
+        <i class="fa fa-inbox" style="width: 14px"></i> <span class="nav-label">{% trans 'Surveys' %}</span><span class="fa arrow"></span>
+    </a>
+    <ul class="nav nav-second-level">
+        <li id="case"><a href="{% url 'surveys:survey-case-list' %}">{% trans 'Case' %}</a></li>
+    </ul>
+</li>
 <li id="visions">
     <a>
         <i class="fa fa-inbox" style="width: 14px"></i> <span class="nav-label">{% trans 'Visions' %}</span><span class="fa arrow"></span>
