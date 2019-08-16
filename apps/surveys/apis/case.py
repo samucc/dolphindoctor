@@ -64,21 +64,23 @@ def answer(request):
     user_list = []
 
     # input data information
-    jsondata = {
-        "pathtype": "getanswer",
-        "answer_record_seqno": "201908051619300001938_007",
-        "content":
-            {
-                "answer_mainseqno": "201908051619300001938",
-                "question_seq": "1",
-                "actual_symptom_code": ["C0015230"],
-                "answer_detail": ["是"]
-            }
-    }
+    jsondata = request.data
+    # jsondata = {
+    #     "pathtype": "getanswer",
+    #     "answer_record_seqno": "201908051619300001938_007",
+    #     "content":
+    #         {
+    #             "answer_mainseqno": "201908051619300001938",
+    #             "question_seq": "1",
+    #             "actual_symptom_code": ["C0015230"],
+    #             "answer_detail": ["是"]
+    #         }
+    # }
     print(jsondata["pathtype"])
     content = jsondata['content']
     print(content)
 
+    python_output = {}
     global_dict = {}
     # programming
     # interface 1--getanswer
