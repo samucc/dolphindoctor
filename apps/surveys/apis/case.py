@@ -288,6 +288,6 @@ def answer(request):
     # output the json string
     json_output = json.dumps(python_output)
     print(json_output)
-    return JsonResponse(json_output,safe=False)
+    return JsonResponse(python_output,safe=False)
 
 # answer()
