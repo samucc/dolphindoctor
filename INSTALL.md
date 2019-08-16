@@ -331,9 +331,15 @@ CentOS 7 安装文档
         server_name demo.dolphindoctor.org;  # 自行修改成你的域名
 
         client_max_body_size 100m;  # 录像上传大小限制
-        fastcgi_connect_timeout 300;
-        fastcgi_send_timeout 300;
-        fastcgi_read_timeout 300;
+        #fastcgi_buffers 8 16k;
+        #fastcgi_buffer_size 32k;
+        #fastcgi_connect_timeout 300;
+        #fastcgi_send_timeout 300;
+        #fastcgi_read_timeout 300;
+        #uwsgi_read_timeout 1800;
+        #uwsgi_send_timeout 300;
+        #proxy_connect_timeout 300;
+        #proxy_read_timeout 300;
 
         location / {
             proxy_pass http://dolphindoctor;
@@ -341,6 +347,13 @@ CentOS 7 安装文档
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             access_log off;
+            proxy_connect_timeout 600s;
+            proxy_read_timeout 600s;
+            proxy_send_timeout 600s;
+            # proxy_next_upstream error;
+            proxy_buffer_size 512k;
+            proxy_buffers   256 256k;
+            proxy_busy_buffers_size 1024k;
         }
 
         location /media/ {
