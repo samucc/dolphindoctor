@@ -15,7 +15,7 @@ router.register('survey-cases', case.CaseViewSet, 'survey-case')
 urlpatterns = [
 
     path('survey-cases/answer/', case.answer,name='survey-case-answer'),
-
+    path('survey-cases/bodyindex/', case.bodyindex,name='survey-case-bodyindex'),
 ]
 
 urlpatterns += router.urls

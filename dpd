@@ -156,7 +156,7 @@ def start_gunicorn():
         #'-k', 'eventlet',
         '-k', 'gthread',
         '--threads', '10',
-        '--timeout', '300',
+        '--timeout', '600',
         '-w', str(WORKERS),
         '--max-requests', '4096',
         '--access-logformat', log_format,
